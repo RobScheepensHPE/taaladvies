@@ -1,0 +1,472 @@
+
+<project name="TAALADVIES" default="main" basedir="..">
+    <property file="${basedir}/build/build.properties"/>
+
+    <!--<taskdef name="sun-appserv-deploy" classname="org.apache.tools.ant.taskdefs.optional.sun.appserv.DeployTask"/>
+    <taskdef name="sun-appserv-undeploy" classname="org.apache.tools.ant.taskdefs.optional.sun.appserv.UndeployTask"/>
+    <taskdef name="sun-appserv-instance" classname="org.apache.tools.ant.taskdefs.optional.sun.appserv.InstanceTask"/>
+    <taskdef name="sun-appserv-component" classname="org.apache.tools.ant.taskdefs.optional.sun.appserv.ComponentTask"/>
+    <taskdef name="sun-appserv-admin" classname="org.apache.tools.ant.taskdefs.optional.sun.appserv.AdminTask"/>
+    <taskdef name="sun-appserv-jspc" classname="org.apache.tools.ant.taskdefs.optional.sun.appserv.SunJspc"/>-->
+
+    <!-- Tell ant to use my environment variables -->
+    <property environment="env" />
+
+	<property name="comp" value="${env.HOSTNAME}"/>
+	<property file="${basedir}/build/${comp}.properties"/>
+
+    <property name="application-name" value="taaladvies"/>
+    <property name="build.compiler" value="modern"/>
+    <property name="web-lib.dir" value="${basedir}/webcontent/WEB-INF/lib"/>
+    <property name="lib.dir" value="${basedir}/lib"/>
+    <property name="src.dir" value="${basedir}/source"/>
+    <property name="war.file" value="taaladvies"/>
+    <property name="war.file.name" value="${war.file}.war"/>
+    <property name="ear-name" value="taaladvies"/>
+    <property name="ophalenTaalunieVragenBatch" value="ophalenTaalunieVragenBatch.jar"/>
+    <property name="doorsturenTaalunieVragenBatch" value="doorsturenTaalunieVragenBatch.jar"/>
+    <property name="fixDiacriticsBatch" value="fixDiacriticsBatch.jar"/>
+    <property name="checkstyle.dir" location="D:\checkstyle"/>
+    <property name="build.reports.dir" location="./reports"/>
+
+    <path id="project.class.path">
+        <fileset dir="${web-lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
+
+        <fileset dir="${lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
+
+        <pathelement path="${src.dir}"/>
+        <pathelement path="${basedir}/${j2ee.jar}" />
+    </path>
+
+    <target name="echoclasspath">
+        <property name="cp" refid="project.class.path"/>
+        <echo message="Classpath is ${cp}"/>
+    </target>
+
+    <target name="main">
+        <echo message="doing nothing, pick a specific target"></echo>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}" includeEmptyDirs="true" failonerror="false"/>
+    </target>
+
+    <target name="prep">
+        <mkdir dir="${build.dir}/classes"/>
+    </target>
+
+    <target name="compile" depends="clean,copyPropertiefiles">
+    	<property name="myclasspath" refid="project.class.path"/>
+    	<echo message="classpath= ${myclasspath}"/>
+        <mkdir dir="${build.dir}"/>
+        <!--Compile files from src.dir do classes-dir-->
+        <javac srcdir="${src.dir}" destdir="${build.dir}/classes" debug="on" deprecation="off"
+               classpathref="project.class.path">
+        </javac>
+    </target>
+
+    <target name="copyPropertiefiles">
+        <mkdir dir="${build.dir}/classes/conf"/>
+        <copy todir="${build.dir}/classes/conf" verbose="true">
+            <fileset dir="${basedir}/build" includes="appconf.xml
+														,log4j.properties
+														,config-taaladvies.xml
+														,toolbar-taaladvies.xml
+														,toolbar-taaladvies2.xml
+														,toolbar-taaladvies3.xml
+														,toolbar-taaladvies4.xml
+														,toolbar-taaladvies5.xml
+														,toolbar-taaladvies6.xml
+														,toolbar-taaladvies7.xml">
+            </fileset>
+        </copy>
+
+        <!--Copy properties-files to classes-->
+        <copy todir="${build.dir}/classes" verbose="true">
+            <fileset dir="${src.dir}" casesensitive="yes">
+                <include name="**/*.properties"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="copyXMLSchemas">
+        <copy todir="${basedir}/webcontent" verbose="true">
+            <fileset dir="${basedir}/build">
+                <include name="taalvragen.xsd"/>
+                <include name="taalantwoord.xsd"/>
+                <include name="doorstuurresultaat.xsd"/>
+            </fileset>
+        </copy>
+    </target>
+
+
+    <target name="cleanWebApp">
+        <delete file="${basedir}/${dist-dir}/${war.file.name}"/>
+    </target>
+
+    <target name="war" depends="compile">
+        <mkdir dir="${basedir}/${dist-dir}"/>
+        <war warfile="${basedir}/${dist-dir}/${war.file.name}" webxml="${basedir}/webcontent/WEB-INF/web.xml">
+         <!--  <fileset dir="${basedir}" excludes="**/*.war, **/*.tar, **/*.ear, **/*.nbattrs, web.xml, **/WEB-INF/**/*.*, **/project-files/**/*.*, **/webcontent/**/*.*, **/docs/**/*.*, **/db/**/*.*, **/.copyarea.db" />-->
+
+            <!--will be copied to the war file (main)-->
+            <fileset dir="${basedir}/webcontent"
+                     includes="**/*.*"
+                     excludes="*.war, **/*.nbattrs, web.xml, **/WEB-INF/**/*.*, **/project-files/**/*.*, **/**/*.copyarea.db"/>
+
+            <!--will be copied to WEB-INF-dir in the war file-->
+            <webinf dir="${basedir}/webcontent/WEB-INF"
+                    includes="**/*"
+                    excludes="web.xml, **/*.jar, **/*.class, **/work/**/*.*, **/temp/**/*.*, **/**/*.copyarea.db"/>
+
+            <!--webcontent/WEB-INF/lib will be copied to WEB-INF/lib in the war file-->
+            <lib dir="${web-lib.dir}"/>
+            <classes dir="${build.dir}/classes"/>
+        </war>
+    </target>
+
+    <target name="ear" depends="war">
+        <ear earfile="${basedir}/${dist-dir}/taaladvies.ear" appxml="${basedir}/build/application.xml">
+            <fileset dir="${basedir}/${dist-dir}" includes="*.war"/>
+        </ear>
+    </target>
+    <!--
+     <target name="ear">
+             <echo message="Making ear file"/>
+
+             <delete>
+                 <fileset dir="${basedir}/${dist-dir}" includes="taaladvies.ear"/>
+             </delete>
+             <jar jarfile="${basedir}/${dist-dir}/taaladvies.ear">
+                 <fileset dir="${basedir}/${dist-dir}" includes="*.war" />
+                 <metainf dir="." includes="application.xml"/>
+             </jar>
+     </target>
+     -->
+    <target name="tar">
+        <delete file="${basedir}/${dist-dir}/taaladvies.tar"/>
+        <tar tarfile="${basedir}/${dist-dir}/taaladvies.tar">
+            <tarfileset dir="${basedir}"
+                        excludes="*.war, *.tar, **/webcontent/**/*.*, *.properties, *.xml, **/.copyarea.db, ./dist/**/*.*, ./ear/**/*.*"/>
+            <tarfileset dir="${basedir}/webcontent/WEB-INF" includes="**/ifxjdbc.jar, **/ifxjdbcx.jar"/>
+            <tarfileset dir="${basedir}/${dist-dir}" includes="taaladvies.ear, **/batches/**/*.*"/>
+        </tar>
+
+    </target>
+
+    <target name="build" depends="clean, prep, compile, copyXMLSchemas, copyPropertiefiles, war, ear, createBatches"/>
+<!--
+    <target name="installFromSource" depends="clean, deploy">
+        <echo message="Doing a full install from the source files"/>
+    </target>
+
+    <target name="reinstallFromSource" depends="stop, undeploy, clean, deploy, start">
+        <echo message="Doing a full reinstall from the source files"/>
+    </target>-->
+
+    <!-- ============================ Create Batches-->
+    <target name="createBatches">
+        <echo message="creating Batches"/>
+        <mkdir dir="${basedir}/${dist-dir}/batches"/>
+        <delete failonerror="false">
+            <fileset dir="${basedir}/${dist-dir}/batches"/>
+        </delete>
+
+        <!-- copying common used libs, config files and xsd's-->
+        <copy todir="${basedir}/${dist-dir}/batches" overwrite="true" verbose="true">
+            <fileset dir="${basedir}/webcontent/WEB-INF">
+                <include name="lib/jdom.jar"/>
+                <include name="lib/commons-httpclient-2.0.2.jar"/>
+                <include name="lib/xercesImpl.jar"/>
+                <include name="lib/mail.jar"/>
+                <include name="lib/activation.jar"/>
+                <include name="lib/xmlParserAPIs.jar"/>
+                <include name="lib/commons-lang-2.1.jar"/>
+            </fileset>
+            <fileset dir="${basedir}">
+                <include name="lib/mail.jar"/>
+                <include name="lib/activation.jar"/>
+                <include name="lib/log4j-1.2.7.jar"/>
+                <include name="lib/commons-logging.jar"/>
+                <include name="lib/ifxjdbc.jar"/>
+                <include name="lib/ifxjdbcx.jar"/>
+                <include name="lib/htmlparser.jar"/>
+                <include name="lib/htmllexer.jar"/>
+            </fileset>
+            <fileset dir="${build.dir}/classes">
+                <include name="conf/appconf.xml"/>
+                <include name="conf/log4j.properties"/>
+            </fileset>
+            <fileset dir="${basedir}/build">
+                <include name="taalvragen.xsd"/>
+                <include name="taalantwoord.xsd"/>
+                <include name="doorstuurresultaat.xsd"/>
+            </fileset>
+        </copy>
+
+        <jar jarfile="${basedir}/${dist-dir}/batches/${ophalenTaalunieVragenBatch}">
+            <fileset dir="${build.dir}/classes">
+                <exclude name="**/*.java"/>
+                <exclude name="**/*.properties"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/taalunie/OphalenTaalunieVragen.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/taalunie/TaalunieException.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/taalunie/TaalunieSaxErrorHandler.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/taalunie/TaalunieInitialization.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/model/Oproep.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/model/Taalvraag.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/model/Distributie.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/utils/Util.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/Queries.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/db/**/*.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/appconf/*.class"/>
+                <include name="be/vlaanderen/sbs/s6/db/*.class"/>
+                <include name="be/vlaanderen/sbs/s6/utils/*.class"/>
+                <include name="be/vlaanderen/sbs/s6/framework/logging/*.class"/>
+                <include name="be/vlaanderen/sbs/s6/framework/error/*.class"/>
+            </fileset>
+
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="be.vlaanderen.sbs.s6.taaladvies.taalunie.OphalenTaalunieVragen"/>
+                <attribute name="Class-Path"
+                           value=". conf/ lib/commons-logging.jar lib/log4j-1.2.7.jar lib/ifxjdbc.jar lib/ifxjdbcx.jar lib/jdom.jar lib/commons-httpclient-2.0.2.jar lib/xercesImpl.jar lib/xmlParserAPIs.jar lib/activation.jar lib/mail.jar"/>
+            </manifest>
+        </jar>
+
+        <jar jarfile="${basedir}/${dist-dir}/batches/${doorsturenTaalunieVragenBatch}">
+            <fileset dir="${build.dir}/classes">
+                <exclude name="**/*.java"/>
+                <exclude name="**/*.properties"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/taalunie/DoorsturenTaalunieVragen.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/taalunie/TaalunieException.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/taalunie/TaalunieSaxErrorHandler.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/taalunie/TaalunieInitialization.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/model/Oproep.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/model/Taalvraag.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/model/Distributie.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/utils/Util.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/Queries.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/db/**/*.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/appconf/*.class"/>
+                <include name="be/vlaanderen/sbs/s6/db/*.class"/>
+                <include name="be/vlaanderen/sbs/s6/utils/*.class"/>
+                <include name="be/vlaanderen/sbs/s6/framework/logging/*.class"/>
+                <include name="be/vlaanderen/sbs/s6/framework/error/*.class"/>
+            </fileset>
+
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="be.vlaanderen.sbs.s6.taaladvies.taalunie.DoorsturenTaalunieVragen"/>
+                <attribute name="Class-Path"
+                           value=". conf/ lib/commons-logging.jar lib/log4j-1.2.7.jar lib/ifxjdbc.jar lib/ifxjdbcx.jar lib/jdom.jar lib/commons-httpclient-2.0.2.jar lib/xercesImpl.jar lib/xmlParserAPIs.jar lib/activation.jar lib/mail.jar"/>
+            </manifest>
+        </jar>
+
+        <delete file="${basedir}/${dist-dir}/batches.tar"/>
+        <tar tarfile="${basedir}/${dist-dir}/batches.tar">
+            <tarfileset dir="${basedir}/${dist-dir}/batches"/>
+        </tar>
+    </target>
+
+    <!-- ============================ Create Diacritics Batches-->
+    <target name="createFixDiacriticsBatch" depends="clean, prep, compile, copyPropertiefiles">
+        <echo message="creating FixDiacriticsBatches"/>
+        <mkdir dir="${basedir}/${dist-dir}/fixDiacriticsBatch"/>
+        <delete failonerror="false">
+            <fileset dir="${basedir}/${dist-dir}/fixDiacriticsBatch"/>
+        </delete>
+
+        <!-- copying common used libs, config files and xsd's-->
+        <copy todir="${basedir}/${dist-dir}/fixDiacriticsBatch" overwrite="true" verbose="true">
+            <fileset dir="${basedir}/webcontent/WEB-INF">
+                <include name="lib/jdom.jar"/>
+                <include name="lib/commons-httpclient-2.0.2.jar"/>
+                <include name="lib/xercesImpl.jar"/>
+                <include name="lib/mail.jar"/>
+                <include name="lib/activation.jar"/>
+                <include name="lib/xmlParserAPIs.jar"/>
+                <include name="lib/commons-lang-2.1.jar"/>
+            </fileset>
+            <fileset dir="${basedir}">
+                <include name="lib/mail.jar"/>
+                <include name="lib/activation.jar"/>
+                <include name="lib/log4j-1.2.7.jar"/>
+                <include name="lib/commons-logging.jar"/>
+                <include name="lib/ifxjdbc.jar"/>
+                <include name="lib/ifxjdbcx.jar"/>
+                <include name="lib/htmlparser.jar"/>
+                <include name="lib/htmllexer.jar"/>
+            </fileset>
+            <fileset dir="${build.dir}/classes">
+                <include name="conf/appconf.xml"/>
+                <include name="conf/log4j.properties"/>
+            </fileset>
+        </copy>
+
+        <jar jarfile="${basedir}/${dist-dir}/fixDiacriticsBatch/${fixDiacriticsBatch}">
+
+            <fileset dir="${build.dir}/classes">
+                <exclude name="**/*.java"/>
+                <exclude name="**/*.properties"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/taalunie/TaalunieException.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/taalunie/TaalunieInitialization.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/db/**/*.class"/>
+                <include name="be/vlaanderen/sbs/s6/taaladvies/appconf/*.class"/>
+                <include name="be/vlaanderen/sbs/s6/db/*.class"/>
+                <include name="be/vlaanderen/sbs/s6/utils/*.class"/>
+                <include name="be/vlaanderen/sbs/s6/framework/logging/*.class"/>
+                <include name="be/vlaanderen/sbs/s6/framework/error/*.class"/>
+            </fileset>
+
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="be.vlaanderen.sbs.s6.taaladvies.db.fixes.FixDiacriticChars"/>
+                <attribute name="Class-Path"
+                           value=". conf/ lib/commons-logging.jar lib/log4j-1.2.7.jar lib/ifxjdbc.jar lib/ifxjdbcx.jar lib/jdom.jar lib/commons-httpclient-2.0.2.jar lib/xercesImpl.jar lib/xmlParserAPIs.jar lib/activation.jar lib/mail.jar lib/htmlparser.jar lib/htmllexer.jar lib/commons-lang-2.1.jar"/>
+            </manifest>
+        </jar>
+
+    </target>
+
+	<target name="deploy7" depends="undeploy7" description="Builds the war file for the independent Online Help Webapp">
+		<exec executable="${server.asadmin}" failonerror="true" resultproperty="result">
+			<arg line="deploy --user ${server.adminuser} --password ${server.adminpw} --host ${server.host} --port ${server.port} --instance ${server.instance} --type application ${basedir}/${dist-dir}/taaladvies.ear"/>
+		</exec>
+	</target>
+
+	<target name="undeploy7" depends="stop7">
+		<exec executable="${server.asadmin}" failonerror="true" resultproperty="result">
+			<arg line="undeploy --user ${server.adminuser} --password ${server.adminpw} --host ${server.host} --port ${server.port} --instance ${server.instance} --type application taaladvies"/>
+		</exec>
+	</target>
+
+	<target name="start7" depends="deploy7" description="Starts the instance. To start the instance via ant, the domino domain (admin server) must be up and running">
+		<exec executable="${server.asadmin}">
+			<arg line="start-instance --user ${server.adminuser} --password ${server.adminpw} --host ${server.host} --port ${server.port} --domain ${server.domain} --debug=true ${server.instance}"/>
+		</exec>
+	</target>
+
+	  <target name="stop7" description="Stops the instance. To stop the instance via ant, the aiw domain (admin server) must be up and running">
+		<exec executable="${server.asadmin}">
+			<arg line="stop-instance --user ${server.adminuser} --password ${server.adminpw} --host ${server.host} --port ${server.port} --domain ${server.domain} ${server.instance}"/>
+		</exec>
+	</target>
+
+	<target name="deploySunOne7" depends="stop7, undeploy7, deploy7, start7" />
+	<target name="releaseSunOne7" depends="build, deploySunOne7" />
+
+<!--
+    --><!--
+             Om te kunnen deployen / undeployen moet met de library
+             Sun\Appserver7\lib\sun-appserv-ant.jar toevoegen aan de
+             ANT_HOME/lib directory zodat onderstaande tasks kunnen
+             gebruikt worden.
+         --><!--
+    --><!--======================= Deploy application =======================--><!--
+    <target name="deploy" depends="checkEar">
+        <echo message="Deploying ear file."/>
+        <sun-appserv-deploy file="${basedir}/${dist-dir}/${ear-name}.ear"
+                            name="${application-name}"
+                            type="application"
+                            force="true"
+                            precompilejsp="${server-precompilejsp}"
+                            upload="${server-upload}"
+                            user="${server-admin-user}"
+                            password="${server-admin-password}"
+                            host="${server-admin-host}"
+                            port="${server-admin-port}"
+                            instance="${server-instance}"
+                            sunonehome="${server-installRoot}"/>
+    </target>
+
+    --><!--======================= Undeploy application =======================--><!--
+    <target name="undeploy">
+        <echo message="Undeploying ${application-name}."/>
+        <sun-appserv-undeploy name="${application-name}" type="application" user="${server-admin-user}"
+                              password="${server-admin-password}" host="${server-admin-host}"
+                              port="${server-admin-port}" instance="${server-instance}"
+                              sunonehome="${server-installRoot}"/>
+    </target>
+
+    --><!--==== Checks the ear file. If the file does not yet exist the build target is called.====--><!--
+    <target name="checkEar" depends="checkEarExists" unless="ear.exists">
+        <antcall target="build"/>
+    </target>
+    <target name="checkEarExists">
+        <available property="ear.exists" type="file" file="${basedir}/${dist-dir}/${ear-name}.ear"/>
+    </target>
+
+    --><!--==== start server ====--><!--
+    <target name="start">
+        <echo message="Starting ${server-instance}@${server-admin-host}."/>
+        <sun-appserv-instance action="start" debug="true" user="${server-admin-user}"
+                              password="${server-admin-password}" host="${server-admin-host}"
+                              port="${server-admin-port}" instance="${server-instance}"
+                              sunonehome="${server-installRoot}"/>
+    </target>
+
+    --><!--==== stop server ====--><!--
+    <target name="stop">
+        <echo message="Stopping ${server-instance}@${server-admin-host}."/>
+        <sun-appserv-instance action="stop" debug="true" user="${server-admin-user}" password="${server-admin-password}"
+                              host="${server-admin-host}" port="${server-admin-port}" instance="${server-instance}"
+                              sunonehome="${server-installRoot}"/>
+    </target>
+
+    --><!--==== restart server (niet mogelijk op windows-machines)====--><!--
+    <target name="restart">
+        <echo message="Restarting ${server-instance}@${server-admin-host}."/>
+        <sun-appserv-instance action="restart" debug="true" user="${server-admin-user}"
+                              password="${server-admin-password}" host="${server-admin-host}"
+                              port="${server-admin-port}" instance="${server-instance}"
+                              sunonehome="${server-installRoot}"/>
+    </target>
+
+    --><!--==== restart server - nu ook voor de windows-machine ;) (jeroen van beirendonck) ====--><!--
+    <target name="restart windows (stop + start)">
+        <echo message="Stopping ${server-instance}@${server-admin-host}."/>
+        <sun-appserv-instance action="stop" debug="true" user="${server-admin-user}" password="${server-admin-password}"
+                              host="${server-admin-host}" port="${server-admin-port}" instance="${server-instance}"
+                              sunonehome="${server-installRoot}"/>
+        <echo message="Starting ${server-instance}@${server-admin-host}."/>
+        <sun-appserv-instance action="start" debug="true" user="${server-admin-user}"
+                              password="${server-admin-password}" host="${server-admin-host}"
+                              port="${server-admin-port}" instance="${server-instance}"
+                              sunonehome="${server-installRoot}"/>
+    </target>
+
+
+    <target name="qa" depends="jjguidelines" description="Project Quality Assurance"/>
+    <target name="jjguidelines" depends="jjguidelines.checkstyle" description="JJGuidelines Quality Assurance"/>
+    <target name="jjguidelines.checkstyle" description="Enforce JJGuidelines rules with CheckStyle">
+        <taskdef resource="checkstyletask.properties">
+            <classpath>
+                <fileset dir="${checkstyle.dir}/lib">
+                    <include name="**/*.jar"/>
+                </fileset>
+            </classpath>
+        </taskdef>
+        <mkdir dir="${build.reports.dir}"/>
+        <checkstyle config="${checkstyle.dir}/conf/checkstyle-jjguidelines.xml"
+                    packageNamesFile="${checkstyle.dir}/conf/packages.xml" failOnViolation="true">
+            <formatter type="plain" toFile="${build.reports.dir}/eds_taaladvies-checkstyle-report.txt"/>
+            <fileset dir="${src.dir}/be/vlaanderen/sbs/s6/taaladvies/taalunie">
+                <include name="**/*.java"/>
+            </fileset>
+            <classpath>
+                <pathelement location="${build.dir}/classes"/>
+                <fileset dir="${web-lib.dir}">
+                    <include name="*.jar"/>
+                </fileset>
+
+                <fileset dir="${lib.dir}">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+        </checkstyle>
+    </target>-->
+</project>

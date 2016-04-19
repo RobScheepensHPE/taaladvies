@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--
+	Ektron, Inc.
+	Revision Date: 2002-06-12
+-->
+<html>
+<head>
+<title>eWebEditPro Language Test</title>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+
+<script language="JavaScript1.2" src="ewebeditprolang.js"></script>
+<script language="JavaScript1.2" src="ewebeditpro.js"></script>
+
+<style>
+H1 { font-size: 14pt }
+H2 { font-size: 12pt; margin-bottom: 6 }
+H3 { font-size: 10pt; margin-top: 6; margin-bottom: 0 }
+.errmsg { color: red }
+.value { font-weight: bold }
+</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt">
+
+<h1>eWebEditPro Language Test Page</h1>
+
+<script language="JavaScript1.2">
+<!--
+with (document)
+{
+	if (typeof eWebEditProMessages != "object" || typeof eWebEditProMessages.eWebEditProMessages == "string")
+	{
+		write("<span class=errmsg>");
+		write("Failed to properly create the eWebEditProMessages JavaScript object.<br>");
+		write("Most likely the language file does not exist: " + eWebEditProMsgsFilename + ".<br>");
+		write("</span>");
+		writeln("<br>");
+	}
+}
+//-->
+</script> 
+
+</script> 
+
+<h2>Language</h2>
+<script language="JavaScript1.2">
+<!--
+	if (document.charset)
+	{
+		document.writeln("Document charset: " + document.charset + "<br>");
+	}
+	if (eWebEditProUtil.queryArgs["lang"])
+	{
+		document.writeln("Selected language: " + eWebEditProUtil.queryArgs["lang"] + "<br>");
+	} 
+	var strLanguageCode = "";
+	if (navigator.language) // for Netscape
+	{
+    	strLanguageCode = navigator.language;
+	}
+ 	if ("string" == typeof navigator.browserLanguage && navigator.browserLanguage) // for IE
+	{
+    	strLanguageCode = navigator.browserLanguage;
+	}
+	document.writeln("Browser GUI language: " + strLanguageCode + "<br>");
+	if (navigator.systemLanguage)
+	{
+		document.writeln("System language: " + navigator.systemLanguage + "<br>");
+	}
+	if (navigator.userLanguage)
+	{
+		document.writeln("User language: " + navigator.userLanguage + "<br>");
+	}
+	
+//-->
+</script> 
+
+<form method="post">
+
+<input type=hidden name="MyContent1" value=""> 
+
+<script language="JavaScript1.2">
+<!--
+if (typeof eWebEditPro == "object" && typeof eWebEditProMessages == "object")
+{
+	eWebEditProSetLanguage();
+	if (eWebEditProUtil.queryArgs["edit"] != "no")
+	{
+		eWebEditPro.create("MyContent1", "100%", 400);
+	}
+}
+
+function preview() 
+{
+	// may be async
+	eWebEditPro.save(null, function () {
+	var objElem = eWebEditPro.instances[0].linkedElement();
+	
+	var win = window.open("", "Preview", "width=800,height=500,resizable,scrollbars,status,titlebar");
+	if (null == win)
+	{
+		alert("Unable to open pop-up window.  Please turn off your pop-up blocker and try again.");
+	}
+	else
+	{ 
+		with (win.document) 
+		{
+			open("text/html", "replace");
+			writeln("<HTML><HEAD><TITLE>Preview Page</TITLE>");
+			if (eWebEditPro.parameters.charset)
+			{
+				writeln("<meta http-equiv=Content-Type content='text/html; charset=" + eWebEditPro.parameters.charset + "'>");
+			}
+			writeln("</HEAD><BODY>");
+			if (objElem)
+			{
+				writeln(objElem.value);
+			}
+			writeln("<BR><BR><BR><form><center>");
+			writeln("<input type='button' value='Close' onClick='javascript:self.close();'>");
+			writeln("</center></form></BODY></HTML>");
+			close();
+		} // end with
+	}
+	}); // end async
+}
+
+//-->
+</script> 
+<br>
+<center>
+<input type="button" value="Preview" onClick="preview();">
+</center>
+</form>
+
+<script language="JavaScript1.2">
+<!--
+document.writeln("<h2>Links To Files</h2>");
+
+document.writeln("Click on the link to test the path to the file.<br><br>");
+if (typeof eWebEditPro == "object")
+{
+	if (!eWebEditProMsgsFilename)
+	{
+		eWebEditProMsgsFilename = "ewebeditpromessages.js";
+	}
+	
+	var files = ["ewebeditpro.js", "ewebeditprodefaults.js", eWebEditProMsgsFilename,
+					eWebEditPro.parameters.locale, eWebEditPro.parameters.installPopup.url, 
+					"clientinstall/ewebeditproclient.exe"];
+	for (var i = 0; i < files.length; i++)
+	{
+		var strFilePath = files[i];
+		if (strFilePath.indexOf("/") != 0) 
+		{
+			strFilePath = eWebEditProPath + strFilePath;
+		}
+		document.writeln("<a href='" + strFilePath + "' target=_blank>Open " + files[i] + "</a><br>");
+	}
+}
+else
+{
+	document.writeln("<span class=errmsg>");
+	document.writeln("The eWebEditPro JavaScript object is not defined.");
+	document.writeln("</span>");
+}
+document.writeln("<br>");
+
+if (typeof eWebEditProMessages == "object")
+{
+	document.writeln("<form>");
+	document.writeln("<h2>eWebEditProMessages Object Declaration</h2>");
+	document.writeln("<h3>UTF-8 Readable</h3>");
+	eWebEditProShowMessages(true, 20, 120); 
+	document.writeln("<h3>Human Readable</h3>");
+	eWebEditProShowMessages(false, 20, 120); 
+	document.writeln("</form>");
+	document.writeln("<br>");
+	//document.writeln("Client installation message: " + eWebEditProMessages.clientInstallMessage);
+}
+//-->
+</script> 
+</body>
+</html>

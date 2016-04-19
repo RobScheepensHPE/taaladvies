@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+			"http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html">
+  <meta http-equiv="charset"      content="UTF-8">
+
+  <title>Data</title>
+
+  <script type="text/javascript" language="JavaScript" src="../scripts/wwhelpf.js"></script>
+  <script type="text/javascript" language="JavaScript">
+   <!--
+    // Update reference to top level help frame
+    //
+    var  WWHelpTopFrame = eval("parent.parent");
+
+
+    // Fix Netscape timing problem on slower systems
+    // Insures when data is loaded (should be after whole frameset)
+    //
+    bOkayToLoad = WWHelpTopFrame.WWHelp.mbLoadData;
+
+    // Workaround for IE 4.0 on Windows and IE 4.5 on Macintosh
+    //
+    WWHelpTopFrame.WWHelp.fDataHead = WWHelp_DataHead;
+    WWHelpTopFrame.WWHelp.fDataBody = WWHelp_DataBody;
+   // -->
+  </script>
+
+  <script type="text/javascript" language="JavaScript">
+   <!--
+    if (bOkayToLoad)
+    {
+      WWHelpTopFrame.WWHelp.fDataHead();
+    }
+   // -->
+  </script>
+ </head>
+
+ <body bgcolor="#FFFFFF">
+  <script type="text/javascript" language="JavaScript">
+   <!--
+    if (bOkayToLoad)
+    {
+      WWHelpTopFrame.WWHelp.fDataBody();
+    }
+   // -->
+  </script>
+ </body>
+</html>

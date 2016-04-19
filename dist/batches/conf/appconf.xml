@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+
+<appConfig name="taaladvies">
+    <resources name="taaladvies">
+        <!-- DB Configuration xxx-->
+
+        <database name="taaladviesDB">
+            <driver>com.informix.jdbc.IfxDriver</driver>
+
+            <!-- <url>jdbc:informix-sqli://10.23.35.237:1527/taaladvies:INFORMIXSERVER=dev1150_ol</url>
+            <user>informix</user>
+            <password>informix</password>-->
+
+            <url>jdbc:informix-sqli://10.23.35.237:1527/taaladvies:INFORMIXSERVER=dev1150_ol</url>
+            <user>d_taaladvies</user>
+            <password>d_taaladvies</password>
+
+            <initCons>4</initCons>
+            <maxCons>4</maxCons>
+            <timeout>300</timeout>
+            <protocol>jdbc</protocol>
+        </database>
+
+        <!-- LDAP configuration  -->
+
+        <ldap name="ldap">
+            <url>ldap.vlaanderen.be</url>
+            <port>389</port>
+            <baseDN>o=vlaanderen, c=be</baseDN>
+        </ldap>
+
+        <mail name="mail">
+            <host>imap.vlaanderen.be</host>
+            <fromIntern>taaladvies@vlaanderen.be</fromIntern>
+            <fromExtern>taaltelefoon@vlaanderen.be</fromExtern>
+            <contentType>text/html; charset=ISO-8859-1</contentType>
+        </mail>
+
+        <security name="security">
+            <tokens>OFF</tokens>
+        </security>
+    </resources>
+
+    <constants name="taaladvies">
+        <NO_OF_RESULTS>5</NO_OF_RESULTS>
+
+        <PROXY_HOST></PROXY_HOST>
+        <PROXY_PORT></PROXY_PORT>
+        <PROXY_USER></PROXY_USER>
+        <PROXY_PASSWORD></PROXY_PASSWORD>
+
+        <HTTP_AUTH_USER>tt_db_srvcs</HTTP_AUTH_USER>
+        <HTTP_AUTH_PASSWORD>DyskP7EJ</HTTP_AUTH_PASSWORD>
+
+        <OPHAALURL>http://extranet.taalunie.org/api/REST/taaltelefoon/readnew.php</OPHAALURL>
+        <OPHAAL_XMLSCHEMALOCATIE>taalvragen.xsd</OPHAAL_XMLSCHEMALOCATIE>
+
+        <DOORSTUURURL>http://extranet.taalunie.org/api/REST/taaltelefoon/write.php</DOORSTUURURL>
+
+        <DOORSTUURRESULTAAT_XMLSCHEMALOCATIE>doorstuurresultaat.xsd</DOORSTUURRESULTAAT_XMLSCHEMALOCATIE>
+        <TOMCATDEBUG>false</TOMCATDEBUG>
+    </constants>
+</appConfig>

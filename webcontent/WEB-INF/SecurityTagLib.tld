@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+
+<tlibversion>1.0</tlibversion>
+<jspversion>1.1</jspversion>
+<shortname>SecurityTagLib</shortname>
+
+<info>
+This tag library checks user permissions.
+SBS@vlaanderen.be
+</info>
+<tag>
+<name>ifAllowed</name>
+<tagclass>be.vlaanderen.sbs.s6.framework.security.IfAllowedTagHandler</tagclass>
+<bodycontent>JSP</bodycontent>
+<info>evaluates the body if the user has sufficient rights.</info>
+<attribute>
+	<name>identifier</name>
+	<required>true</required>
+	<rtexprvalue>true</rtexprvalue>
+</attribute>
+</tag>
+<tag>
+<name>ifNotAllowed</name>
+<tagclass>be.vlaanderen.sbs.s6.framework.security.IfNotAllowedTagHandler</tagclass>
+<bodycontent>JSP</bodycontent>
+<info>evaluates the body if the user has insufficient rights.</info>
+<attribute>
+	<name>identifier</name>
+	<required>true</required>
+	<rtexprvalue>true</rtexprvalue>
+</attribute>
+</tag>
+<tag>
+<name>checkUser</name>
+<tagclass>be.vlaanderen.sbs.s6.framework.security.CheckPrincipalHandler</tagclass>
+<bodycontent>JSP</bodycontent>
+<info>evaluates the body if the user has logged in</info>
+<attribute>
+	<name>role</name>
+	<required>false</required>
+	<rtexprvalue>true</rtexprvalue>
+</attribute>
+</tag>
+<tag>
+<name>isLoggedIn</name>
+<tagclass>be.vlaanderen.sbs.s6.taaladvies.CheckAuthenticationTag</tagclass>
+<bodycontent>empty</bodycontent>
+<info>checks if the user was logged in</info>
+</tag>
+</taglib>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+	eWebEditPro Control Schema
+	Copyright 2004, Ektron, Inc.
+	Revision date: 2004-05-25
+-->
+<xsd:schema targetNamespace="urn:eWebEditProNet" xmlns="urn:eWebEditProNet" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vs="http://schemas.microsoft.com/Visual-Studio-Intellisense" vs:friendlyname="eWebEditPro Control Schema" vs:ishtmlschema="false" vs:iscasesensitive="false" vs:requireattributequotes="true">
+	<xsd:annotation>
+		<xsd:documentation>
+         eWebEditPro Control schema
+      </xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="eWebEditProControl" type="eWebEditProControlType" form="qualified" />
+	<xsd:complexType name="eWebEditProControlType">
+		<xsd:all>
+			<xsd:element name="Fields" minOccurs="0" type="FieldsType" form="unqualified" />
+			<xsd:element name="parameters" minOccurs="0" type="parametersType" form="unqualified" />
+		</xsd:all>
+		<xsd:attribute name="BaseURL" type="xsd:string" vs:builder="url" />
+		<xsd:attribute name="BodyStyle" type="xsd:string" vs:builder="style" />
+		<xsd:attribute name="CharSet" type="xsd:string" />
+		<xsd:attribute name="Config" type="xsd:string" />
+		<xsd:attribute name="Disabled" type="xsd:boolean" />
+		<xsd:attribute name="EditorGetMethod" type="EditorGetMethodType" />
+		<xsd:attribute name="HideAboutButton" type="xsd:boolean" />
+		<xsd:attribute name="License" type="xsd:string" />
+		<xsd:attribute name="Locale" type="xsd:string" />
+		<xsd:attribute name="MaxContentSize" type="nonNegInt31" />
+		<xsd:attribute name="Path" type="xsd:string" />
+		<xsd:attribute name="PreferredType" type="PreferredTypeType" />
+		<xsd:attribute name="ReadOnly" type="xsd:boolean" />
+		<xsd:attribute name="StyleSheet" type="xsd:string" vs:builder="url" />
+		<xsd:attribute name="Text" type="xsd:string" />
+		<xsd:attribute name="Title" type="xsd:string" />
+		<xsd:attribute name="XmlInfo" type="xsd:string" />
+		<!-- xsd:attribute name="Enabled" type="xsd:boolean" / -->
+		<!-- xsd:attribute name="BorderWidth" type="ui4" / -->
+		<!-- xsd:attribute name="BorderColor" type="xsd:string" vs:builder="color" / -->
+		<!-- xsd:attribute name="BorderStyle" type="BorderStyle" / -->
+		<xsd:attributeGroup ref="WebControlAttributes" />
+	</xsd:complexType>
+	<xsd:complexType name="FieldsType">
+		<xsd:sequence>
+			<xsd:element name="eWebEditProField" minOccurs="1" maxOccurs="unbounded" type="eWebEditProFieldType" form="qualified" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="eWebEditProFieldType">
+		<xsd:attribute name="Name" type="xsd:string" />
+		<xsd:attribute name="GetContentType" type="GetContentTypeType" />
+		<xsd:attribute name="SetContentType" type="SetContentTypeType" />
+		<xsd:attribute name="Text" type="xsd:string" />
+	</xsd:complexType>
+	<xsd:complexType name="parametersType">
+		<xsd:all>
+			<xsd:element name="buttonTag" minOccurs="0" type="buttonTagType" form="unqualified" />
+			<xsd:element name="installPopup" minOccurs="0" type="PopupType" form="unqualified" />
+			<xsd:element name="popup" minOccurs="0" type="PopupType" form="unqualified" />
+		</xsd:all>
+		<xsd:attribute name="clientInstall" type="xsd:string" vs:builder="url" />
+		<xsd:attribute name="embedAttributes" type="xsd:string" />
+		<xsd:attribute name="objectAttributes" type="xsd:string" />
+		<xsd:attribute name="ondblclickelement" type="xsd:string" />
+		<xsd:attribute name="onexeccommand" type="xsd:string" />
+		<xsd:attribute name="onfocus" type="xsd:string" />
+		<xsd:attribute name="onblur" type="xsd:string" />
+		<xsd:attribute name="textareaAttributes" type="xsd:string" />
+	</xsd:complexType>
+	<xsd:complexType name="buttonTagType">
+		<xsd:all>
+			<xsd:element name="imageTag" minOccurs="0" type="imageTagType" form="unqualified" />
+		</xsd:all>
+		<xsd:attribute name="end" type="xsd:string" />
+		<xsd:attribute name="start" type="xsd:string" />
+		<xsd:attribute name="tagAttributes" type="xsd:string" />
+		<xsd:attribute name="type" type="buttonTagTypeType" />
+		<xsd:attribute name="value" type="xsd:string" />
+	</xsd:complexType>
+	<xsd:complexType name="imageTagType">
+		<xsd:attribute name="alt" type="xsd:string" />
+		<xsd:attribute name="border" type="nonNegInt31" />
+		<xsd:attribute name="height" type="nonNegInt31" />
+		<xsd:attribute name="src" type="xsd:string" vs:builder="url" />
+		<xsd:attribute name="width" type="nonNegInt31" />
+	</xsd:complexType>
+	<xsd:complexType name="PopupType">
+		<xsd:attribute name="query" type="xsd:string" />
+		<xsd:attribute name="url" type="xsd:string" vs:builder="url" />
+		<xsd:attribute name="windowFeatures" type="xsd:string" />
+		<xsd:attribute name="windowName" type="xsd:string" />
+	</xsd:complexType>
+	<xsd:simpleType name="EditorGetMethodType">
+		<xsd:union memberTypes="xsd:string">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="getBodyHTML" />
+					<xsd:enumeration value="getDocument" />
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="PreferredTypeType">
+		<xsd:union memberTypes="xsd:string">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="activex" />
+					<xsd:enumeration value="section" />
+					<xsd:enumeration value="textarea" />
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="SetContentTypeType">
+		<xsd:union memberTypes="xsd:string">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="datadesignpackage" />
+					<xsd:enumeration value="datadocumentxml" />
+					<xsd:enumeration value="dataentrypage" />
+					<xsd:enumeration value="dataentryxslt" />
+					<xsd:enumeration value="datapresentationxslt" />
+					<xsd:enumeration value="dataschema" />
+					<xsd:enumeration value="designpage" />
+					<xsd:enumeration value="htmlbody" />
+					<xsd:enumeration value="htmlheader" />
+					<xsd:enumeration value="htmlwhole" />
+					<xsd:enumeration value="rtf" />
+					<xsd:enumeration value="xmlbody" />
+					<xsd:enumeration value="xmlheader" />
+					<xsd:enumeration value="xmlwhole" />
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="GetContentTypeType">
+		<xsd:union memberTypes="xsd:string">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="datadesignpackage" />
+					<xsd:enumeration value="datadocumentxml" />
+					<xsd:enumeration value="dataentrypage" />
+					<xsd:enumeration value="dataentryxslt" />
+					<xsd:enumeration value="dataindex" />
+					<xsd:enumeration value="datapresentationpage" />
+					<xsd:enumeration value="datapresentationxslt" />
+					<xsd:enumeration value="dataschema" />
+					<xsd:enumeration value="designpage" />
+					<xsd:enumeration value="htmlbody" />
+					<xsd:enumeration value="htmlheader" />
+					<xsd:enumeration value="htmlwhole" />
+					<xsd:enumeration value="rtf" />
+					<xsd:enumeration value="text" />
+					<xsd:enumeration value="whole" />
+					<xsd:enumeration value="xmlbody" />
+					<xsd:enumeration value="xmlheader" />
+					<xsd:enumeration value="xmlwhole" />
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="buttonTagTypeType">
+		<xsd:union memberTypes="xsd:string">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="button" />
+					<xsd:enumeration value="custom" />
+					<xsd:enumeration value="hyperlink" />
+					<xsd:enumeration value="image" />
+					<xsd:enumeration value="imagelink" />
+					<xsd:enumeration value="inputbutton" />
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="nonNegInt31">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:minInclusive value="0" />
+			<xsd:maxInclusive value="2147483647" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- adapted from asp.xsd -->
+	<xsd:attributeGroup name="ControlAttributes">
+		<xsd:attribute name="Visible" type="xsd:boolean" />
+		<xsd:attribute name="ID" type="xsd:string" />
+		<xsd:attribute name="EnableViewState" type="xsd:boolean" />
+		<xsd:attribute name="OnLoad" vs:omtype="event" />
+		<xsd:attribute name="OnDataBinding" vs:omtype="event" />
+		<xsd:attribute name="OnPreRender" vs:omtype="event" />
+		<xsd:attribute name="OnInit" vs:omtype="event" />
+		<xsd:attribute name="OnUnload" vs:omtype="event" />
+		<xsd:attribute name="OnDisposed" vs:omtype="event" />
+	</xsd:attributeGroup>
+	<xsd:attributeGroup name="WebControlAttributes">
+		<xsd:attribute name="Width" type="xsd:string" />
+		<xsd:attribute name="Height" type="xsd:string" />
+		<!-- xsd:attribute name="AccessKey" type="xsd:string" / -->
+		<!-- xsd:attribute name="ForeColor" type="xsd:string" vs:builder="color" / -->
+		<!-- xsd:attribute name="ToolTip" type="xsd:string" vs:nonbrowseable="true" / -->
+		<!-- xsd:attribute name="TabIndex" type="xsd:integer" / -->
+		<!-- xsd:attribute name="BackColor" type="xsd:string" vs:builder="color" / -->
+		<!-- xsd:attribute name="CssClass" type="xsd:string" / -->
+		<!-- xsd:attribute name="Font-Size" type="ui4" / -->
+		<!-- xsd:attribute name="Font-Overline" type="xsd:boolean" / -->
+		<!-- xsd:attribute name="Font-Underline" type="xsd:boolean" / -->
+		<!-- xsd:attribute name="Font-Names" type="xsd:string" / -->
+		<!-- xsd:attribute name="Font-Italic" type="xsd:boolean" / -->
+		<!-- xsd:attribute name="Font-Name" type="xsd:string" / -->
+		<!-- xsd:attribute name="Font-Bold" type="xsd:boolean" / -->
+		<!-- xsd:attribute name="Font-Strikeout" type="xsd:boolean" / -->
+		<xsd:attribute name="Style" type="xsd:string" vs:nonbrowseable="true" />
+		<xsd:attribute name="Runat">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="server" />
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attributeGroup ref="ControlAttributes" />
+	</xsd:attributeGroup>
+</xsd:schema>

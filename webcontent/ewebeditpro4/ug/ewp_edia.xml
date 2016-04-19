@@ -1,0 +1,1139 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+
+<WebWorksHelpIX version="2.0">
+<div id="171891" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171891"> </a><br /> /pdfmark where { pop} { userdict /pdfmark /cleartomark load put} ifelse<br />
+</div>
+<div id="171895" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171895"> </a>[ {Catalog} &lt;&lt; /PageLabels &lt;&lt; /Nums [ <br />
+</div>
+<div id="171897" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171897"> </a>0 &lt;&lt; /S /r /St 1 &gt;&gt;<br />
+</div>
+<div id="171899" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171899"> </a>4 &lt;&lt; /S /r /St 1 &gt;&gt;<br />
+</div>
+<div id="171901" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171901"> </a>10 &lt;&lt; /S /D /St 1 &gt;&gt;<br />
+</div>
+<div id="171903" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171903"> </a>12 &lt;&lt; /S /D /St 3 &gt;&gt;<br />
+</div>
+<div id="171905" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171905"> </a>16 &lt;&lt; /S /D /St 7 &gt;&gt;<br />
+</div>
+<div id="171907" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171907"> </a>31 &lt;&lt; /S /D /St 22 &gt;&gt;<br />
+</div>
+<div id="171909" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171909"> </a>39 &lt;&lt; /S /D /St 30 &gt;&gt;<br />
+</div>
+<div id="171911" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171911"> </a>42 &lt;&lt; /S /D /St 33 &gt;&gt;<br />
+</div>
+<div id="171913" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171913"> </a>43 &lt;&lt; /S /D /St 34 &gt;&gt;<br />
+</div>
+<div id="171915" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171915"> </a>44 &lt;&lt; /S /D /St 35 &gt;&gt;<br />
+</div>
+<div id="171917" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171917"> </a>48 &lt;&lt; /S /D /St 39 &gt;&gt;<br />
+</div>
+<div id="171919" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171919"> </a>53 &lt;&lt; /S /D /St 44 &gt;&gt;<br />
+</div>
+<div id="171921" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171921"> </a>56 &lt;&lt; /S /D /St 47 &gt;&gt;<br />
+</div>
+<div id="171923" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171923"> </a>70 &lt;&lt; /S /D /St 61 &gt;&gt;<br />
+</div>
+<div id="171925" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171925"> </a>102 &lt;&lt; /S /D /St 93 &gt;&gt;<br />
+</div>
+<div id="171927" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171927"> </a>106 &lt;&lt; /S /D /St 97 &gt;&gt;<br />
+</div>
+<div id="171929" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171929"> </a>115 &lt;&lt; /S /D /St 106 &gt;&gt;<br />
+</div>
+<div id="171931" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171931"> </a>130 &lt;&lt; /S /D /St 121 &gt;&gt;<br />
+</div>
+<div id="171933" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171933"> </a>155 &lt;&lt; /S /D /St 146 &gt;&gt;<br />
+</div>
+<div id="171935" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171935"> </a>159 &lt;&lt; /S /D /St 150 &gt;&gt;<br />
+</div>
+<div id="171937" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171937"> </a>165 &lt;&lt; /S /D /St 156 &gt;&gt;<br />
+</div>
+<div id="171939" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171939"> </a>169 &lt;&lt; /S /D /St 160 &gt;&gt;<br />
+</div>
+<div id="171941" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171941"> </a>175 &lt;&lt; /S /r /St 1 &gt;&gt;<br />
+</div>
+<div id="171943" style="color: #000000;  font-size: 2pt; font-style: normal; font-weight: normal; margin-bottom: 0pt; margin-left: 0pt; margin-right: 0pt; margin-top: 0pt; text-align: justify; text-decoration: none; text-indent: 0pt; text-transform: none; vertical-align: baseline">
+<a name="171943"> </a> ] &gt;&gt; &gt;&gt; /PUT pdfmark<br />
+</div>
+<p id="171893" class="Body">
+  <a name="171893"> </a>
+</p>
+
+  <i t="508 compliance ">
+    <j l="508.htm#427149"/>
+  </i>
+  <i t="about eWebEditPro box ">
+    <j l="tableof4.htm#452070"/>
+  </i>
+  <i t="absolute positioning of objects ">
+    <j l="tableof5.htm#462155"/>
+  </i>
+  <i t="alignment">
+    <i t="cell ">
+      <j l="cellpr11.htm#441828"/>
+    </i>
+    <i t="image ">
+      <j l="picture9.htm#439216"/>
+    </i>
+    <i t="table ">
+      <j l="manipul6.htm#442369"/>
+    </i>
+    <i t="text ">
+      <j l="tableof4.htm#452052"/>
+    </i>
+  </i>
+  <i t="background color">
+    <i t="applying to text ">
+      <j l="tableof4.htm#454975"/>
+    </i>
+    <i t="cell">
+      <i t="applying ">
+        <j l="cellpro6.htm#441705"/>
+      </i>
+      <i t="deleting ">
+        <j l="cellpro6.htm#451570"/>
+      </i>
+    </i>
+    <i t="removing from text ">
+      <j l="tableof4.htm#454975"/>
+    </i>
+    <i t="table">
+      <i t="applying ">
+        <j l="manipul8.htm#447761"/>
+      </i>
+      <i t="deleting ">
+        <j l="manipul8.htm#439675"/>
+      </i>
+    </i>
+  </i>
+  <i t="background image">
+    <i t="cell">
+      <i t="deleting ">
+        <j l="cellpro7.htm#450720"/>
+      </i>
+      <i t="inserting ">
+        <j l="cellpro7.htm#450699"/>
+      </i>
+    </i>
+    <i t="table">
+      <i t="deleting ">
+        <j l="manipul9.htm#446221"/>
+      </i>
+      <i t="inserting ">
+        <j l="manipul9.htm#446201"/>
+      </i>
+    </i>
+  </i>
+  <i t="bidirectional editing ">
+    <j l="tableof6.htm#457345"/>
+  </i>
+  <i t="blur, WebImageFX command ">
+    <j l="imageed5.htm#442082"/>
+  </i>
+  <i t="bold">
+    <i t="toolbar option ">
+      <j l="tableof4.htm#440901"/>
+    </i>
+  </i>
+  <i t="bookmarks ">
+    <j l="bookmara.htm#427149"/>
+  </i>
+  <i t="border">
+    <i t="image">
+      <i t="color ">
+        <j l="picture8.htm#439237"/>
+      </i>
+      <i t="thickness ">
+        <j l="picture8.htm#456386"/>
+      </i>
+    </i>
+  </i>
+  <i t="border color">
+    <i t="cell ">
+      <j l="cellpro5.htm#452310"/>
+    </i>
+    <i t="table ">
+      <j l="manipu11.htm#444589"/>
+    </i>
+  </i>
+  <i t="border size">
+    <i t="cell ">
+      <j l="cellprop.htm#442659"/>
+    </i>
+    <i t="table ">
+      <j l="manipu12.htm#439806"/>
+    </i>
+  </i>
+  <i t="brightness, WebImageFX command ">
+    <j l="imageed6.htm#444845"/>
+  </i>
+  <i t="bullet">
+    <i t="toolbar option ">
+      <j l="tableof4.htm#452014"/>
+    </i>
+  </i>
+  <i t="buttons">
+    <i t="adding to menu ">
+      <j l="customi3.htm#451788"/>
+    </i>
+    <i t="rearranging on a menu ">
+      <j l="customi3.htm#451814"/>
+    </i>
+    <i t="removing from menu ">
+      <j l="customi3.htm#451788"/>
+    </i>
+  </i>
+  <i t="cells">
+    <i t="background color ">
+      <j l="cellpro6.htm#441705"/>
+    </i>
+    <i t="background image">
+      <i t="deleting ">
+        <j l="cellpro7.htm#450720"/>
+      </i>
+      <i t="inserting ">
+        <j l="cellpro7.htm#450699"/>
+      </i>
+    </i>
+    <i t="border">
+      <i t="color ">
+        <j l="cellpro5.htm#452310"/>
+      </i>
+      <i t="invisible ">
+        <j l="cellpro5.htm#441623"/>
+      </i>
+    </i>
+    <i t="deleting ">
+      <j l="cellpro4.htm#452377"/>
+    </i>
+    <i t="inserting ">
+      <j l="cellpro3.htm#452245"/>
+    </i>
+    <i t="merging ">
+      <j l="cellpr15.htm#442257"/>
+    </i>
+    <i t="padding ">
+      <j l="cellpr17.htm#442832"/>
+    </i>
+    <i t="spacing ">
+      <j l="cellpr17.htm#442832"/>
+    </i>
+    <i t="splitting ">
+      <j l="cellpr14.htm#441931"/>
+    </i>
+    <i t="text alignment ">
+      <j l="cellpr11.htm#441828"/>
+    </i>
+    <i t="width ">
+      <j l="cellpro2.htm#442591"/>
+    </i>
+  </i>
+  <i t="choose color, WebImageFX command ">
+    <j l="imageed7.htm#487602"/>
+  </i>
+  <i t="choose font, WebImageFX command ">
+    <j l="imageed8.htm#487617"/>
+  </i>
+  <i t="cleaning HTML ">
+    <j l="html5.htm#440340"/>
+  </i>
+  <i t="color">
+    <i t="background">
+      <i t="cell">
+        <i t="applying ">
+  <j l="cellpro6.htm#441705"/>
+        </i>
+        <i t="deleting ">
+  <j l="cellpro6.htm#451570"/>
+        </i>
+      </i>
+      <i t="table">
+        <i t="applying ">
+  <j l="manipul8.htm#447761"/>
+        </i>
+        <i t="deleting ">
+  <j l="manipul8.htm#439675"/>
+        </i>
+      </i>
+    </i>
+    <i t="cell border ">
+      <j l="cellpro5.htm#452310"/>
+      <i t="default ">
+        <j l="dialogb4.htm#443189"/>
+      </i>
+    </i>
+    <i t="font, changing ">
+      <j l="tableof4.htm#452341"/>
+    </i>
+    <i t="picture border ">
+      <j l="picture8.htm#439237"/>
+    </i>
+    <i t="table border ">
+      <j l="manipu11.htm#444589"/>
+      <i t="default ">
+        <j l="dialogb3.htm#443299"/>
+      </i>
+    </i>
+  </i>
+  <i t="color depth, specifying ">
+    <j l="imagee42.htm#442494"/>
+  </i>
+  <i t="color depth, WebImageFX command ">
+    <j l="imageed9.htm#487571"/>
+  </i>
+  <i t="columns">
+    <i t="table">
+      <i t="adding ">
+        <j l="manipul2.htm#439025"/>
+      </i>
+      <i t="deleting ">
+        <j l="manipul2.htm#439025"/>
+      </i>
+      <i t="spanning ">
+        <j l="cellpro9.htm#441701"/>
+      </i>
+      <i t="specifying ">
+        <j l="manipul2.htm#439012"/>
+      </i>
+    </i>
+  </i>
+  <i t="contrast, WebImageFX command ">
+    <j l="imagee10.htm#445281"/>
+  </i>
+  <i t="copy">
+    <i t="toolbar and menu option ">
+      <j l="tableof4.htm#440807"/>
+    </i>
+  </i>
+  <i t="copy, WebImageFX command ">
+    <j l="imagee11.htm#445550"/>
+  </i>
+  <i t="copying information from other applications ">
+    <j l="copya.htm#427149"/>
+  </i>
+  <i t="copyright character, inserting ">
+    <j l="tableof4.htm#452202"/>
+  </i>
+  <i t="create new, WebImageFX command ">
+    <j l="imagee12.htm#459967"/>
+  </i>
+  <i t="crop, WebImageFX command ">
+    <j l="imagee13.htm#459932"/>
+  </i>
+  <i t="customizing toolbar ">
+    <j l="customiz.htm#454988"/>
+  </i>
+  <i t="cut, toolbar and menu option ">
+    <j l="tableof4.htm#440795"/>
+  </i>
+  <i t="delete, WebImageFX command ">
+    <j l="imagee14.htm#444519"/>
+  </i>
+  <i t="deleting">
+    <i t="cell ">
+      <j l="cellpro4.htm#452377"/>
+    </i>
+    <i t="table ">
+      <j l="tables3.htm#440892"/>
+    </i>
+  </i>
+  <i t="dimensions, WebImageFX command ">
+    <j l="imagee15.htm#446037"/>
+  </i>
+  <i t="editing HTML ">
+    <j l="html3.htm#440352"/>
+  </i>
+  <i t="exit, WebImageFX command ">
+    <j l="imagee16.htm#490282"/>
+  </i>
+  <i t="finding text ">
+    <j l="finda.htm#427149"/>
+  </i>
+  <i t="fonts">
+    <i t="background color ">
+      <j l="tableof4.htm#454975"/>
+    </i>
+    <i t="color ">
+      <j l="tableof4.htm#452336"/>
+    </i>
+    <i t="heading size ">
+      <j l="tableof4.htm#452268"/>
+    </i>
+    <i t="size ">
+      <j l="tableof4.htm#440891"/>
+    </i>
+    <i t="style ">
+      <j l="tableof4.htm#440881"/>
+    </i>
+  </i>
+  <i t="form elements toolbar ">
+    <j l="tableof7.htm#458399"/>
+  </i>
+  <i t="forms">
+    <i t="replacing form or element information ">
+      <j l="tableof7.htm#461350"/>
+    </i>
+    <i t="updating form or element information ">
+      <j l="tableof7.htm#461390"/>
+    </i>
+  </i>
+  <i t="freehand, WebImageFX command ">
+    <j l="imagee17.htm#495876"/>
+  </i>
+  <i t="horizontal flip, WebImageFX command ">
+    <j l="imagee18.htm#471283"/>
+  </i>
+  <i t="horizontal line, inserting ">
+    <j l="tableof4.htm#447030"/>
+  </i>
+  <i t="HTML">
+    <i t="cleaning ">
+      <j l="html5.htm#440340"/>
+    </i>
+    <i t="editing ">
+      <j l="html3.htm#440352"/>
+    </i>
+    <i t="inserting ">
+      <j l="html4.htm#439143"/>
+    </i>
+    <i t="viewing ">
+      <j l="html2.htm#443493"/>
+    </i>
+  </i>
+  <i t="hyperlinks ">
+    <j l="hyperlib.htm#427149"/>
+    <i t="creating ">
+      <j l="hyperli2.htm#442923"/>
+    </i>
+    <i t="editing ">
+      <j l="hyperli7.htm#440076"/>
+    </i>
+    <i t="entering manually ">
+      <j l="hyperli4.htm#441842"/>
+    </i>
+    <i t="preventing ">
+      <j l="hyperli9.htm#439904"/>
+    </i>
+    <i t="removing ">
+      <j l="hyperli8.htm#442208"/>
+    </i>
+    <i t="testing ">
+      <j l="hyperli5.htm#439780"/>
+    </i>
+    <i t="to a bookmark in another web page ">
+      <j l="hyperli6.htm#440015"/>
+    </i>
+    <i t="using a Quick Link ">
+      <j l="hyperli3.htm#441629"/>
+    </i>
+  </i>
+  <i t="image info, WebImageFX command ">
+    <j l="imagee19.htm#448674"/>
+  </i>
+  <i t="image upload">
+    <i t="from Microsoft Word document ">
+      <j l="msword2.htm#441969"/>
+    </i>
+    <i t="inserting picture from computer ">
+      <j l="picture4.htm#445339"/>
+    </i>
+    <i t="media file selection ">
+      <j l="picture2.htm#452096"/>
+    </i>
+  </i>
+  <i t="images">
+    <i t="adding space around ">
+      <j l="pictur11.htm#447456"/>
+    </i>
+    <i t="aligning ">
+      <j l="picture9.htm#439216"/>
+    </i>
+    <i t="background">
+      <i t="cell, inserting ">
+        <j l="cellpro7.htm#450699"/>
+      </i>
+      <i t="table, inserting ">
+        <j l="manipul9.htm#446201"/>
+      </i>
+    </i>
+    <i t="border">
+      <i t="color ">
+        <j l="picture8.htm#439237"/>
+      </i>
+      <i t="thickness ">
+        <j l="picture8.htm#456386"/>
+      </i>
+    </i>
+    <i t="deleting ">
+      <j l="pictur15.htm#463783"/>
+    </i>
+    <i t="deleting from server ">
+      <j l="picture3.htm#454261"/>
+    </i>
+    <i t="editing ">
+      <j l="imageedi.htm#438886"/>
+    </i>
+    <i t="inserting ">
+      <j l="pictures.htm#454379"/>
+    </i>
+    <i t="inserting from server into editor ">
+      <j l="picture3.htm#455410"/>
+    </i>
+    <i t="inserting from your computer ">
+      <j l="picture4.htm#445339"/>
+    </i>
+    <i t="locking in position ">
+      <j l="tableof5.htm#457403"/>
+    </i>
+    <i t="moving to server ">
+      <j l="pictur14.htm#463717"/>
+    </i>
+    <i t="scanning ">
+      <j l="imagee36.htm#465748"/>
+    </i>
+    <i t="specifying color depth ">
+      <j l="imagee42.htm#442494"/>
+    </i>
+  </i>
+  <i t="indent">
+    <i t="toolbar option ">
+      <j l="tableof4.htm#452033"/>
+    </i>
+  </i>
+  <i t="insert table">
+    <i t="toolbar button ">
+      <j l="dialogb2.htm#444338"/>
+    </i>
+  </i>
+  <i t="inserting">
+    <i t="cells ">
+      <j l="cellpro3.htm#452245"/>
+    </i>
+    <i t="HTML ">
+      <j l="html4.htm#439143"/>
+    </i>
+  </i>
+  <i t="Internet addresses, spell checking ">
+    <j l="spellch6.htm#442031"/>
+  </i>
+  <i t="italic">
+    <i t="toolbar option ">
+      <j l="tableof4.htm#440912"/>
+    </i>
+  </i>
+  <i t="jumps, see bookmarks and hyperlinks">
+    <j l="bookmar2.htm#442361"/>
+  </i>
+  <i t="justify">
+    <i t="toolbar option ">
+      <j l="tableof4.htm#452052"/>
+    </i>
+  </i>
+  <i t="license keys, viewing ">
+    <j l="tableof4.htm#452070"/>
+  </i>
+  <i t="line, WebImageFX command ">
+    <j l="imagee20.htm#472721"/>
+  </i>
+  <i t="lock table or image in position ">
+    <j l="tableof5.htm#457403"/>
+  </i>
+  <i t="menus">
+    <i t="adding to toolbar ">
+      <j l="customi2.htm#443554"/>
+    </i>
+    <i t="changing orientation ">
+      <j l="customi8.htm#445711"/>
+    </i>
+    <i t="creating ">
+      <j l="customi6.htm#445246"/>
+    </i>
+    <i t="moving from toolbar ">
+      <j l="customi7.htm#445504"/>
+    </i>
+    <i t="rearranging on toolbar ">
+      <j l="customi5.htm#444545"/>
+    </i>
+    <i t="removing from toolbar ">
+      <j l="customi2.htm#443554"/>
+    </i>
+  </i>
+  <i t="merging cells ">
+    <j l="cellpr15.htm#442257"/>
+  </i>
+  <i t="Microsoft Word">
+    <i t="editing in ">
+      <j l="msworda.htm#440736"/>
+    </i>
+    <i t="editing XML documents ">
+      <j l="msword3.htm#442004"/>
+    </i>
+    <i t="uploading image from ">
+      <j l="msword2.htm#441969"/>
+    </i>
+  </i>
+  <i t="number">
+    <i t="toolbar option ">
+      <j l="tableof4.htm#451999"/>
+    </i>
+  </i>
+  <i t="numbers in words, spell checking ">
+    <j l="spellch6.htm#442031"/>
+  </i>
+  <i t="objects, absolute positioning ">
+    <j l="tableof5.htm#462155"/>
+  </i>
+  <i t="Office 2000, inserting content from ">
+    <j l="html6.htm#443325"/>
+  </i>
+  <i t="open, WebImageFX command ">
+    <j l="imagee21.htm#460773"/>
+  </i>
+  <i t="oval, WebImageFX command ">
+    <j l="imagee22.htm#474154"/>
+  </i>
+  <i t="padding, cell ">
+    <j l="cellpr17.htm#442832"/>
+  </i>
+  <i t="paste">
+    <i t="toolbar and menu option ">
+      <j l="tableof4.htm#440819"/>
+    </i>
+  </i>
+  <i t="paste as new image, WebImageFX command ">
+    <j l="imagee23.htm#487358"/>
+  </i>
+  <i t="paste text">
+    <i t="toolbar and menu option ">
+      <j l="tableof4.htm#460742"/>
+    </i>
+  </i>
+  <i t="picture properties">
+    <i t="image upload ">
+      <j l="picture2.htm#452096"/>
+    </i>
+  </i>
+  <i t="pictures">
+    <i t="inserting see image upload">
+      <j l="picture2.htm#452096"/>
+    </i>
+  </i>
+  <i t="pixels ">
+    <j l="picture7.htm#439005"/>
+  </i>
+  <i t="pointer selection, WebImageFX command ">
+    <j l="imagee24.htm#494248"/>
+  </i>
+  <i t="polygon, WebImageFX command ">
+    <j l="imagee25.htm#474534"/>
+  </i>
+  <i t="position objects menu ">
+    <j l="tableof5.htm#462155"/>
+  </i>
+  <i t="print editor content ">
+    <j l="tableof4.htm#454951"/>
+  </i>
+  <i t="quick link ">
+    <j l="hyperli3.htm#441629"/>
+  </i>
+  <i t="rectangle, WebImageFX command ">
+    <j l="imagee26.htm#476812"/>
+  </i>
+  <i t="redisplay toolbars ">
+    <j l="customi4.htm#451774"/>
+  </i>
+  <i t="redo, WebImageFX command ">
+    <j l="imagee27.htm#475492"/>
+  </i>
+  <i t="registered trademark character, inserting ">
+    <j l="tableof4.htm#452190"/>
+  </i>
+  <i t="replacing text ">
+    <j l="finda.htm#427149"/>
+  </i>
+  <i t="right to left editing ">
+    <j l="tableof6.htm#457345"/>
+  </i>
+  <i t="rotate, WebImageFX command ">
+    <j l="imagee29.htm#444461"/>
+  </i>
+  <i t="rows">
+    <i t="table">
+      <i t="adding ">
+        <j l="manipul2.htm#439025"/>
+      </i>
+      <i t="deleting ">
+        <j l="manipul2.htm#439025"/>
+      </i>
+      <i t="spanning ">
+        <j l="cellpro9.htm#441701"/>
+      </i>
+      <i t="specifying ">
+        <j l="manipul2.htm#439012"/>
+      </i>
+    </i>
+  </i>
+  <i t="save as, WebImageFX command ">
+    <j l="imagee31.htm#461504"/>
+  </i>
+  <i t="save, WebImageFX command ">
+    <j l="imagee30.htm#478527"/>
+  </i>
+  <i t="scanning an image ">
+    <j l="imagee36.htm#465748"/>
+  </i>
+  <i t="search ">
+    <j l="finda.htm#427149"/>
+    <i t="considering case of search term ">
+      <j l="find6.htm#440192"/>
+    </i>
+    <i t="direction ">
+      <j l="find5.htm#440169"/>
+    </i>
+    <i t="whole word match ">
+      <j l="find7.htm#440200"/>
+    </i>
+  </i>
+  <i t="section 508">
+    <i t="compliance ">
+      <j l="508.htm#427149"/>
+    </i>
+    <i t="tables ">
+      <j l="5084.htm#441116"/>
+    </i>
+  </i>
+  <i t="select all">
+    <i t="menu option ">
+      <j l="contexts.htm#440800"/>
+    </i>
+  </i>
+  <i t="select, WebImageFX command ">
+    <j l="imagee32.htm#461481"/>
+  </i>
+  <i t="selecting text ">
+    <j l="tableof2.htm#454650"/>
+  </i>
+  <i t="server, moving picture to ">
+    <j l="pictur14.htm#463717"/>
+  </i>
+  <i t="sharpen, WebImageFX command ">
+    <j l="imagee33.htm#444567"/>
+  </i>
+  <i t="shortcuts, keyboard ">
+    <j l="tableof4.htm#452806"/>
+  </i>
+  <i t="space character, inserting ">
+    <j l="tableof4.htm#452211"/>
+  </i>
+  <i t="spacing, cell ">
+    <j l="cellpr17.htm#442832"/>
+  </i>
+  <i t="spanning">
+    <i t="table columns ">
+      <j l="cellpro9.htm#441701"/>
+    </i>
+    <i t="table rows ">
+      <j l="cellpro9.htm#441701"/>
+    </i>
+  </i>
+  <i t="special characters, inserting ">
+    <j l="tableof4.htm#452166"/>
+  </i>
+  <i t="spelling">
+    <i t="check a single word ">
+      <j l="spellch5.htm#441446"/>
+    </i>
+    <i t="check as you type ">
+      <j l="spellch3.htm#438917"/>
+    </i>
+    <i t="check on demand ">
+      <j l="spellch4.htm#439023"/>
+    </i>
+    <i t="check selected text ">
+      <j l="spellch5.htm#441446"/>
+    </i>
+    <i t="checking file addresses ">
+      <j l="spellch6.htm#442031"/>
+    </i>
+    <i t="checking Internet addresses ">
+      <j l="spellch6.htm#442031"/>
+    </i>
+    <i t="checking uppercase words ">
+      <j l="spellch6.htm#442031"/>
+    </i>
+    <i t="checking words with numbers ">
+      <j l="spellch6.htm#442031"/>
+    </i>
+    <i t="fix errors ">
+      <j l="spellch3.htm#438931"/>
+    </i>
+  </i>
+  <i t="splitting a cell ">
+    <j l="cellpr14.htm#441931"/>
+  </i>
+  <i t="style class">
+    <i t="assigning to text ">
+      <j l="tableof4.htm#452353"/>
+    </i>
+  </i>
+  <i t="tables">
+    <i t="alignment ">
+      <j l="manipul6.htm#442369"/>
+    </i>
+    <i t="background color">
+      <i t="applying ">
+        <j l="manipul8.htm#447761"/>
+      </i>
+      <i t="deleting ">
+        <j l="manipul8.htm#439675"/>
+      </i>
+    </i>
+    <i t="background image">
+      <i t="deleting ">
+        <j l="manipul9.htm#446221"/>
+      </i>
+      <i t="inserting ">
+        <j l="manipul9.htm#446201"/>
+      </i>
+    </i>
+    <i t="border">
+      <i t="color ">
+        <j l="manipu11.htm#444589"/>
+      </i>
+      <i t="invisible ">
+        <j l="manipu11.htm#441134"/>
+      </i>
+      <i t="size ">
+        <j l="manipu12.htm#439806"/>
+      </i>
+    </i>
+    <i t="columns">
+      <i t="adding ">
+        <j l="manipul2.htm#439025"/>
+      </i>
+      <i t="deleting ">
+        <j l="manipul2.htm#439025"/>
+      </i>
+      <i t="spanning ">
+        <j l="cellpro9.htm#441701"/>
+      </i>
+      <i t="specifying ">
+        <j l="manipul2.htm#439012"/>
+      </i>
+    </i>
+    <i t="creating ">
+      <j l="tables2.htm#453322"/>
+    </i>
+    <i t="deleting ">
+      <j l="tables3.htm#440892"/>
+    </i>
+    <i t="inserting within a table ">
+      <j l="tables4.htm#439918"/>
+    </i>
+    <i t="locking in position ">
+      <j l="tableof5.htm#457403"/>
+    </i>
+    <i t="rows">
+      <i t="adding ">
+        <j l="manipul2.htm#439025"/>
+      </i>
+      <i t="deleting ">
+        <j l="manipul2.htm#439025"/>
+      </i>
+      <i t="spanning ">
+        <j l="cellpro9.htm#441701"/>
+      </i>
+      <i t="specifying ">
+        <j l="manipul2.htm#439012"/>
+      </i>
+    </i>
+    <i t="section 508 ">
+      <j l="5084.htm#441116"/>
+    </i>
+    <i t="width">
+      <i t="setting by percentage ">
+        <j l="manipul4.htm#439126"/>
+      </i>
+      <i t="setting by pixels ">
+        <j l="manipul5.htm#439144"/>
+      </i>
+    </i>
+  </i>
+  <i t="text">
+    <i t="aligning ">
+      <j l="tableof4.htm#452052"/>
+      <i t="in columns ">
+        <j l="tables4.htm#441571"/>
+      </i>
+      <i t="within a cell ">
+        <j l="cellpr11.htm#441828"/>
+      </i>
+    </i>
+    <i t="direction menu ">
+      <j l="tableof6.htm#457345"/>
+    </i>
+    <i t="indenting ">
+      <j l="tableof4.htm#452033"/>
+    </i>
+    <i t="remove formatting ">
+      <j l="tableof4.htm#454991"/>
+    </i>
+    <i t="replacing ">
+      <j l="finda.htm#427149"/>
+    </i>
+    <i t="searching ">
+      <j l="finda.htm#427149"/>
+    </i>
+    <i t="selecting ">
+      <j l="tableof2.htm#454650"/>
+    </i>
+    <i t="WebImageFX command ">
+      <j l="imagee34.htm#465894"/>
+    </i>
+  </i>
+  <i t="thumbnail, WebImageFX command ">
+    <j l="imagee35.htm#465767"/>
+  </i>
+  <i t="toolbars">
+    <i t="buttons ">
+      <j l="tableof4.htm#452806"/>
+    </i>
+    <i t="customizing ">
+      <j l="customiz.htm#454988"/>
+    </i>
+    <i t="redisplay ">
+      <j l="customi4.htm#451774"/>
+    </i>
+    <i t="restore ">
+      <j l="customi4.htm#451774"/>
+    </i>
+  </i>
+  <i t="trademark character, inserting ">
+    <j l="tableof4.htm#452190"/>
+  </i>
+  <i t="twain acquire, WebImageFX command ">
+    <j l="imagee36.htm#465748"/>
+  </i>
+  <i t="twain source, WebImageFX command ">
+    <j l="imagee37.htm#462320"/>
+  </i>
+  <i t="underline">
+    <i t="toolbar option ">
+      <j l="tableof4.htm#440923"/>
+    </i>
+  </i>
+  <i t="undo">
+    <i t="toolbar option ">
+      <j l="tableof4.htm#440830"/>
+    </i>
+    <i t="WebImageFX command ">
+      <j l="imagee38.htm#462282"/>
+    </i>
+  </i>
+  <i t="uppercase words, spell checking ">
+    <j l="spellch6.htm#442031"/>
+  </i>
+  <i t="version number, viewing ">
+    <j l="tableof4.htm#452070"/>
+  </i>
+  <i t="vertical flip, WebImageFX command ">
+    <j l="imagee39.htm#495992"/>
+  </i>
+  <i t="viewing HTML ">
+    <j l="html2.htm#443493"/>
+  </i>
+  <i t="WebImageFX">
+    <i t="assigning new name to image ">
+      <j l="imageed3.htm#495489"/>
+    </i>
+    <i t="choosing image ">
+      <j l="imageed2.htm#479933"/>
+    </i>
+    <i t="commands">
+      <i t="blur ">
+        <j l="imageed5.htm#442082"/>
+      </i>
+      <i t="brightness ">
+        <j l="imageed6.htm#444845"/>
+      </i>
+      <i t="choose color ">
+        <j l="imageed7.htm#487602"/>
+      </i>
+      <i t="choose font ">
+        <j l="imageed8.htm#487617"/>
+      </i>
+      <i t="color depth ">
+        <j l="imageed9.htm#487571"/>
+      </i>
+      <i t="contrast ">
+        <j l="imagee10.htm#445281"/>
+      </i>
+      <i t="copy ">
+        <j l="imagee11.htm#445550"/>
+      </i>
+      <i t="create new ">
+        <j l="imagee12.htm#459967"/>
+      </i>
+      <i t="crop ">
+        <j l="imagee13.htm#459932"/>
+      </i>
+      <i t="delete ">
+        <j l="imagee14.htm#444519"/>
+      </i>
+      <i t="dimensions ">
+        <j l="imagee15.htm#446037"/>
+      </i>
+      <i t="exit ">
+        <j l="imagee16.htm#490282"/>
+      </i>
+      <i t="freehand ">
+        <j l="imagee17.htm#495876"/>
+      </i>
+      <i t="horizontal flip ">
+        <j l="imagee18.htm#471283"/>
+      </i>
+      <i t="image info ">
+        <j l="imagee19.htm#448674"/>
+      </i>
+      <i t="line ">
+        <j l="imagee20.htm#472721"/>
+      </i>
+      <i t="open ">
+        <j l="imagee21.htm#460773"/>
+      </i>
+      <i t="oval ">
+        <j l="imagee22.htm#474154"/>
+      </i>
+      <i t="paste as new image ">
+        <j l="imagee23.htm#487358"/>
+      </i>
+      <i t="pointer selection ">
+        <j l="imagee24.htm#494248"/>
+      </i>
+      <i t="polygon ">
+        <j l="imagee25.htm#474534"/>
+      </i>
+      <i t="rectangle ">
+        <j l="imagee26.htm#476812"/>
+      </i>
+      <i t="redo ">
+        <j l="imagee27.htm#475492"/>
+      </i>
+      <i t="rotate ">
+        <j l="imagee29.htm#444461"/>
+      </i>
+      <i t="save ">
+        <j l="imagee30.htm#478527"/>
+      </i>
+      <i t="save as ">
+        <j l="imagee31.htm#461504"/>
+      </i>
+      <i t="select ">
+        <j l="imagee32.htm#461481"/>
+      </i>
+      <i t="sharpen ">
+        <j l="imagee33.htm#444567"/>
+      </i>
+      <i t="text ">
+        <j l="imagee34.htm#465894"/>
+      </i>
+      <i t="thumbnail ">
+        <j l="imagee35.htm#465767"/>
+      </i>
+      <i t="twain acquire ">
+        <j l="imagee36.htm#465748"/>
+      </i>
+      <i t="twain source ">
+        <j l="imagee37.htm#462320"/>
+      </i>
+      <i t="undo ">
+        <j l="imagee38.htm#462282"/>
+      </i>
+      <i t="vertical flip ">
+        <j l="imagee39.htm#495992"/>
+      </i>
+      <i t="zoom in ">
+        <j l="imagee40.htm#446300"/>
+      </i>
+      <i t="zoom out ">
+        <j l="imagee41.htm#444577"/>
+      </i>
+    </i>
+    <i t="introduction ">
+      <j l="imageedi.htm#438886"/>
+    </i>
+    <i t="menu commands ">
+      <j l="imageed4.htm#492167"/>
+    </i>
+    <i t="saving image ">
+      <j l="imageed3.htm#492154"/>
+    </i>
+    <i t="specifying color depth ">
+      <j l="imagee42.htm#442494"/>
+    </i>
+    <i t="toolbar buttons ">
+      <j l="imageed4.htm#492167"/>
+    </i>
+  </i>
+  <i t="whole word match ">
+    <j l="find7.htm#440200"/>
+  </i>
+  <i t="width, table">
+    <i t="setting by percentage ">
+      <j l="manipul4.htm#439126"/>
+    </i>
+    <i t="setting by pixels ">
+      <j l="manipul5.htm#439144"/>
+    </i>
+  </i>
+  <i t="word wrap ">
+    <j l="cellpr16.htm#442311"/>
+  </i>
+  <i t="Word, Microsoft">
+    <i t="editing in ">
+      <j l="msworda.htm#440736"/>
+    </i>
+    <i t="editing XML documents ">
+      <j l="msword3.htm#442004"/>
+    </i>
+    <i t="inserting from ">
+      <j l="html6.htm#443325"/>
+    </i>
+    <i t="uploading image from ">
+      <j l="msword2.htm#441969"/>
+    </i>
+  </i>
+  <i t="WYSIWYG, view as ">
+    <j l="tableof4.htm#447097"/>
+  </i>
+  <i t="zoom in, WebImageFX command ">
+    <j l="imagee40.htm#446300"/>
+  </i>
+  <i t="zoom out, WebImageFX command ">
+    <j l="imagee41.htm#444577"/>
+  </i>
+</WebWorksHelpIX>

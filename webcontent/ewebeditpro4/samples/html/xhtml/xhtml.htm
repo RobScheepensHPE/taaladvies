@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>eWebEditPro Produces XHTML</title>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+
+<!--
+
+	Include ewebeditpro.js.
+	
+	If it is in a different directory, specify the path.
+	
+	For example, src="/ewebeditpro/ewebeditpro.js"
+	
+-->
+<script language="JavaScript1.2" src="../../../ewebeditpro.js"></script>
+
+<style>
+h1 { font-family: sans-serif; }
+h2 { font-family: sans-serif; }
+p  { font-family: sans-serif; }
+</style>
+
+</head>
+<body>
+<h1>XHTML Sample</h1>
+
+<p>This sample shows how the editor can produce either HTML or XHTML. The format produced depends on the value of the <i>publish</i> attribute of the <i>standard</i> element in the config.xml file. The editor produces XHTML code when the content is saved and when viewing as HTML only if the <i>publish</i> attribute of the <i>standard</i> element and <i>viewas</i> element is set to "xhtml", respectively.</p>
+
+<form name="frmMain">
+
+<script language="JavaScript">
+<!--
+	eWebEditProMessages.elementNotFoundMessage = ""; // prevent "unable to find element" message
+	eWebEditPro.onload = "loadOriginalContent()";
+	eWebEditPro.actionOnUnload = EWEP_ONUNLOAD_NOSAVE;
+	
+	function loadOriginalContent()
+	{
+		for (var i = 0; i < eWebEditPro.instances.length; i++)
+		{
+			eWebEditPro.instances[i].load(frmMain.origHTML);
+		}
+	}
+//-->
+</script>
+
+<!-- Original content to be shown as HTML or XHTML -->
+<input type=hidden name="origHTML" value="Note that &lt;STRONG&gt;XHTML &lt;/STRONG&gt;tags are lowercase, all attribute values are quoted, and every tag has a closing tag or ends with &quot;/&gt;&quot;.&lt;HR&gt;For more information on XHTML, see &lt;A href=&quot;http://www.w3.org/TR/xhtml1/&quot; target=_blank&gt;W3C page on XHTML&lt;/A&gt;&nbsp;or &lt;A href=&quot;http://www.xhtml.org/&quot; target=_blank&gt;XHTML.ORG&lt;/A&gt;.">
+
+<h2>Editor 1 Produces Clean HTML</h2>
+<p>In config, the publish attribute is set to cleanhtml: &lt;standard publish="cleanhtml"&gt;</p>
+
+<script language="JavaScript">
+<!--
+	eWebEditPro.parameters.config = "confightml.xml";
+	eWebEditPro.create("asHTML", "100%", 150);
+//-->
+</script>
+
+<hr>
+
+<h2>Editor 2 Produces XHTML</h2>
+<p>In config, the publish attribute is set to xhtml: &lt;standard publish="xhtml"&gt;</p>
+<script language="JavaScript">
+<!--
+	eWebEditPro.parameters.config = "configxhtml.xml";
+	eWebEditPro.create("asXHTML", "100%", 150);
+//-->
+</script>
+
+<hr>
+
+<table align="center" cellspacing="5">
+<tr>
+<td align="center">
+<input type="button" value="Show HTML from Editor 1" onClick="eWebEditPro.instances.asHTML.save(eWebEditPro.instances.asHTML.linkedElement, null, new Function())"></td>
+<td align="center">
+<input type="button" value="Show XHTML from Editor 2" onClick="eWebEditPro.instances.asXHTML.save(eWebEditPro.instances.asXHTML.linkedElement, null, new Function())"></td>
+</tr>
+<tr>
+<td align="center">
+<textarea name="asHTML" rows="20" cols="40"></textarea>
+</td>
+<td align="center">
+<textarea name="asXHTML" rows="20" cols="40"></textarea>
+</td>
+</tr>
+</table>
+
+</form>
+</body>
+</html>

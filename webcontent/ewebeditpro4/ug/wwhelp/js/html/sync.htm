@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html">
+  <meta http-equiv="charset"      content="UTF-8">
+
+  <title>Sync</title>
+
+  <script type="text/javascript" language="JavaScript" src="../scripts/syncf.js"></script>
+  <script type="text/javascript" language="JavaScript">
+   <!--
+    // Update reference to top level help frame
+    //
+    var  WWHelpTopFrame = eval("parent.parent");
+    // Confirm that head and body load together
+    //
+    var  bOkayToLoad = WWHelpTopFrame.WWHelp.mbInitialized;
+
+
+    // Workaround for IE 4.0 on Windows and IE 4.5 on Macintosh
+    //
+    WWHelpTopFrame.WWHelp.mSync.fSyncHead = Sync_SyncHead;
+    WWHelpTopFrame.WWHelp.mSync.fSyncBody = Sync_SyncBody;
+   // -->
+  </script>
+
+  <script type="text/javascript" language="JavaScript">
+   <!--
+    if (bOkayToLoad)
+    {
+      WWHelpTopFrame.WWHelp.mSync.fSyncHead();
+    }
+   // -->
+  </script>
+ </head>
+
+ <body bgcolor="#FFFFFF">
+  <script type="text/javascript" language="JavaScript">
+   <!--
+    if (bOkayToLoad)
+    {
+      WWHelpTopFrame.WWHelp.mSync.fSyncBody();
+    }
+   // -->
+  </script>
+ </body>
+</html>

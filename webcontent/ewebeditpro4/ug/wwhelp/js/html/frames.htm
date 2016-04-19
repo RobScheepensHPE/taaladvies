@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN"
+			"http://www.w3.org/TR/REC-html40/frameset.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html">
+  <meta http-equiv="charset"      content="UTF-8">
+
+  <script type="text/javascript" language="JavaScript" src="../../common/config/title.js"></script>
+
+  <script type="text/javascript" language="JavaScript" src="../config/messages.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../../common/scripts/browserf.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../scripts/wwhelpf.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../scripts/bookf.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../scripts/tabsf.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../scripts/syncf.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../scripts/outlinef.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../scripts/linksf.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../scripts/indexf.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../scripts/searchf.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../../common/scripts/popupf.js"></script>
+
+  <script type="text/javascript" language="JavaScript">
+   <!--
+    // Update reference to top level help frame
+    //
+    var  WWHelpTopFrame = eval("self");
+    var  WWHelp = new WWHelp_Object();
+   // -->
+  </script>
+
+  <script type="text/javascript" language="JavaScript" src="../../common/config/books.js"></script>
+
+  <script type="text/javascript" language="JavaScript" src="../../common/config/popup.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../scripts/handlers.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../../common/scripts/frmsetf.js"></script>
+
+  <script type="text/javascript" language="JavaScript">
+   <!--
+    var  WWHelpFrameSet = new WWHelpFrameSet_Object("WWHelpTopFrame.WWHDocument");
+
+
+    WWHelpFrameSet.fExecute(location.href, WWHelp.mBookDirList);
+   // -->
+  </script>
+
+  <script type="text/javascript" language="JavaScript">
+   <!--
+    // Netscape Resize Fix
+    //
+    function  HandleLoadData()
+    {
+      WWHelp.mbLoadData = true;
+      WWHNavigation.WWHData.location.href = WWHNavigation.WWHData.location.href;
+    }
+
+    function  HandleResizeWindow()
+    {
+      if (WWHelp.mBrowser == 1)  // Shorthand for Netscape
+      {
+        WWHNavigation.WWHSync.location.href = WWHNavigation.WWHSync.location.href;
+      }
+    }
+   // -->
+  </script>
+ </head>
+
+ <frameset cols="300,*" onLoad="HandleLoadData();" onResize="HandleResizeWindow();">
+  <frame id="WWHNavigation" name="WWHNavigation" src="navigate.htm" scrolling="no">
+  <frame id="WWHDocument" name="WWHDocument" src="../../common/html/default.htm" scrolling="auto">
+
+  <noframes>
+   <body>
+    <p>This page uses frames, but your browser doesn't support them.</p>
+   </body>
+  </noframes>
+ </frameset>
+</html>

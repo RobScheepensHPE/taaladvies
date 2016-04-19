@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+
+<appConfig name="taaladvies">
+    <resources name="taaladvies">
+        <!-- DB Configuration -->
+
+        <database name="taaladviesDB">
+            <driver>com.informix.jdbc.IfxDriver</driver>
+
+            <!--LOCAL-->
+            <!--<url>jdbc:informix-sqli://w2vzmq2302:1526/taaladvies2:INFORMIXSERVER=ol_w2vzmq2302</url>
+            <user>informix</user>
+            <password>informix</password>-->
+
+            <!--DEVELOPMENT-->
+            <url>jdbc:informix-sqli://10.1.185.29:1527/taaladvies:INFORMIXSERVER=dev930_ol</url>
+            <user>dtaaladv</user>
+            <password>dtaaladv</password>
+
+            <!--PRODUCTION (READONLY-USER!!)-->
+            <!--<url>jdbc:informix-sqli://ifxcluster1.vlaanderen.be:1527/taaladvies:INFORMIXSERVER=ifxcluster1_ol</url>
+            <user>rtaaladv</user>
+            <password>E1D39EXl</password>-->
+
+            <initCons>4</initCons>
+            <maxCons>4</maxCons>
+            <timeout>300</timeout>
+            <dataSourceName>taaladviesDS</dataSourceName>
+            <protocol>jdbc</protocol>
+        </database>
+
+        <!-- LDAP configuration  -->
+
+        <ldap name="ldap">
+            <url>ldap.vlaanderen.be</url>
+            <port>389</port>
+            <baseDN>o=vlaanderen, c=be</baseDN>
+        </ldap>
+
+        <mail name="mail">
+            <host>mailhost1.vlaanderen.be</host>
+            <fromIntern>taaladvies@vlaanderen.be</fromIntern>
+            <fromExtern>taaltelefoon@vlaanderen.be</fromExtern>
+            <contentType>text/html; charset=ISO-8859-1</contentType>
+        </mail>
+
+        <security name="security">
+            <tokens>OFF</tokens>
+        </security>
+    </resources>
+
+    <constants name="taaladvies">
+        <NO_OF_RESULTS>5</NO_OF_RESULTS>
+
+        <PROXY_HOST></PROXY_HOST>
+        <PROXY_PORT></PROXY_PORT>
+        <PROXY_USER></PROXY_USER>
+        <PROXY_PASSWORD></PROXY_PASSWORD>
+
+        <OPHAALURL>http://localhost:8080/taaladvies/test.xml</OPHAALURL>
+        <OPHAAL_XMLSCHEMALOCATIE>taalvragen.xsd</OPHAAL_XMLSCHEMALOCATIE>
+
+        <DOORSTUURURL>http://localhost:8080/taaladvies/testdoorstuur</DOORSTUURURL>
+        <DOORSTUUR_XMLSCHEMALOCATIE>taalantwoord.xsd</DOORSTUUR_XMLSCHEMALOCATIE>
+
+        <DOORSTUURRESULTAAT_XMLSCHEMALOCATIE>doorstuurresultaat.xsd</DOORSTUURRESULTAAT_XMLSCHEMALOCATIE>
+        <TOMCATDEBUG>true</TOMCATDEBUG>
+    </constants>
+</appConfig>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         

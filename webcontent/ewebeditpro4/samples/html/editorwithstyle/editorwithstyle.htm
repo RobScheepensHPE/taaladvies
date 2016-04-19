@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>eWebEditPro with Style Sheet</title>
+	<script language="JavaScript1.2" src="../../../ewebeditpro.js"></script>
+</head>
+
+<body>
+<form name="frmname" method="post">
+<input type=hidden name="MyContent1" value="<h1>Heading 1</h1><p>here is some text</p><p>here is another paragraph</p><p>here is a third</p><h2>Heading 2</h2><p>some more text</p><h3>Heading 3</h3><p>another line of text</p><table width='100%'><tbody><tr><td>&#160;Apply table cell style here.</td><td>Apply generic style to this text.&#160;</td><td>more text to apply styles&#160;</td></tr><tr><td>&#160;<a href='http://www.ektron.com/'>Hyperlink</a></td><td>Apply&#160;highlight style this text</td><td>&#160;</td></tr></tbody></table><p>List of things:</p><ul><li>1<sup>st</sup></li><li>2<sup>nd</sup></li><li>3<sup>rd</sup></li></ul><p>&#160;</p>"> 
+<br>
+<p>Select a style sheet from the list of style sheets. The list of style sheet files is programmatically defined in this file. The default style sheet is defined in the config XML data (for example, config.xml). </p>
+<br>
+<script language="JavaScript">
+<!--
+var bStylesheetDisabled = false;
+var myStyleSheets = new Array();
+myStyleSheets["jsstyledefault"] = "";
+myStyleSheets["jsstyle1"] = "style1.css";
+myStyleSheets["jsstyle2"] = "style2.css";
+myStyleSheets["jsstyleparagraph"] = "paragraph.css";
+
+function setStyleSheet(sEditorName, strCmdName, strTextData, lData)
+{
+	var strStyleSheet = myStyleSheets[strCmdName];
+	if ("string" == typeof strStyleSheet)
+	{
+		if (eWebEditPro.instances[sEditorName].editor)
+		{
+			eWebEditPro.instances[sEditorName].editor.setProperty("StyleSheet", strStyleSheet);
+		}
+		bStylesheetDisabled = false;
+	}
+}
+
+eWebEditProExecCommandHandlers["jsstyledefault"] = setStyleSheet;
+eWebEditProExecCommandHandlers["jsstyle1"] = setStyleSheet;
+eWebEditProExecCommandHandlers["jsstyle2"] = setStyleSheet;
+eWebEditProExecCommandHandlers["jsstyleparagraph"] = setStyleSheet;
+eWebEditProExecCommandHandlers["jsstylenone"] = function(sEditorName, strCmdName, strTextData, lData) 
+{
+	if (eWebEditPro.instances[sEditorName].editor)
+	{
+		eWebEditPro.instances[sEditorName].editor.disableAllStyleSheets();
+	}
+	bStylesheetDisabled = true;
+}
+eWebEditProExecCommandHandlers["jshighlight"] = function(sEditorName, strCmdName, strTextData, lData) 
+{
+	if (eWebEditPro.instances[sEditorName].editor)
+	{
+		eWebEditPro.instances[sEditorName].editor.ExecCommand("cmdselstyle", ".highlight", 0);
+	}
+}
+
+eWebEditPro.addEventHandler("ontoolbarreset", "loadStyleSheet(this.event.srcName)");
+
+// To get the whole document instead of just the body, set editorGetMethod to "getDocument"
+// eWebEditPro.parameters.editorGetMethod = "getDocument";
+eWebEditPro.create("MyContent1", "100%", 400);
+
+function loadStyleSheet(sEditorName)
+{
+	var objInstance = eWebEditPro.instances[sEditorName];	
+	if (objInstance.editor)
+	{
+		var objMenu = objInstance.editor.Toolbars();
+		
+		// This shows how to add commands to a menu.
+		objMenu.CommandAdd('jsstylesheet', 'Style Sheets', 'Style Sheets', '', 0, 5, 'formatbar', 0, 0);
+		var objCommand = objMenu.CommandItem("jsstylesheet");
+		objCommand.AddItem('Default',0,'jsstyledefault');
+		objCommand.AddItem('None',0,'jsstylenone');
+		objCommand.AddItem('Marine',0,'jsstyle1');
+		objCommand.AddItem('Rose',0,'jsstyle2');
+		objCommand.AddItem('Slate',0,'jsstyleparagraph');
+		//Adding a custom button
+		objMenu.CommandAdd('jshighlight', 'Highlight', 'Highlight', '', 0, 0, 'editbar', 0, -1);
+	}
+}
+
+function preview(strEditorName) {
+	// may be async
+	eWebEditPro.save(null, function () {
+	var objElem = eWebEditPro.instances[strEditorName].linkedElement();
+	var win = window.open("", "Preview", "width=800,height=500,resizable,scrollbars,status,titlebar"); 
+	if (null == win)
+	{
+		alert("Unable to open pop-up window.  Please turn off your pop-up blocker and try again.");
+	}
+	else
+	{
+		with (win.document) { 
+			 if ("getDocument" == eWebEditPro.parameters.editorGetMethod)
+			{
+				write(objElem.value);
+			}
+			else
+			{
+			   var style = "";
+			    if (eWebEditPro.instances[strEditorName].editor)
+			    {
+			  		style = eWebEditPro.instances[strEditorName].editor.getPropertyString("StyleSheet");
+			    }
+				if (0 == style.length) // default
+				{
+					style = eWebEditPro.parameters.path + "ektnormal.css"; // from config.xml
+				} 
+				else if (bStylesheetDisabled)
+				{
+					style = "";
+				}
+	
+				write("<HTML><HEAD><TITLE>Preview Page</TITLE><link rel='stylesheet' type='text/css' href='" + style +"'><meta http-equiv=Content-Type content='text/html;'></HEAD><BODY><form>\n");
+				write(objElem.value);
+				write("<BR><BR><BR><center>");
+				write("<input type='button' value='Close' onClick='javascript:self.close();'>");
+				write("</center></form></BODY></HTML>");
+		  }
+		  close();
+		} // end with
+	} // end else
+	}); // end async
+}
+//-->
+</script>
+<BR>
+
+<input type="button" value="Preview" onClick="preview('MyContent1');">
+
+</form>
+</body>
+</html>

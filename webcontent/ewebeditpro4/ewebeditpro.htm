@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--
+	Ektron, Inc.
+	Revision Date: 2001-02-07
+-->
+<html>
+<head>
+<title>eWebEditPro</title>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+
+<!--
+
+	Include ewebeditpro.js.
+	If it is in a different directory, specify the path.
+	
+-->
+<script language="JavaScript1.2" src="ewebeditpro.js"></script>
+
+</head>
+
+<body>
+
+<!--
+
+	The following JavaScript checks to ensure that the eWebEditPro JavaScript object
+	was successfully created. If not, a message will appear. Mostly likely the path 
+	is not correct in the ewebeditpro.js file or the ewebeditpro.js file could not
+	be found.
+	
+	This code is not required to include eWebEditPro in a web page.
+	
+-->
+<script language="JavaScript1.2">
+<!--
+if (typeof eWebEditPro != "object")
+{
+	var sMsg = "Failed to create the eWebEditPro JavaScript object.";
+	sMsg += "\nMost likely the path (eWebEditProPath) in file ewebeditpro.js is not correct.";
+	alert(sMsg);
+}
+//-->
+</script> 
+<font face="Arial" size="3">
+This is a sample web page with:<br>
+<ul>
+<li>Two eWebEditPro editors</li>
+<li>Buttons to insert HTML text into the editors</li>
+<li>An 'Edit' button to popup a window with the editor</li>
+</ul></font>
+
+<!--
+
+	A form element is required to include eWebEditPro in a web page. The method must be "post".
+	
+-->
+<form method="post">
+
+<!-- 
+
+	The editor's content must be stored in a standard HTML element (such as input type=hidden).
+	The editor will initialize its content from this element and save the content back to it
+	when the form is submitted or the page is unloaded.
+	
+	When the form is submitted, the content is posted to the server in this standard HTML element.
+	
+	The name of the hidden field does not matter, but it must have a name specified using 
+	the 'name' attribute.
+	
+	The name MUST MATCH the name passed to the eWebEditPro.create function.
+	
+-->
+<input type=hidden name="MyContent1" value="&lt;p&gt;Editor 1&lt;/p&gt;"> 
+<br>
+
+<!--
+
+	The following JavaScript places the eWebEditPro in the web page.
+	
+	The name MUST MATCH the name assigned to the HTML element that holds the content 
+		(typically an input type=hidden)
+		
+	The width and height (in percent or pixels) may be given.
+	
+	The ActiveX control may be accessed in JavaScript using eWebEditPro.MyContent1. 
+	
+-->
+<script language="JavaScript1.2">
+<!--
+	eWebEditPro.create("MyContent1", 700, 250);
+//-->
+</script> 
+<br>
+<!--
+
+	The following illustrates how the ActiveX control can be accessed through the 
+	eWebEditPro JavaScript object. 
+	
+	By clicking the button, the text in the Text1 element is pasted into the editor
+	at the cursor location using the editor's pasteHTML method. This method can be 
+	used to insert any HTML text in the editor.
+	
+-->
+<input type=text name="Text1" value="<i>paste</i> <b>this</b>"> 
+<input type=button name="btnPaste1" value="Paste" onclick="eWebEditPro.MyContent1.pasteHTML(Text1.value)">
+<br><br>
+
+<!-- 
+
+	If more than one editor is on a page, each editor must have its own corresponding
+	standard HTML element to store the content. The names must be unique.
+	
+-->
+<input type=hidden name="MyContent2" value="&lt;p&gt;Editor 2&lt;/p&gt;">
+<br>
+
+<!-- 
+
+	This is a second editor on this page. Note that the name matches the name of the hidden field above.
+	In this example, the 'buttonsAbout' parameter is set to "False" to prevent the About button from 
+	appearing in this instance of the editor. The button will appear in the first editor created above.
+	
+	If a third editor were created, it would also have the About button removed unless the parameter 
+	were set back to "True" or the eWebEditPro.parameters.reset() method was called.
+	
+-->
+To disable About button:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;eWebEditPro.parameters.hideAboutButton = "True";<br>
+<script language="JavaScript1.2">
+<!--
+	eWebEditPro.parameters.hideAboutButton = "True";
+	eWebEditPro.create("MyContent2", 700, 250);
+//-->
+</script> 
+<br>
+<input type=text name="Text2" value="<i>paste</i> <b>this</b>"> 
+<input type=button name="btnPaste2" value="Paste" onclick="eWebEditPro.MyContent2.pasteHTML(Text2.value)"> 
+<br>
+<br><br><br>
+
+<!-- 
+
+	It may be advantageous to not include the editor on a page, but instead to have buttons that 
+	open a page with editor. The editor is linked to a textarea element (or any element with
+	a value property that can store HTML).
+	
+	When that page is opened, the content is automatically copied from the standard HTML element
+	to the editor in the popup window. When the popup window is closed, the content is copied 
+	back to the standard element.
+	
+	When the form is submitted, the content is posted to the server in this standard HTML element.
+	
+	The name of the textarea element does not matter, but it must have a name specified using 
+	the 'name' attribute.
+	
+	The name MUST MATCH the name passed to the eWebEditPro.createButton function.
+
+-->
+<textarea name="ta1" cols=80 rows=5><p>Click 'Edit' to edit this content with the eWebEditPro editor.</p></textarea><br>
+
+<!-- 
+
+	The following JavaScript creates a button that, when clicked, will open a page with
+	the editor in a popup window.
+	
+	The name of the button does not matter.
+	
+	The second argument (e.g., "ta1") MUST MATCH the name of the standard HTML element 
+	(typically a TEXTAREA).
+	
+-->
+<script language="JavaScript1.2">
+<!--
+	eWebEditPro.createButton("btnEdit", "ta1");
+//-->
+</script> 
+<br>
+
+<!--
+
+	Because this is a static HTML page, there is not form action or submit button.
+	Normally, a submit button would as shown:
+	
+	<input type=submit name="btnSubmit" value="Submit"> 
+	
+	When the form is submitted, all editors will save their content to their standard
+	HTML elements (e.g., hidden fields) to be posted to the dynamic web server.
+	
+-->
+</form>
+
+</body>
+</html>

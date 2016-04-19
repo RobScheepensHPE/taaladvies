@@ -1,0 +1,80 @@
+package be.vlaanderen.sbs.s6.taaladvies.db;
+
+import java.sql.Connection;
+
+import be.vlaanderen.sbs.s6.framework.logging.AppLogger;
+import be.vlaanderen.sbs.s6.taaladvies.db.conmanager.ConManager;
+import be.vlaanderen.sbs.s6.taaladvies.db.conmanager.ConManagerFactory;
+
+
+public class MyDbConnection implements IDbConnection 
+{
+    private static MyDbConnection instance;
+    private be.vlaanderen.sbs.s6.db.dpPoolManager pool;
+    private static ConManager cManager;
+
+	/**
+	 * Simple use of DpPoolManager to provide a Connection Pool for the application.
+	 */
+	public MyDbConnection() 
+	{	
+		try
+		{		
+			cManager = ConManagerFactory.getConManager();
+		}
+		catch(java.sql.SQLException ex)
+		{
+			AppLogger.getInstance().error("",ex);
+		}
+	}
+	
+	/**
+	 * Returns a connection from the pool.
+	 * @return java.sql.Connection
+	 */
+	public java.sql.Connection getConnection()
+	{
+		try
+		{		
+			be.vlaanderen.sbs.s6.framework.logging.AppLogger.getInstance().debug("MyDbConnection : About to get connection");			
+			Connection c = cManager.getConnection();
+			be.vlaanderen.sbs.s6.framework.logging.AppLogger.getInstance().debug("MyDbConnection : Received connection : " + c);			
+			return c;
+		}
+		catch(java.sql.SQLException ex)
+		{
+			AppLogger.getInstance().error("",ex);
+			return null;
+		}
+	}
+	
+	/**
+	 * Retrieves an instance of the Interface used to connect to the database.
+	 * @return be.vlaanderen.sbs.s6.phonebook.IDbConnection
+	 */
+	public static IDbConnection getInstance()
+	{
+	    if (instance == null)
+	        instance = new MyDbConnection();
+	    return instance;
+	}
+	
+	/**
+	 * Puts a connection back into the pool.
+	 */
+	public void releaseConnection(java.sql.Connection con)
+	{
+		try
+		{		
+			String connection = con.toString();
+			be.vlaanderen.sbs.s6.framework.logging.AppLogger.getInstance().debug("MyDbConnection : About to free connection: " + connection);
+			
+			cManager.freeConnection(con);
+			be.vlaanderen.sbs.s6.framework.logging.AppLogger.getInstance().debug("MyDbConnection : Freed connection: " + connection);
+		}
+		catch(java.sql.SQLException ex)
+		{
+			AppLogger.getInstance().error("",ex);
+		}
+	}
+}

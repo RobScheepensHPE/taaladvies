@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>eWebEditPro</title>
+	<script src="ewebeditpro.js" language="JavaScript1.2" type="text/javascript"></script>
+	<script language="JavaScript1.2" type="text/javascript" src="productinfo.js"></script>
+	<style>
+	H1 { font-size: 14pt }
+	H2 { font-size: 12pt; margin-bottom: 6 }
+	H3 { font-size: 10pt; margin-top: 6; margin-bottom: 0 }
+	LI { font-size: 10pt; font-weight: bold; font-style: italic }
+	BODY { font-family: Arial; font-size: 10pt; font-weight: bold; margin: 10pt 0pt 0pt 10pt; padding: 0pt 0pt 0pt 0pt }
+	.errmsg { color: red }
+	.value { font-weight: bold }
+	.noDisplay	{display:none;}
+	</style>
+	<script language="JavaScript1.2" type="text/javascript">
+	<!--
+		function writePage()
+		{
+		 	var sHtml = '<h1 align="center">Welcome to ' + g_sEWEPProduct + '</h1>';
+			sHtml += '<center><img src="ewep_splash.gif" border="1"></center>';
+			if (g_sEWEPProduct.indexOf("+XML"))
+			{
+				sHtml += '<h1 align="center">The world’s leading browser-based XML editor</h1>';
+			}
+			sHtml += '<p>';
+			sHtml += '<table align="center">';
+			sHtml += '<tr>';
+			sHtml += '<th>This site provides the following options.</th>';
+			sHtml += '</tr>';
+			sHtml += '<tr>';
+			sHtml += '<td><a href="ewepsamples.htm">eWebEditPro Samples</a></td>';
+			sHtml += '</tr>';
+			sHtml += '<tr>';
+			sHtml += '<td><a href="' + g_sReleaseNote + '">eWebEditPro Release Notes</a></td>';
+			sHtml += '</tr>';
+			sHtml += '</table>';
+			sHtml += '</p>';
+			document.write(sHtml);
+		}
+		function writeOtherLinks()
+		{
+			sHtml = '<p>';
+			sHtml += '<table border="1" align="center" cellpadding="10" cellspacing="0">';
+			sHtml += '<tr>';
+			sHtml += '<th colspan="2">Other useful links</th>';
+			sHtml += '</tr>';
+			sHtml += '<tr>';
+			sHtml += '<td width="50%" align="center" height="170">';
+			sHtml += '<a href="http://www.ektron.com"><img src="ektron.gif" border="0" /><br/>Ektron Site</a>';
+			sHtml += '</td>';
+			sHtml += '<td width="50%" align="center">';
+			sHtml += '<a href="' + g_sWIFXPage + '"><img src="webimagefx.gif" border="0" /><br/>Ektron WebImageFX</a>';
+			sHtml += '</td>';
+			sHtml += '</tr>';
+			sHtml += '<tr>';
+			sHtml += '<td align="center" height="170">';
+			sHtml += '<a href="' + g_sCMS300Page + '"><img src="EktronCMS300.gif" border="0" /><br/>Ektron CMS300</a>';
+			sHtml += '</td>';
+			sHtml += '<td align="center">';
+			sHtml += '<a href="' + g_sCMS400Page + '"><img src="EktronCMS400.gif" border="0" /><br/>Ektron CMS400.net</a>';
+			sHtml += '</td>';
+			sHtml += '</tr>';
+			sHtml += '</table>';
+			sHtml += '</p>';
+			document.write(sHtml);
+		}
+	//-->
+	</script>
+</head>
+
+<body background="logo_gray.gif">
+<script language="JavaScript1.2" type="text/javascript">
+	writePage();
+	writeOtherLinks();
+</script>
+
+</body>
+</html>

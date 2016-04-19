@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN"
+			"http://www.w3.org/TR/REC-html40/frameset.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html">
+  <meta http-equiv="charset"      content="UTF-8">
+
+  <title>Navigation</title>
+
+  <script type="text/javascript" language="JavaScript">
+   <!--
+    // Update reference to top level help frame
+    //
+    var  WWHelpTopFrame = eval("parent");
+   // -->
+  </script>
+
+  <script type="text/javascript" language="JavaScript">
+   <!--
+    // Netscape Resize Fix
+    //
+    function  HandleResizeNavigation()
+    {
+      if (WWHelpTopFrame.WWHelp.mBrowser == 1)  // Shorthand for Netscape
+      {
+        WWHSync.location.href = WWHSync.location.href;
+      }
+    }
+   // -->
+  </script>
+ </head>
+
+ <frameset rows="36,*,0" border="0" frameborder="0" framespacing="0" onResize="HandleResizeNavigation();">
+  <frame id="WWHTabs" name="WWHTabs" src="tabs.htm" scrolling="no" frameborder="0" marginwidth="0" marginheight="0">
+  <frame id="WWHSync" name="WWHSync" src="sync.htm" scrolling="auto" frameborder="0">
+  <frame id="WWHData" name="WWHData" src="data.htm" scrolling="no" frameborder="0" marginwidth="0" marginheight="0">
+ </frameset>
+</html>

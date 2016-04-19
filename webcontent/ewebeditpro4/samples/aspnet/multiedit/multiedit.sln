@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "multiedit", "http://localhost/ewebeditpro4/samples/aspnet/multiedit/multiedit.csproj", "{548AF171-A80D-4C4D-B4FB-610CE7DB879B}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{548AF171-A80D-4C4D-B4FB-610CE7DB879B}.Debug.ActiveCfg = Debug|.NET
+		{548AF171-A80D-4C4D-B4FB-610CE7DB879B}.Debug.Build.0 = Debug|.NET
+		{548AF171-A80D-4C4D-B4FB-610CE7DB879B}.Release.ActiveCfg = Release|.NET
+		{548AF171-A80D-4C4D-B4FB-610CE7DB879B}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

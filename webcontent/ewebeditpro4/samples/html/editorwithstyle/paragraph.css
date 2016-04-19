@@ -1,0 +1,74 @@
+ P  {
+	margin-top : 0;
+	margin-bottom : 0;
+}
+
+H1  {
+	font-weight : bold;
+	font-size : x-large;
+	color : white;
+}
+
+H2  {
+	font-size : large;
+	font-style : normal;
+	font-weight : normal;
+	color : white;
+}
+
+H3  {
+	font-size : medium;
+	font-style : normal;
+	font-weight : normal;
+	color : white;
+}
+BODY  {
+	background-color : Silver;
+	color : Black;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.highlight {
+	background-color : #6495ED;
+}
+
+td.purple{
+	caption :  White on Black (Cell);
+	background-color : Black;
+	color : white;
+}
+ul.disc{
+	caption : Disc (Bullet);
+	list-style : disc;
+}
+ul.circle{
+	caption : Circle (Bullet);
+	list-style : circle;
+}
+ul.square{
+	caption : Square (Bullet);
+	list-style : square;
+}
+ol.decimal{
+	caption : Decimal (List);
+	list-style : decimal;
+}
+ol.lowerroman{
+	caption : Lower-roman (List);
+	list-style : lower-roman;
+}
+ol.upperroman{
+	caption : Upper-roman (List);
+	list-style : upper-roman;
+}
+ol.loweralpha{
+	caption : Lower-alpha (List);
+	list-style : lower-alpha;
+}
+ol.upperalpha{
+	caption : Upper-alpha (List);
+	list-style : upper-alpha;
+}
+ul.none, ol.none{
+	caption : Invisible Bullet;
+	list-style : none;
+}

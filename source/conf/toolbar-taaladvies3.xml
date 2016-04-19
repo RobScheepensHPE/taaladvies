@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="us-ascii"?>
+
+  <!-- Antwoord -->
+<uiconfig>
+	<toolbar collapse="true">
+		<button actionid="CUT"/>
+		<button actionid="COPY"/>
+		<button actionid="PASTE"/>
+		<button actionid="FIND"/>
+		<separator/>
+		<button actionid="UNDO"/>
+		<button actionid="REDO"/>
+		<separator/>
+		<choice actionid="PARAGRAPHSTYLE"/>
+		<choice actionid="FONTTYPE"/>
+		<choice actionid="FONTSIZE"/>
+		<separator/>
+		<button actionid="BOLD"/>
+		<button actionid="ITALIC"/>
+		<button actionid="UNDERLINE"/>
+		<separator/>
+		<buttongroup actionid="UNORDEREDLIST">
+            		<subbutton actionid="DISCUNORDEREDLIST" />
+           		<subbutton actionid="CIRCLEUNORDEREDLIST" />
+            		<subbutton actionid="SQUAREUNORDEREDLIST" />
+       		</buttongroup>
+        	<buttongroup actionid="ORDEREDLIST">
+            		<subbutton actionid="NUMERICORDEREDLIST" />
+           		<subbutton actionid="LOWERALPHAORDEREDLIST" />
+            		<subbutton actionid="UPPERALPHAORDEREDLIST" />
+            		<subbutton actionid="LOWERROMANORDEREDLIST" />
+            		<subbutton actionid="UPPERROMANORDEREDLIST" />
+        	</buttongroup>
+		<separator/>
+		<button actionid="LINK"/>
+		<button actionid="SPELLCHECK"/>
+		<button actionid="SPECIALCHARACTER"/>
+
+		<button actionid="SHOWNALLCHAR"/>
+		<separator/>
+		<button actionid="STANDALONE"/>
+		<button actionid="INFO"/>
+	</toolbar>
+</uiconfig>

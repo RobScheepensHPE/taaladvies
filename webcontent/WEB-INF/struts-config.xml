@@ -1,0 +1,679 @@
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.0//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_0.dtd">
+<struts-config>
+    <!-- ========== Form Bean Definitions =================================== -->
+    <form-beans type="org.apache.struts.action.ActionFormBean">
+
+        <form-bean name="LoginForm" type="be.vlaanderen.sbs.s6.taaladvies.LoginForm"/>
+
+        <form-bean name="MediaBeheerForm" type="be.vlaanderen.sbs.s6.taaladvies.beheer.MediaBeheerForm"/>
+        <form-bean name="GebruikersBeheerForm" type="be.vlaanderen.sbs.s6.taaladvies.beheer.GebruikersBeheerForm"/>
+        <form-bean name="DoelgroepenBeheerForm" type="be.vlaanderen.sbs.s6.taaladvies.beheer.DoelgroepenBeheerForm"/>
+        <form-bean name="DoelgroepenAlgemeenBeheerForm"
+                   type="be.vlaanderen.sbs.s6.taaladvies.beheer.DoelgroepenAlgemeenBeheerForm"/>
+        <form-bean name="NaslagwerkenBeheerForm" type="be.vlaanderen.sbs.s6.taaladvies.beheer.NaslagwerkenBeheerForm"/>
+        <form-bean name="BibliografienBeheerForm"
+                   type="be.vlaanderen.sbs.s6.taaladvies.beheer.BibliografienBeheerForm"/>
+        <form-bean name="SjablonenBeheerForm" type="be.vlaanderen.sbs.s6.taaladvies.beheer.SjablonenBeheerForm"/>
+        <form-bean name="CategorienBeheerForm" type="be.vlaanderen.sbs.s6.taaladvies.beheer.CategorienBeheerForm"/>
+        <form-bean name="HerkomstenBeheerForm" type="be.vlaanderen.sbs.s6.taaladvies.beheer.HerkomstenBeheerForm"/>
+        <form-bean name="RelevantiesBeheerForm" type="be.vlaanderen.sbs.s6.taaladvies.beheer.RelevantiesBeheerForm"/>
+        <form-bean name="ZoekomgevingenBeheerForm"
+                   type="be.vlaanderen.sbs.s6.taaladvies.beheer.ZoekomgevingenBeheerForm"/>
+        <form-bean name="StatussenBeheerForm" type="be.vlaanderen.sbs.s6.taaladvies.beheer.StatussenBeheerForm"/>
+        <form-bean name="OproepOpenenForm" type="be.vlaanderen.sbs.s6.taaladvies.beheer.OproepOpenenForm"/>
+        <form-bean name="OproepVerwijderenForm" type="be.vlaanderen.sbs.s6.taaladvies.beheer.OproepVerwijderenForm"/>
+
+        <form-bean name="NaslagreferentiesInvoerForm"
+                   type="be.vlaanderen.sbs.s6.taaladvies.oproep.NaslagreferentiesInvoerForm"/>
+        <form-bean name="BronnenInvoerForm" type="be.vlaanderen.sbs.s6.taaladvies.oproep.BronnenInvoerForm"/>
+        <form-bean name="CitatenInvoerForm" type="be.vlaanderen.sbs.s6.taaladvies.oproep.CitatenInvoerForm"/>
+        <form-bean name="FrequentiesInvoerForm" type="be.vlaanderen.sbs.s6.taaladvies.oproep.FrequentiesInvoerForm"/>
+        <form-bean name="WebreferentiesInvoerForm"
+                   type="be.vlaanderen.sbs.s6.taaladvies.oproep.WebreferentiesInvoerForm"/>
+        <form-bean name="NotitiesInvoerForm" type="be.vlaanderen.sbs.s6.taaladvies.oproep.NotitiesInvoerForm"/>
+        <form-bean name="Oproep_TaalvragenInvoerForm"
+                   type="be.vlaanderen.sbs.s6.taaladvies.oproep.Oproep_TaalvragenInvoerForm"/>
+        <form-bean name="TaalvragenInvoerForm" type="be.vlaanderen.sbs.s6.taaladvies.oproep.TaalvragenInvoerForm"/>
+        <form-bean name="CategorienInvoerForm" type="be.vlaanderen.sbs.s6.taaladvies.oproep.CategorienInvoerForm"/>
+        <form-bean name="Oproep_TekstInvoerForm" type="be.vlaanderen.sbs.s6.taaladvies.oproep.Oproep_TekstInvoerForm"/>
+        <form-bean name="TekstblokkenInvoerForm" type="be.vlaanderen.sbs.s6.taaladvies.oproep.TekstblokkenInvoerForm"/>
+        <form-bean name="KenmerkenInvoerForm" type="be.vlaanderen.sbs.s6.taaladvies.oproep.KenmerkenInvoerForm"/>
+        <form-bean name="BijzonderheidInvoerForm"
+                   type="be.vlaanderen.sbs.s6.taaladvies.oproep.BijzonderheidInvoerForm"/>
+        <form-bean name="VolledigeTekstViewForm" type="be.vlaanderen.sbs.s6.taaladvies.oproep.VolledigeTekstViewForm"/>
+        <form-bean name="KlantenGegevensInvoerForm"
+                   type="be.vlaanderen.sbs.s6.taaladvies.oproep.KlantenGegevensInvoerForm"/>
+        <form-bean name="KopieerTaalvraagForm" type="be.vlaanderen.sbs.s6.taaladvies.oproep.KopieerTaalvraagForm"/>
+        <form-bean name="KopieerTekstForm" type="be.vlaanderen.sbs.s6.taaladvies.oproep.KopieerTekstForm"/>
+        <form-bean name="HulpmiddelenOverzichtForm"
+                   type="be.vlaanderen.sbs.s6.taaladvies.oproep.HulpmiddelenOverzichtForm"/>
+
+        <form-bean name="EigenTaalvragenForm" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.EigenTaalvragenForm"/>
+        <form-bean name="EigenTekstenForm" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.EigenTekstenForm"/>
+        <form-bean name="AlleTekstenForm" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.AlleTekstenForm"/>
+        <form-bean name="AlleTaalvragenForm" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.AlleTaalvragenForm"/>
+        <form-bean name="BinnengekomenTaalvragenForm"
+                   type="be.vlaanderen.sbs.s6.taaladvies.overzicht.BinnengekomenTaalvragenForm"/>
+        <form-bean name="SearchForm" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.SearchForm"/>
+        <form-bean name="RaadplegerReadForm" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.RaadplegerReadForm"/>
+
+        <form-bean name="Search2Form" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.Search2Form"/>
+        <form-bean name="Result2Form" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.Result2Form"/>
+        <form-bean name="DistributiekeuzeForm" type="be.vlaanderen.sbs.s6.taaladvies.distributie.DistributiekeuzeForm"/>
+        <form-bean name="GetCategorieForSearchForm"
+                   type="be.vlaanderen.sbs.s6.taaladvies.overzicht.GetCategorieForSearchForm"/>
+        <form-bean name="EditeerModusForm" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.EditeerModusForm"/>
+        <form-bean name="VerwijderOpTeLadenOproepenForm" type="be.vlaanderen.sbs.s6.taaladvies.VerwijderOpTeLadenOproepenForm"/>
+    </form-beans>
+    <!-- ========== Global Forward Definitions ============================== -->
+    <global-forwards type="org.apache.struts.action.ActionForward">
+        <forward name="login" path="/login.jsp" redirect="false"/>
+        <forward name="error" path="/error.jsp" redirect="false"/>
+        <forward name="notloggedin" path="/login.jsp" redirect="false"/>
+        <forward name="beheerMenu" path="/admin/beheerdermenu.jsp"/>
+        <forward name="verwijderOpTeLadenOproepen" path="/verwijderOpTeLadenOpropen.jsp" redirect="false"/>
+    </global-forwards>
+
+    <!-- ========== Action Mapping Definitions ============================== -->
+    <action-mappings type="org.apache.struts.action.ActionMapping">
+
+<!--    These are NOT USED....(Class used for 'type' doesn't exist either)
+        <action path="/ophalen" type="be.vlaanderen.sbs.s6.taaladvies.taalunie.OphalenTaalunieVragenAction"
+                unknown="false" input="/login.jsp" scope="session">
+            <forward name="success" path="/profielen.jsp" redirect="true"/>
+        </action>
+
+        <action path="/doorsturen" type="be.vlaanderen.sbs.s6.taaladvies.taalunie.DoorsturenTaalunieVragenAction"
+                unknown="false" input="/login.jsp" scope="session">
+            <forward name="success" path="/profielen.jsp" redirect="true"/>
+        </action>
+        -->
+
+        <action path="/login" type="be.vlaanderen.sbs.s6.taaladvies.LoginAction" name="LoginForm" unknown="false"
+                validate="true" input="/login.jsp" scope="session">
+            <forward name="success" path="/profielen.jsp" redirect="false"/>
+            <forward name="eigentaalvragen" path="/do/initEigenTaalvragen" redirect="true"/>
+            <forward name="beheerdermenu" path="/admin/beheerdermenu.jsp" redirect="false"/>
+            <forward name="externeraadpleger" path="/do/initZoekenExtern" redirect="true"/>
+        </action>
+
+        <action path="/logout" type="be.vlaanderen.sbs.s6.taaladvies.LogoutAction" unknown="false" validate="true"
+                input="/profielen.jsp" scope="session">
+            <forward name="success" path="/logout.jsp" redirect="false"/>
+        </action>
+
+        <action path="/initMediaBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.InitMediaBeheerAction"
+                name="MediaBeheerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/admin/mediabeheer.jsp" redirect="false"/>
+        </action>
+
+        <action path="/mediaBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.MediaBeheerAction"
+                name="MediaBeheerForm" unknown="false" validate="true" input="/admin/mediabeheer.jsp" scope="session">
+            <forward name="backtopage" path="/do/initMediaBeheer" redirect="true"/>
+        </action>
+
+        <action path="/initGebruikersBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.InitGebruikersBeheerAction"
+                name="GebruikersBeheerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/admin/gebruikersbeheer.jsp" redirect="false"/>
+        </action>
+
+        <action path="/gebruikersBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.GebruikersBeheerAction"
+                name="GebruikersBeheerForm" unknown="false" validate="true" input="/admin/gebruikersbeheer.jsp"
+                scope="session">
+            <forward name="backtopage" path="/do/initGebruikersBeheer" redirect="true"/>
+        </action>
+
+        <action path="/initDoelgroepenBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.InitDoelgroepenBeheerAction"
+                name="DoelgroepenBeheerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/admin/doelgroepenbeheer.jsp" redirect="false"/>
+        </action>
+
+        <action path="/doelgroepenBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.DoelgroepenBeheerAction"
+                name="DoelgroepenBeheerForm" unknown="false" validate="true" input="/admin/doelgroepenbeheer.jsp"
+                scope="session">
+            <forward name="backtopage" path="/do/initDoelgroepenBeheer" redirect="true"/>
+            <forward name="success" path="/admin/doelgroepenbeheer.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initDoelgroepenAlgemeenBeheer"
+                type="be.vlaanderen.sbs.s6.taaladvies.beheer.InitDoelgroepenAlgemeenBeheerAction"
+                name="DoelgroepenAlgemeenBeheerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/admin/doelgroepenalgemeenbeheer.jsp" redirect="false"/>
+        </action>
+
+        <action path="/doelgroepenAlgemeenBeheer"
+                type="be.vlaanderen.sbs.s6.taaladvies.beheer.DoelgroepenAlgemeenBeheerAction"
+                name="DoelgroepenAlgemeenBeheerForm" unknown="true" input="/admin/doelgroepenalgemeenbeheer.jsp"
+                scope="session">
+            <forward name="backtopage" path="/do/initDoelgroepenAlgemeenBeheer" redirect="true"/>
+            <forward name="success" path="/admin/doelgroepenalgemeenbeheer.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initNaslagwerkenBeheer"
+                type="be.vlaanderen.sbs.s6.taaladvies.beheer.InitNaslagwerkenBeheerAction" name="NaslagwerkenBeheerForm"
+                unknown="false" validate="false" scope="session">
+            <forward name="success" path="/admin/naslagwerkenbeheerEKTRON.jsp" redirect="false"/>
+        </action>
+
+        <action path="/naslagwerkenBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.NaslagwerkenBeheerAction"
+                name="NaslagwerkenBeheerForm" unknown="false" validate="true"
+                input="/admin/naslagwerkenbeheerEKTRON.jsp" scope="session">
+            <forward name="backtopage" path="/do/initNaslagwerkenBeheer" redirect="true"/>
+        </action>
+
+        <action path="/initBibliografienBeheer"
+                type="be.vlaanderen.sbs.s6.taaladvies.beheer.InitBibliografienBeheerAction"
+                name="BibliografienBeheerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/admin/bibliografienbeheer.jsp" redirect="false"/>
+        </action>
+
+        <action path="/bibliografienBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.BibliografienBeheerAction"
+                name="BibliografienBeheerForm" unknown="false" validate="true" input="/admin/bibliografienbeheer.jsp"
+                scope="session">
+            <forward name="backtopage" path="/do/initBibliografienBeheer" redirect="true"/>
+        </action>
+
+        <action path="/initSjablonenBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.InitSjablonenBeheerAction"
+                name="SjablonenBeheerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/admin/sjablonenbeheerEKTRON.jsp" redirect="false"/>
+        </action>
+
+        <action path="/sjablonenBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.SjablonenBeheerAction"
+                name="SjablonenBeheerForm" unknown="false" validate="true" input="/admin/sjablonenbeheerEKTRON.jsp"
+                scope="session">
+            <forward name="backtopage" path="/do/initSjablonenBeheer" redirect="true"/>
+        </action>
+
+        <action path="/initCategorienBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.InitCategorienBeheerAction"
+                name="CategorienBeheerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/admin/categorienbeheer.jsp" redirect="false"/>
+        </action>
+
+        <action path="/categorienBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.CategorienBeheerAction"
+                name="CategorienBeheerForm" unknown="false" validate="true" input="/admin/categorienbeheer.jsp"
+                scope="session">
+            <forward name="backtopage" path="/do/initCategorienBeheer" redirect="true"/>
+        </action>
+
+        <action path="/initHerkomstenBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.InitHerkomstenBeheerAction"
+                name="HerkomstenBeheerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/admin/herkomstenbeheer.jsp" redirect="false"/>
+        </action>
+
+        <action path="/herkomstenBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.HerkomstenBeheerAction"
+                name="HerkomstenBeheerForm" unknown="false" validate="true" input="/admin/herkomstenbeheer.jsp"
+                scope="session">
+            <forward name="backtopage" path="/do/initHerkomstenBeheer" redirect="true"/>
+        </action>
+
+        <action path="/initRelevantiesBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.InitRelevantiesBeheerAction"
+                name="RelevantiesBeheerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/admin/relevantiesbeheer.jsp" redirect="false"/>
+        </action>
+
+        <action path="/relevantiesBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.RelevantiesBeheerAction"
+                name="RelevantiesBeheerForm" unknown="false" validate="true" input="/admin/relevantiesbeheer.jsp"
+                scope="session">
+            <forward name="backtopage" path="/do/initRelevantiesBeheer" redirect="true"/>
+        </action>
+
+        <action path="/initZoekomgevingenBeheer"
+                type="be.vlaanderen.sbs.s6.taaladvies.beheer.InitZoekomgevingenBeheerAction"
+                name="ZoekomgevingenBeheerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/admin/zoekomgevingenbeheer.jsp" redirect="false"/>
+        </action>
+
+        <action path="/zoekomgevingenBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.ZoekomgevingenBeheerAction"
+                name="ZoekomgevingenBeheerForm" unknown="false" validate="true" input="/admin/zoekomgevingenbeheer.jsp"
+                scope="session">
+            <forward name="backtopage" path="/do/initZoekomgevingenBeheer" redirect="true"/>
+        </action>
+
+        <action path="/initStatussenBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.InitStatussenBeheerAction"
+                name="StatussenBeheerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/admin/statussenbeheer.jsp" redirect="false"/>
+        </action>
+
+        <action path="/statussenBeheer" type="be.vlaanderen.sbs.s6.taaladvies.beheer.StatussenBeheerAction"
+                name="StatussenBeheerForm" unknown="false" validate="true" input="/admin/statussenbeheer.jsp"
+                scope="session">
+            <forward name="backtopage" path="/do/initStatussenBeheer" redirect="true"/>
+        </action>
+
+        <action path="/oproepOpenen" type="be.vlaanderen.sbs.s6.taaladvies.beheer.OproepOpenenAction"
+                name="OproepOpenenForm" unknown="false" validate="true" input="/admin/oproepopenen.jsp" scope="session">
+            <forward name="success" path="/admin/beheerdermenu.jsp" redirect="true"/>
+        </action>
+
+        <action path="/oproepVerwijderen" type="be.vlaanderen.sbs.s6.taaladvies.beheer.OproepVerwijderenAction"
+                name="OproepVerwijderenForm" unknown="false" validate="true" input="/admin/oproepverwijderen.jsp"
+                scope="session">
+            <forward name="success" path="/admin/beheerdermenu.jsp" redirect="true"/>
+        </action>
+
+
+        <action path="/initNaslagreferentiesInvoer"
+                type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitNaslagreferentiesInvoerAction"
+                name="NaslagreferentiesInvoerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/naslagreferentiesinvoerEKTRON.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/naslagreferentiesread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/naslagreferentiesInvoer"
+                type="be.vlaanderen.sbs.s6.taaladvies.oproep.NaslagreferentiesInvoerAction"
+                name="NaslagreferentiesInvoerForm" unknown="false" validate="true"
+                input="/oproep/naslagreferentiesinvoerEKTRON.jsp" scope="session">
+            <forward name="success" path="/oproep/naslagreferentiesinvoerEKTRON.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initBronnenInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitBronnenInvoerAction"
+                name="BronnenInvoerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/bronneninvoerEKTRON.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/bronnenread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/bronnenInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.BronnenInvoerAction"
+                name="BronnenInvoerForm" unknown="false" validate="true" input="/oproep/bronneninvoerEKTRON.jsp"
+                scope="session">
+            <forward name="success" path="/oproep/bronneninvoerEKTRON.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initCitatenInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitCitatenInvoerAction"
+                name="CitatenInvoerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/citateninvoerEKTRON.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/citatenread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/citatenInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.CitatenInvoerAction"
+                name="CitatenInvoerForm" unknown="false" validate="true" input="/oproep/citateninvoerEKTRON.jsp"
+                scope="session">
+            <forward name="success" path="/oproep/citateninvoerEKTRON.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initFrequentiesInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitFrequentiesInvoerAction"
+                name="FrequentiesInvoerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/frequentiesinvoer.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/frequentiesread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/frequentiesInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.FrequentiesInvoerAction"
+                name="FrequentiesInvoerForm" unknown="false" validate="true" input="/oproep/frequentiesinvoer.jsp"
+                scope="session">
+            <forward name="success" path="/oproep/frequentiesinvoer.jsp" redirect="true"/>
+        </action>                
+
+        <action path="/initWebreferentiesInvoer"
+                type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitWebreferentiesInvoerAction"
+                name="WebreferentiesInvoerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/webreferentiesinvoerEKTRON.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/webreferentiesread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/webreferentiesInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.WebreferentiesInvoerAction"
+                name="WebreferentiesInvoerForm" unknown="false" validate="true"
+                input="/oproep/webreferentiesinvoerEKTRON.jsp" scope="session">
+            <forward name="success" path="/oproep/webreferentiesinvoerEKTRON.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initNotitiesInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitNotitiesInvoerAction"
+                name="NotitiesInvoerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/notitiesinvoerEKTRON.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/notitiesreadEKTRON.jsp" redirect="true"/>
+        </action>
+
+        <action path="/notitiesInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.NotitiesInvoerAction"
+                name="NotitiesInvoerForm" unknown="false" validate="true" input="/oproep/notitiesinvoerEKTRON.jsp"
+                scope="session">
+            <forward name="success" path="/oproep/notitiesinvoerEKTRON.jsp" redirect="true"/>
+        </action>
+
+        <action path="/notitiesInvoerReadOnly" type="be.vlaanderen.sbs.s6.taaladvies.oproep.NotitiesInvoerAction"
+                name="NotitiesInvoerForm" unknown="false" validate="true" input="/oproep/notitiesreadEKTRON.jsp"
+                scope="session">
+            <forward name="readonly" path="/oproep/notitiesreadEKTRON.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initOproep_TaalvragenInvoer"
+                type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitOproep_TaalvragenInvoerAction"
+                name="Oproep_TaalvragenInvoerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/oproep_taalvrageninvoerEKTRON.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/oproep_taalvragenread.jsp" redirect="true"/>
+            <forward name="binnengekomen" path="/oproep/oproep_binnengekomenvragenread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/oproep_TaalvragenInvoer"
+                type="be.vlaanderen.sbs.s6.taaladvies.oproep.Oproep_TaalvragenInvoerAction"
+                name="Oproep_TaalvragenInvoerForm" unknown="false" validate="true"
+                input="/oproep/oproep_taalvrageninvoerEKTRON.jsp" scope="session">
+            <forward name="success" path="/oproep/oproep_taalvrageninvoerEKTRON.jsp" redirect="true"/>
+            <forward name="distributie" path="/distributie/distributiekeuzeEKTRON.jsp" redirect="true"/>
+            <forward name="eigentaalvragen" path="/do/initEigenTaalvragen" redirect="true"/>
+        </action>
+
+        <action path="/initTaalvragenInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitTaalvragenInvoerAction"
+                name="TaalvragenInvoerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/taalvrageninvoerEKTRON.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/taalvragenread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initBinnengekomenTaalvragenInvoer"
+                type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitTaalvragenInvoerAction" name="TaalvragenInvoerForm"
+                unknown="false" validate="false" scope="session">
+
+            <!--/oproep/binnengekomentaalvrageninvoer.jsp doesn't exist -> error -->
+            <!--<forward name="success" path="/oproep/binnengekomentaalvrageninvoer.jsp" redirect="true"/>-->
+            <forward name="readonly" path="/oproep/binnengekomentaalvragenread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/taalvragenInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.TaalvragenInvoerAction"
+                name="TaalvragenInvoerForm" unknown="false" validate="true" input="/oproep/taalvrageninvoerEKTRON.jsp"
+                scope="session">
+            <forward name="success" path="/oproep/taalvrageninvoerEKTRON.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initCategorienInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitCategorienInvoerAction"
+                name="CategorienInvoerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/categorieninvoer.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/categorienread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/categorienInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.CategorienInvoerAction"
+                name="CategorienInvoerForm" unknown="false" validate="true" input="/oproep/categorieninvoer.jsp"
+                scope="session">
+            <forward name="success" path="/oproep/categorieninvoer.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initOproep_TekstInvoer"
+                type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitOproep_TekstInvoerAction" name="Oproep_TekstInvoerForm"
+                unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/oproep_tekstinvoerEKTRON.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/oproep_tekstread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/oproep_TekstInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.Oproep_TekstInvoerAction"
+                name="Oproep_TekstInvoerForm" unknown="false" validate="true"
+                input="/oproep/oproep_tekstinvoerEKTRON.jsp" scope="session">
+            <forward name="success" path="/oproep/oproep_tekstinvoerEKTRON.jsp" redirect="true"/>
+            <forward name="distributie" path="/distributie/distributiekeuzeEKTRON.jsp" redirect="true"/>
+            <forward name="eigentaalvragen" path="/do/initEigenTaalvragen" redirect="true"/>
+        </action>
+
+        <action path="/initTekstblokkenInvoer"
+                type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitTekstblokkenInvoerAction" name="TekstblokkenInvoerForm"
+                unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/tekstblokkeninvoerEKTRON.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/tekstblokkenread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/tekstblokkenInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.TekstblokkenInvoerAction"
+                name="TekstblokkenInvoerForm" unknown="false" validate="true"
+                input="/oproep/tekstblokkeninvoerEKTRON.jsp" scope="session">
+            <forward name="success" path="/oproep/tekstblokkeninvoerEKTRON.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initKenmerkenInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitKenmerkenInvoerAction"
+                name="KenmerkenInvoerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/kenmerkeninvoerEKTRON.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/kenmerkenread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/kenmerkenInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.KenmerkenInvoerAction"
+                name="KenmerkenInvoerForm" unknown="false" validate="true" input="/oproep/kenmerkeninvoerEKTRON.jsp"
+                scope="session">
+            <forward name="success" path="/oproep/kenmerkeninvoerEKTRON.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initBijzonderheidInvoer"
+                type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitBijzonderheidInvoerAction"
+                name="BijzonderheidInvoerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/bijzonderheidinvoerEKTRON.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/bijzonderheidread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/bijzonderheidInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.BijzonderheidInvoerAction"
+                name="BijzonderheidInvoerForm" unknown="false" validate="true"
+                input="/oproep/bijzonderheidinvoerEKTRON.jsp" scope="session">
+            <forward name="success" path="/oproep/bijzonderheidinvoerEKTRON.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initKlantenGegevensInvoer"
+                type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitKlantenGegevensInvoerAction"
+                name="KlantenGegevensInvoerForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/klantengegevensinvoer.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/klantengegevensread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/klantenGegevensInvoer" type="be.vlaanderen.sbs.s6.taaladvies.oproep.KlantenGegevensInvoerAction"
+                name="KlantenGegevensInvoerForm" unknown="false" validate="true"
+                input="/oproep/klantengegevensinvoer.jsp" scope="session">
+            <forward name="success" path="/oproep/klantengegevensinvoer.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initVolledigeTekstView"
+                type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitVolledigeTekstViewAction" name="VolledigeTekstViewForm"
+                unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/volledigetekstview.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/volledigetekstread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initHulpmiddelenOverzicht"
+                type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitHulpmiddelenOverzichtAction"
+                name="HulpmiddelenOverzichtForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/hulpmiddelenoverzicht.jsp" redirect="true"/>
+            <forward name="readonly" path="/oproep/hulpmiddelenoverzichtread.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initKopieerTaalvraag" type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitKopieerTaalvraagAction"
+                name="KopieerTaalvraagForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/kopieertaalvraag.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initKopieerTekst" type="be.vlaanderen.sbs.s6.taaladvies.oproep.InitKopieerTekstAction"
+                name="KopieerTekstForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/oproep/kopieertekst.jsp" redirect="true"/>
+        </action>
+
+        <action path="/kopieerTaalvraag" type="be.vlaanderen.sbs.s6.taaladvies.oproep.KopieerTaalvraagAction"
+                name="KopieerTaalvraagForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/do/initTaalvragenInvoer"/>
+        </action>
+
+        <action path="/kopieerTekst" type="be.vlaanderen.sbs.s6.taaladvies.oproep.KopieerTekstAction"
+                name="KopieerTekstForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/do/initOproep_TekstInvoer"/>
+        </action>
+
+
+        <action path="/initEigenTaalvragen" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.InitEigenTaalvragenAction"
+                name="EigenTaalvragenForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/overzicht/eigentaalvragen.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initEigenTeksten" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.InitEigenTekstenAction"
+                name="EigenTekstenForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/overzicht/eigenteksten.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initAlleTaalvragen" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.InitAlleTaalvragenAction"
+                name="AlleTaalvragenForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/overzicht/alletaalvragen.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initBinnengekomenTaalvragen"
+                type="be.vlaanderen.sbs.s6.taaladvies.overzicht.InitBinnengekomenTaalvragenAction"
+                name="BinnengekomenTaalvragenForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/overzicht/binnengekomentaalvragen.jsp" redirect="true"/>
+        </action>
+
+        <action path="/veranderDomein" type="be.vlaanderen.sbs.s6.taaladvies.oproep.VeranderDomeinAction"
+                name="BinnengekomenTaalvragenForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/overzicht/binnengekomentaalvragen.jsp" redirect="true"/>
+        </action>
+
+
+        <action path="/initAlleTeksten" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.InitAlleTekstenAction"
+                name="AlleTekstenForm" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/overzicht/alleteksten.jsp" redirect="true"/>
+        </action>
+
+        <action path="/overname" type="be.vlaanderen.sbs.s6.taaladvies.oproep.OvernameAction" unknown="false"
+                scope="session">
+            <forward name="success" path="/overzicht/eigentaalvragen.jsp" redirect="true"/>
+        </action>
+
+        <action path="/toeeigenen" type="be.vlaanderen.sbs.s6.taaladvies.oproep.ToeeigenAction" unknown="false" 
+        		scope="session" input="/overzicht/binnengekomentaalvragen.jsp" validate="true">
+			<forward name="success" path="/overzicht/binnengekomentaalvragen.jsp" redirect="true" />
+		</action>
+
+        <action path="/distributiekeuze" type="be.vlaanderen.sbs.s6.taaladvies.distributie.DistributiekeuzeAction"
+                name="DistributiekeuzeForm" unknown="false" validate="true"
+                input="/distributie/distributiekeuzeEKTRON.jsp" scope="session">
+            <forward name="success" path="/distributie/distributiekeuzeEKTRON.jsp" redirect="true"/>
+            <forward name="bevestiging" path="/distributie/distributiebevestiging.jsp" redirect="true"/>
+        </action>
+
+        <action path="/raadplegerRead" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.RaadplegerReadAction"
+                name="RaadplegerReadForm" unknown="false" scope="session" validate="false">
+            <forward name="success" path="/overzicht/raadplegerread.jsp" redirect="true"/>
+        </action>
+
+        <!-- === SEARCH ACTIONS EXTERNE RAADPLEGER === -->
+
+        <action path="/initZoeken" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.InitSearchAction" unknown="false"
+                input="/overzicht/zoeken.jsp" scope="request">
+            <forward name="success" path="/overzicht/zoeken.jsp" redirect="false"/>
+        </action>
+
+        <action path="/zoeken" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.SearchAction" name="SearchForm"
+                unknown="false" validate="true" input="/overzicht/zoeken.jsp" scope="session">
+            <forward name="success" path="/overzicht/resultaat.jsp" redirect="false"/>
+        </action>
+
+        <action path="/initZoekOpnieuw" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.InitSearchAction"
+                unknown="false" input="/overzicht/resultaat.jsp" scope="request">
+            <forward name="success" path="/overzicht/zoeken.jsp" redirect="false"/>
+        </action>
+
+        <action path="/zoekenVervolg" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.NavigateResultsAction"
+                unknown="false" input="/overzicht/resultaat.jsp" parameter="method" scope="session">
+            <forward name="success" path="/overzicht/resultaat.jsp" redirect="false"/>
+        </action>
+
+        <!-- === SEARCH ACTIONS EXTERNE RAADPLEGER === -->
+
+        <action path="/initZoekenExtern" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.InitSearchAction"
+                unknown="false" scope="request">
+            <forward name="success" path="/overzicht/zoekenextern.jsp" redirect="false"/>
+        </action>
+
+        <action path="/zoekenExtern" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.SearchAction" name="SearchForm"
+                unknown="false" validate="true" input="/overzicht/zoekenextern.jsp" scope="session">
+            <forward name="success" path="/overzicht/resultaatextern.jsp" redirect="false"/>
+        </action>
+
+        <action path="/zoekenVervolgExtern" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.NavigateResultsAction"
+                unknown="false" input="/overzicht/resultaatextern.jsp" parameter="method" scope="request">
+            <forward name="success" path="/overzicht/resultaatextern.jsp" redirect="false"/>
+        </action>
+
+        <!-- === SEARCH ACTIONS KOPPELEN TEXT === -->
+
+        <action path="/initZoekenKoppelTXT" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.InitSearchAction"
+                unknown="false" scope="request">
+            <forward name="success" path="/overzicht/zoekenkoppelTXT.jsp" redirect="false"/>
+        </action>
+
+        <action path="/zoekenKoppelTXT" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.SearchAction" name="SearchForm"
+                unknown="false" validate="true" input="/overzicht/zoekenkoppelTXT.jsp" scope="session">
+            <forward name="success" path="/overzicht/resultaatkoppelTXT.jsp" redirect="false"/>
+        </action>
+
+        <action path="/zoekenVervolgKoppelTXT" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.NavigateResultsAction"
+                unknown="false" input="/overzicht/resultaatkoppelTXT.jsp" parameter="method" scope="request">
+            <forward name="success" path="/overzicht/resultaatkoppelTXT.jsp" redirect="false"/>
+        </action>
+
+        <action path="/koppelTeksten" type="be.vlaanderen.sbs.s6.taaladvies.oproep.KoppelTekstenAction" unknown="false"
+                scope="session" name="SearchForm" validate="false">
+            <forward name="success" path="/oproep/taalvrageninvoerEKTRON.jsp" redirect="false"/>
+        </action>
+
+        <!-- === SEARCH ACTIONS KOPIEREN TLV === -->
+
+        <action path="/initZoekenKopieerTLV" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.InitSearchAction"
+                unknown="false" scope="request">
+            <forward name="success" path="/overzicht/zoekenkopieerTLV.jsp" redirect="false"/>
+        </action>
+
+        <action path="/zoekenKopieerTLV" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.SearchAction" name="SearchForm"
+                unknown="false" validate="true" input="/overzicht/zoekenkopieerTLV.jsp" scope="session">
+            <forward name="success" path="/overzicht/resultaatkopieerTLV.jsp" redirect="false"/>
+        </action>
+
+        <action path="/zoekenVervolgKopieerTLV" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.NavigateResultsAction"
+                unknown="false" input="/overzicht/resultaatkopieerTLV.jsp" parameter="method" scope="request">
+            <forward name="success" path="/overzicht/resultaatkopieerTLV.jsp" redirect="false"/>
+        </action>
+
+        <!-- === SEARCH ACTIONS KOPIEREN TXT === -->
+
+        <action path="/initZoekenKopieerTXT" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.InitSearchAction"
+                unknown="false" scope="request">
+            <forward name="success" path="/overzicht/zoekenkopieerTXT.jsp" redirect="false"/>
+        </action>
+
+        <action path="/zoekenKopieerTXT" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.SearchAction" name="SearchForm"
+                unknown="false" validate="true" input="/overzicht/zoekenkopieerTXT.jsp" scope="session">
+            <forward name="success" path="/overzicht/resultaatkopieerTXT.jsp" redirect="false"/>
+        </action>
+
+        <action path="/zoekenVervolgKopieerTXT" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.NavigateResultsAction"
+                unknown="false" input="/overzicht/resultaatkopieerTXT.jsp" parameter="method" scope="request">
+            <forward name="success" path="/overzicht/resultaatkopieerTXT.jsp" redirect="false"/>
+        </action>
+
+        <!-- === SEARCH ACTIONS MATTIJS === -->
+
+        <action path="/initSearch2" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.InitSearch2Action"
+                name="Search2Form" unknown="false" validate="false" scope="session">
+            <forward name="success" path="/overzicht/search2.jsp" redirect="true"/>
+        </action>
+
+        <action path="/search2" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.Search2Action" name="Search2Form"
+                unknown="false" validate="true" input="/overzicht/search2.jsp" scope="session">
+            <forward name="success" path="/overzicht/search2result.jsp" redirect="true"/>
+        </action>
+
+        <action path="/change2" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.Change2Action" name="Result2Form"
+                unknown="false" validate="false" scope="session">
+            <forward name="success" path="/overzicht/search2result.jsp" redirect="true"/>
+        </action>
+
+        <action path="/initGetCategorieForSearch"
+                type="be.vlaanderen.sbs.s6.taaladvies.overzicht.InitGetCategorieForSearchAction" name="SearchForm"
+                unknown="false" validate="false" scope="session">
+            <forward name="success" path="/overzicht/getcategorieforsearch.jsp" redirect="true"/>
+        </action>
+
+        <action path="/getCategorieForSearch"
+                type="be.vlaanderen.sbs.s6.taaladvies.overzicht.GetCategorieForSearchAction"
+                name="GetCategorieForSearchForm" unknown="false" validate="true" scope="session">
+            <forward name="success" path="/overzicht/getcategorieforsearch.jsp" redirect="false"/>
+            <forward name="KPTLV" path="/overzicht/zoekenkopieerTLV.jsp" redirect="false"/>
+            <forward name="KPTXT" path="/overzicht/zoekenkopieerTXT.jsp" redirect="false"/>
+            <forward name="ZK" path="/overzicht/zoeken.jsp" redirect="false"/>
+            <forward name="ZKEXT" path="/overzicht/zoekenextern.jsp" redirect="false"/>
+            <forward name="ZKKOP" path="/overzicht/zoekenkoppelTXT.jsp" redirect="false"/>
+        </action>
+
+        <action path="/editeerModus" type="be.vlaanderen.sbs.s6.taaladvies.overzicht.EditeerModusAction"
+                name="EditeerModusForm" validate="true" scope="session">
+        </action>
+
+        <action path="/verwijderOpTeLadenOproepen" type="be.vlaanderen.sbs.s6.taaladvies.VerwijderOpTeLadenOproepenAction" name="VerwijderOpTeLadenOproepenForm" unknown="false"
+                validate="true" input="/verwijderOpTeLadenOproepen.jsp" scope="session">
+            <forward name="success" path="/verwijderOpTeLadenOproepen.jsp" redirect="false"/>
+        </action>
+    </action-mappings>
+</struts-config>

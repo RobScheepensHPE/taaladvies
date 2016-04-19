@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+
+<WebWorksHelpTOC version="2.0">
+    <i l="introduc.htm#438886" t="Introduction to eWebEditPro">
+      <i l="introdu2.htm#440903" t="Using eWebEditPro"/>
+      <i l="introdu3.htm#440695" t="Organization of this Documentation"/>
+    </i>
+    <i l="samplewe.htm#442464" t="Creating a Simple Web Page">
+      <i l="samplew2.htm#443184" t="Your Finished Web Page"/>
+      <i l="samplew3.htm#439229" t="Creating the Sample Web Page">
+        <i l="samplew3.htm#439244" t="Enter the First Two Sentences"/>
+        <i l="samplew3.htm#441154" t="Creating a Hyperlink"/>
+        <i l="samplew3.htm#441308" t="Applying a Bullet to a Line of Text"/>
+        <i l="samplew3.htm#441509" t="Changing the Size of Text"/>
+      </i>
+    </i>
+    <i l="tableoft.htm#427149" t="Toolbar Buttons">
+      <i l="tableof2.htm#454650" t="Selecting Text"/>
+      <i l="tableof3.htm#453840" t="Applying Formatting Attributes to Text"/>
+      <i l="tableof4.htm#452719" t="Table of Toolbar Buttons and Drop-Down Lists">
+        <i l="tableof5.htm#462155" t="Position Objects Options"/>
+        <i l="tableof6.htm#457345" t="Text Direction Options"/>
+        <i l="tableof7.htm#458399" t="Form Elements Toolbar"/>
+        <i l="tableof8.htm#461222" t="Buttons of the Form Elements Toolbar"/>
+      </i>
+    </i>
+    <i l="customiz.htm#454988" t="Customizing Your Toolbar">
+      <i l="customi2.htm#443554" t="Removing Or Adding Menus"/>
+      <i l="customi3.htm#451788" t="Removing or Adding Menu Items">
+        <i l="customi3.htm#451806" t="Using the Customize Toolbar Dialog Box"/>
+        <i l="customi3.htm#451814" t="Rearranging the Items on a Menu"/>
+      </i>
+      <i l="customi4.htm#451774" t="Restoring Toolbars"/>
+      <i l="customi5.htm#444545" t="Rearranging the Menus on a Toolbar"/>
+      <i l="customi6.htm#445246" t="Creating a New Menu"/>
+      <i l="customi7.htm#445504" t="Moving a Menu Off the Toolbar"/>
+      <i l="customi8.htm#445711" t="Changing the Menu's Orientation"/>
+    </i>
+    <i l="contexts.htm#439794" t="The Context Sensitive Menu"/>
+    <i l="introtou.htm#427149" t="Using eWebEditPro's Advanced Features"/>
+    <i l="copya.htm#427149" t="Copying from Other Applications"/>
+    <i l="finda.htm#427149" t="Finding and Replacing Text">
+      <i l="find2.htm#440890" t="Finding Text"/>
+      <i l="find3.htm#440673" t="Finding and Replacing Text"/>
+      <i l="find4.htm#440826" t="Additional Options on the Dialog Box">
+        <i l="find5.htm#440169" t="Specifying a Search Direction"/>
+        <i l="find6.htm#440192" t="Considering the Case of a Search Term"/>
+        <i l="find7.htm#440200" t="Whole Word Match"/>
+      </i>
+    </i>
+    <i l="spellchb.htm#427149" t="Checking Spelling">
+      <i l="spellch2.htm#441381" t="Disabling Script Blocking"/>
+      <i l="spellch3.htm#438917" t="Checking Spelling as You Type">
+        <i l="spellch3.htm#438931" t="Fixing Spelling Errors"/>
+      </i>
+      <i l="spellch4.htm#439023" t="Checking Spelling Upon Demand">
+        <i l="spellch4.htm#439223" t="The Spelling Dialog Box"/>
+        <i l="spellch5.htm#441446" t="Spell Checking Selected Text"/>
+      </i>
+      <i l="spellch6.htm#442031" t="Setting Spell Check Options"/>
+    </i>
+    <i l="msworda.htm#440736" t="Editing in Microsoft Word">
+      <i l="msword2.htm#441969" t="Uploading an Image in a Microsoft Word Document"/>
+      <i l="msword3.htm#442004" t="Editing XML Documents"/>
+    </i>
+    <i l="pictures.htm#454379" t="Inserting Images">
+      <i l="picture2.htm#452096" t="Using the First Picture Properties Dialog Box">
+        <i l="picture3.htm#455410" t="Inserting a Picture from the Server"/>
+        <i l="picture4.htm#445339" t="Inserting a Picture from Your Computer"/>
+      </i>
+      <i l="picture5.htm#454060" t="Using the Second Media Selection Dialog Box">
+        <i l="picture5.htm#448212" t="The Picture Properties Dialog Box"/>
+        <i l="picture6.htm#447982" t="Adjusting a Picture"/>
+        <i l="picture7.htm#439005" t="Pixels"/>
+        <i l="picture8.htm#456386" t="Setting a Border"/>
+        <i l="picture9.htm#439216" t="Aligning the Picture"/>
+        <i l="pictur10.htm#439685" t="Resetting Width, Height, Border Thickness, and Alignment"/>
+        <i l="pictur11.htm#447456" t="Adding Space around the Picture"/>
+        <i l="pictur12.htm#439467" t="Editing the Picture's Title"/>
+        <i l="pictur13.htm#448376" t="The Options Button"/>
+      </i>
+      <i l="pictur14.htm#463717" t="Moving an Image to the Server"/>
+      <i l="pictur15.htm#463783" t="Deleting a Picture"/>
+    </i>
+    <i l="imageedi.htm#438886" t="Editing Images">
+      <i l="imageed2.htm#441914" t="Using WebImageFX">
+        <i l="imageed2.htm#479933" t="Choosing the Image"/>
+        <i l="imageed3.htm#492154" t="Saving the Image"/>
+      </i>
+      <i l="imageed4.htm#492167" t="Toolbar Buttons and Menu Commands">
+        <i l="imageed4.htm#452885" t="File Menu Options"/>
+        <i l="imageed4.htm#444806" t="Edit Menu Options"/>
+        <i l="imageed4.htm#466549" t="View Menu Options"/>
+        <i l="imageed4.htm#469216" t="Image Menu Options"/>
+        <i l="imageed4.htm#470061" t="Annotation Menu Options"/>
+        <i l="imageed5.htm#442082" t="Blur"/>
+        <i l="imageed6.htm#444845" t="Brightness"/>
+        <i l="imageed7.htm#487602" t="Choose Color"/>
+        <i l="imageed8.htm#487617" t="Choose Font"/>
+        <i l="imageed9.htm#487571" t="Color Depth"/>
+        <i l="imagee10.htm#445281" t="Contrast"/>
+        <i l="imagee11.htm#445550" t="Copy"/>
+        <i l="imagee12.htm#459967" t="Create New"/>
+        <i l="imagee13.htm#459932" t="Crop"/>
+        <i l="imagee14.htm#444519" t="Delete"/>
+        <i l="imagee15.htm#446037" t="Dimensions"/>
+        <i l="imagee16.htm#490282" t="Exit"/>
+        <i l="imagee17.htm#495876" t="Freehand"/>
+        <i l="imagee18.htm#471283" t="Horizontal Flip"/>
+        <i l="imagee19.htm#448674" t="Image Info"/>
+        <i l="imagee20.htm#472721" t="Line"/>
+        <i l="imagee21.htm#460773" t="Open"/>
+        <i l="imagee22.htm#474154" t="Oval"/>
+        <i l="imagee23.htm#487358" t="Paste as New Image"/>
+        <i l="imagee24.htm#494248" t="Pointer Selection"/>
+        <i l="imagee25.htm#474534" t="Polygon"/>
+        <i l="imagee26.htm#476812" t="Rectangle"/>
+        <i l="imagee27.htm#475492" t="Redo"/>
+        <i l="imagee28.htm#448315" t="Reset Zoom Ratio"/>
+        <i l="imagee29.htm#444461" t="Rotate"/>
+        <i l="imagee30.htm#478527" t="Save"/>
+        <i l="imagee31.htm#461504" t="Save As"/>
+        <i l="imagee32.htm#461481" t="Select"/>
+        <i l="imagee33.htm#444567" t="Sharpen"/>
+        <i l="imagee34.htm#465894" t="Text"/>
+        <i l="imagee35.htm#465767" t="Thumbnail"/>
+        <i l="imagee36.htm#465748" t="Twain Acquire"/>
+        <i l="imagee37.htm#462320" t="Twain Source"/>
+        <i l="imagee38.htm#462282" t="Undo"/>
+        <i l="imagee39.htm#495992" t="Vertical Flip"/>
+        <i l="imagee40.htm#446300" t="Zoom In"/>
+        <i l="imagee41.htm#444577" t="Zoom Out"/>
+      </i>
+      <i l="imagee42.htm#442494" t="Specifying Color Depth"/>
+    </i>
+    <i l="tables.htm#427149" t="Introduction to Tables">
+      <i l="tables2.htm#453322" t="Creating a Table"/>
+      <i l="tables3.htm#440892" t="Deleting a Table"/>
+      <i l="tables4.htm#439918" t="Inserting a Table within a Table"/>
+    </i>
+    <i l="dialogbo.htm#427149" t="Table Dialog Boxes and Menus">
+      <i l="dialogb2.htm#444338" t="The Insert Table Menu"/>
+      <i l="dialogb3.htm#439138" t="The Table Properties Dialog Box"/>
+      <i l="dialogb4.htm#439511" t="The Cell Properties Dialog Box"/>
+      <i l="dialogb5.htm#439959" t="The Table Context Sensitive Menu"/>
+    </i>
+    <i l="manipula.htm#427149" t="Manipulating Your Table's Format">
+      <i l="manipul2.htm#439012" t="Choosing the Number of Rows and Columns">
+        <i l="manipul2.htm#448112" t="Placement of Inserted Row or Column"/>
+        <i l="manipul2.htm#439025" t="Adding or Removing Rows and Columns"/>
+      </i>
+      <i l="manipul3.htm#439121" t="Specifying Table Width">
+        <i l="manipul4.htm#439126" t="Specifying Table Width by Percentage"/>
+        <i l="manipul5.htm#439144" t="Specifying Table Width by Pixels"/>
+      </i>
+      <i l="manipul6.htm#442369" t="Specifying Horizontal Alignment"/>
+      <i l="manipul7.htm#447754" t="Table Backgrounds">
+        <i l="manipul8.htm#447761" t="Specifying a Table's Background Color"/>
+        <i l="manipul9.htm#446201" t="Specifying a Background Image for a Table"/>
+      </i>
+      <i l="manipu10.htm#444585" t="Setting Table Borders">
+        <i l="manipu11.htm#444589" t="Assigning Border Color"/>
+        <i l="manipu12.htm#439806" t="Assigning Border Size"/>
+      </i>
+    </i>
+    <i l="cellprop.htm#427149" t="Working with Table Cells">
+      <i l="cellpro2.htm#442591" t="Specifying the Width of a Cell"/>
+      <i l="cellpro3.htm#452245" t="Inserting a Cell"/>
+      <i l="cellpro4.htm#452377" t="Deleting a Cell"/>
+      <i l="cellpro5.htm#452310" t="Setting a Cell's Border Color"/>
+      <i l="cellpro6.htm#441705" t="Specifying a Cell's Background Color">
+        <i l="cellpro6.htm#451570" t="Deleting a Cell's Background Color"/>
+      </i>
+      <i l="cellpro7.htm#450699" t="Specifying a Background Image for a Cell">
+        <i l="cellpro7.htm#450720" t="Deleting a Background Image"/>
+        <i l="cellpro8.htm#449487" t="Using the Color Box"/>
+      </i>
+      <i l="cellpro9.htm#441701" t="Spanning Rows or Columns">
+        <i l="cellpr10.htm#439058" t="Spanning More than One Row or Column"/>
+      </i>
+      <i l="cellpr11.htm#441828" t="Aligning Text Within a Cell">
+        <i l="cellpr12.htm#441830" t="Setting Horizontal Alignment"/>
+        <i l="cellpr13.htm#441858" t="Setting Vertical Alignment"/>
+      </i>
+      <i l="cellpr14.htm#441931" t="Splitting a Cell"/>
+      <i l="cellpr15.htm#442257" t="Merging Two Cells"/>
+      <i l="cellpr16.htm#442311" t="Word Wrap"/>
+      <i l="cellpr17.htm#442832" t="Setting Cell Padding and Spacing">
+        <i l="cellpr17.htm#451231" t="Assigning Cell Padding"/>
+        <i l="cellpr17.htm#442851" t="Assigning Cell Spacing"/>
+      </i>
+    </i>
+    <i l="bookmara.htm#427149" t="Using Bookmarks">
+      <i l="bookmar2.htm#442361" t="Creating a Bookmark"/>
+      <i l="bookmar3.htm#442393" t="Changing the Destination Window"/>
+    </i>
+    <i l="hyperlib.htm#427149" t="Using Hyperlinks">
+      <i l="hyperli2.htm#442923" t="Creating a Hyperlink">
+        <i l="hyperli3.htm#441629" t="Using a Quick Link"/>
+        <i l="hyperli4.htm#441842" t="Entering a Hyperlink Manually"/>
+      </i>
+      <i l="hyperli5.htm#439780" t="Testing a Hyperlink"/>
+      <i l="hyperli6.htm#440015" t="Creating a Hyperlink to a Location Within a Web Page"/>
+      <i l="hyperli7.htm#440076" t="Editing a Hyperlink"/>
+      <i l="hyperli8.htm#442208" t="Removing a Hyperlink"/>
+      <i l="hyperli9.htm#439904" t="Preventing a URL from Becoming a Hyperlink"/>
+    </i>
+    <i l="html.htm#427149" t="Working with HTML">
+      <i l="html2.htm#443493" t="Viewing and Editing HTML">
+        <i l="html3.htm#440352" t="Editing a Section of a Page"/>
+      </i>
+      <i l="html4.htm#439143" t="Inserting HTML"/>
+      <i l="html5.htm#440340" t="Cleaning HTML"/>
+      <i l="html6.htm#443325" t="Inserting Content from MS Office 2000"/>
+    </i>
+    <i l="508.htm#427149" t="Section 508 Compliance">
+      <i l="5082.htm#440225" t="Moving the Cursor into eWebEditPro">
+        <i l="5082.htm#440269" t="Using Internet Explorer"/>
+        <i l="5082.htm#440273" t="Using Netscape"/>
+      </i>
+      <i l="5083.htm#440282" t="Using eWebEditPro without a Mouse"/>
+      <i l="5084.htm#441116" t="Section 508 Tables"/>
+    </i>
+
+</WebWorksHelpTOC>

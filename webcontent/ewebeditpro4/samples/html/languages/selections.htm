@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Select Language</title>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+
+<base target="main">
+
+</head>
+<body style="font-family:Verdana,sans-serif">
+<h3>Language Sample</h3>
+<form name="frmSelect">
+	<p>Select language for menus and dialogs: 
+	<select name="language" size="1" onChange="parent.main.location.reload()">
+		<option value="locale0401b.xml,windows-1256">Arabic</option>
+		<option value="locale0804b.xml,gb2312">Chinese (Simplified)</option>
+		<option value="locale0404b.xml,big5">Chinese (Traditional)</option>
+		<option value="locale0406b.xml,iso-8859-1">Danish</option>
+	    <option value="locale0413b.xml,iso-8859-1">Dutch</option>
+    	<option value="locale0000b.xml,iso-8859-1" selected>English</option>
+		<option value="locale040cb.xml,iso-8859-1">French</option>
+		<option value="locale0407b.xml,iso-8859-1">German</option>
+		<option value="locale040db.xml,iso-8859-8">Hebrew</option>
+		<option value="locale0410b.xml,iso-8859-1">Italian</option>
+		<option value="locale0411b.xml,shift_jis">Japanese</option>
+		<option value="locale0412b.xml,euc-kr">Korean</option>
+		<option value="locale0816b.xml,iso-8859-1">Portuguese</option>
+		<option value="locale0419b.xml,windows-1251">Russian</option>
+		<option value="locale040ab.xml,iso-8859-1">Spanish</option>
+		<option value="locale041db.xml,iso-8859-1">Swedish</option>
+	</select>
+	<br>
+	<font size=1>
+	When you select a language from the drop-down list, only the tooltips and dialog boxes change - the text inside the editor does not change.</font>
+	</p>
+</form>
+</body>
+</html>

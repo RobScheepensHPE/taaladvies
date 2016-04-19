@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="lib2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/batches/lib/commons-lang-2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/batches/lib/htmlparser.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/batches/lib/xercesImpl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/batches/lib/commons-httpclient-2.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/batches/lib/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/batches/lib/ifxjdbc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/batches/lib/htmllexer.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/batches/lib/log4j-1.2.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/batches/lib/jdom.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/batches/lib/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/batches/lib/ifxjdbcx.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/batches/lib/xmlParserAPIs.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/batches/lib/activation.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

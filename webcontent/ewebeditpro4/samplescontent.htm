@@ -1,0 +1,495 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--
+	Ektron, Inc.
+	Revision Date: 2004-07-08
+-->
+<html>
+<head>
+	<title>eWebEditPro Samples</title>
+	<script src="ewepsamples.js" language="JavaScript1.2"></script>
+	<style>
+	H1 { font-size: 14pt }
+	H2 { font-size: 12pt; margin-bottom: 6 }
+	H3 { font-size: 10pt; margin-top: 6; margin-bottom: 0 }
+	LI { font-size: 10pt; font-weight: bold; font-style: italic }
+	BODY { font-family: Arial; font-size: 10pt; font-weight: bold; margin: 10pt 0pt 0pt 10pt; padding: 0pt 0pt 0pt 0pt; background: #69c  }
+	.errmsg { color: red }
+	.value { font-weight: bold }
+	.noDisplay	{display:none;}
+	</style> 
+	<script language="JavaScript1.2" type="text/javascript">
+	<!--
+		var bIsStatis = false;
+		var ua = window.navigator.userAgent.toLowerCase();
+		var bIsOpera = (ua.indexOf("opera") > -1);
+		var bIsNetscape = (window.navigator.appName == "Netscape");
+		bIsStatis = bIsOpera || bIsNetscape;
+
+		function eWebEditProUtil_parseQuery()
+		{
+			var objQuery = new Object();
+			var strQuery = location.search.substring(1);
+			// escape() encodes space as "%20".
+			// If space is encoded as "+", then use the following line
+			// in your customized function.
+			// strQuery = strQuery.replace(/\+/g, " ");
+			var aryQuery = strQuery.split("&");
+			var pair = [];
+			for (var i = 0; i < aryQuery.length; i++)
+			{
+				pair = aryQuery[i].split("=");
+				if (2 == pair.length)
+				{
+					objQuery[unescape(pair[0])] = unescape(pair[1]);
+				}
+			}
+			return objQuery;
+		}
+		
+		function ListSamples(strPlatform)
+		{
+			var strText = "";
+			if ("webimagefx" == strPlatform)
+			{
+				strText = '<p><h3>WebImageFX Samples</h3></p>';
+				if (g_ASPWifxSvr)
+				{
+					strText += '<p><li><a href="samples/asp/imageeditsvr/imageeditsvr.htm" target="samplepage">Server-side Image Editor (ASP)</a></p>';
+				}
+				if (g_HTMLWifxClient)
+				{
+					strText += '<p><li><a href="samples/html/imageeditclient/testimageedit.htm" target="samplepage">Client-side Image Editor (HTML)</a></p>';
+				}
+			}	
+			else if ("datadesign" == strPlatform)
+			{
+				strText = '<p><h3>Data Design Samples</h3></p>';
+				if (g_ASPDataDesign)
+				{
+					strText += '<p><li><a href="samples/asp/datadesign/index.asp" target="samplepage">Database Examples (ASP)</a></p>';
+				}
+				if (g_ASPJobDesign)
+				{
+					strText += '<p><li><a href="samples/asp/design_job/index.asp" target="samplepage">Job Data Design (ASP)</a></p>';
+				}
+				if (g_ASPRealEstate)
+				{
+					strText += '<p><li><a href="samples/asp/realestate/index.asp" target="samplepage">Real Estate Sample (ASP)</a></p>';
+				}
+				if (g_CFRealEstate)
+				{
+					strText += '<p><li><a href="samples/coldfusion/realestate/index.cfm" target="samplepage">Real Estate Sample (ColdFusion)</a></p>';
+				}
+				if (g_XMLDDesignAPI)
+				{
+					strText += '<p><li><a href="samples/xml/datadesignapi/datadesignapi.htm" target="samplepage">Access to Data Designer Data Field (XML)</a></p>';
+				}
+			}
+			else if ("asp" == strPlatform)
+			{
+				strText = '<p><h3>ASP Samples</h3></p>';
+				if (g_ASPComment)
+				{
+					strText += '<p><li><a href="samples/asp/comment/index.asp" target="samplepage">Comment Sample</a></p>';
+				}
+				if (g_ASPDatabase)
+				{
+				strText += '<p><li><a href="samples/asp/database/index.asp" target="samplepage">Database Sample</a></p>';
+				}	
+				if (g_ASPDataDesign)
+				{
+					strText += '<p><li><a href="samples/asp/datadesign/index.asp" target="samplepage">Data Design Sample</a></p>';
+				}
+				if (g_ASPDyConfigAPI)
+				{
+					strText += '<p><li><a href="samples/asp/dynamicconfig/dynamicconfig.asp" target="samplepage">Dynamic Configuration API</a></p>';
+				}
+				if (g_ASPJobDesign)
+				{
+					strText += '<p><li><a href="samples/asp/design_job/index.asp" target="samplepage">Job Data Design</a></p>';
+				}
+				if (g_ASPEditFile)
+				{
+				strText += '<p><li><a href="samples/asp/editfile/editfile.asp" target="samplepage">Edit File</a></p>';	
+				}
+				if (g_ASPMultiEdit)
+				{
+				strText += '<p><li><a href="samples/asp/multiedit/multiedit.asp" target="samplepage">Multiedit</a></p>';
+				}
+				if (g_ASPRealEstate)
+				{
+					strText += '<p><li><a href="samples/asp/realestate/index.asp" target="samplepage">Real Estate Sample</a></p>';
+				}
+				if (g_ASPWifxSvr)
+				{
+					strText += '<p><li><a href="samples/asp/imageeditsvr/imageeditsvr.htm" target="samplepage">Server-side Image Editor</a></p>';
+				}
+				if (g_ASPJobEdit)
+				{
+					strText += '<p><li><a href="samples/asp/xml_xslt_job/index.asp" target="samplepage">XML XSLT Job</a></p>';	
+				}
+			}
+			else if("aspnet" == strPlatform)
+			{
+				strText = '<p><h3>ASP.NET Samples</h3></p>';
+				if (g_ASPNETEditFile)
+				{
+				strText += '<p><li><a href="samples/aspnet/editfile/editfile.aspx" target="samplepage">Edit File</a></p>';
+				}
+				if (g_ASPNETSvrCtl)
+				{
+				strText += '<p><li><a href="samples/aspnet/multiedit/help/setup_instruction.htm" target="samplepage">Server Setup Instruction</a></p>';	
+				strText += '<p><li><a href="samples/aspnet/multiedit/multiedit.aspx" target="samplepage">Multiedit Server Control</a></p>';
+				}
+				if (g_ASPNETUserCtl)
+				{
+				strText += '<p><li><a href="samples/aspnet/multiedituserctl/multiedituserctl.aspx" target="samplepage">Multiedit User Control</a></p>';
+				}
+				if (g_ASPNETMultiEdit)
+				{
+				strText += '<p><li><a href="samples/aspnet/multieditasp/multieditasp.aspx" target="samplepage">Multiedit</a></p>';
+				}
+				if (g_ASPNETMultiConfig)
+				{
+				strText += '<p><li><a href="samples/aspnet/multiconfig/multiconfig.aspx" target="samplepage">Multiple Configuration</a></p>';	
+				}
+				if (g_ASPNETJobEdit)
+				{
+					strText += '<p><li><a href="samples/aspnet/xml_xslt_job/index.aspx" target="samplepage">XML XSLT Job</a></p>';	
+				}
+			}
+			else if("coldfusion" == strPlatform)
+			{
+				strText = '<p><h3>ColdFusion Samples</h3></p>';
+				if (g_CFDatabase)
+				{
+				strText += '<p><li><a href="samples/coldfusion/database/index.cfm" target="samplepage">Database Sample</a></p>';
+				}
+				if (g_CFEditFile)
+				{
+				strText += '<p><li><a href="samples/coldfusion/editfile/editfile.cfm" target="samplepage">Edit File</a></p>';
+				}
+				if (g_CFMultiEdit)
+				{
+				strText += '<p><li><a href="samples/coldfusion/multiedit/multiedit.cfm" target="samplepage">Multiedit</a></p>';
+				}
+				if (g_CFRealEstate)
+				{
+					strText += '<p><li><a href="samples/coldfusion/realestate/index.cfm" target="samplepage">Real Estate Sample</a></p>';
+				}
+				if (g_CFJobEdit)
+				{
+					strText += '<p><li><a href="samples/coldfusion/xml_xslt_job/index.cfm" target="samplepage">XML XSLT Job</a></p>';
+				}
+			}
+			else if("html" == strPlatform)
+			{
+				strText = '<p><h3>HTML Samples</h3></p>';
+				if (g_HTMLWifxClient)
+				{
+					strText += '<p><li><a href="samples/html/imageeditclient/testimageedit.htm" target="samplepage">Client-side Image Editor</a></p>';
+				}
+				if (g_HTMLStyle)
+				{
+				strText += '<p><li><a href="samples/html/editorwithstyle/editorwithstyle.htm" target="samplepage">Editor with Style</a></p>';
+				}
+				if (g_HTMLLanguages)
+				{
+				strText += '<p><li><a href="samples/html/languages/languages.htm" target="samplepage">Languages</a></p>';
+				}
+				if (g_HTMLMethods)
+				{
+				strText += '<p><li><a href="samples/html/methods/ewebeditpromethods.htm" target="samplepage">Methods</a></p>';
+				}
+				if (g_HTMLXHTML)
+				{
+				strText += '<p><li><a href="samples/html/xhtml/xhtml.htm" target="samplepage">XHTML</a></p>';
+				}
+			}
+			else if("jsp" == strPlatform)
+			{
+				strText = '<p><h3>JSP Samples</h3></p>';
+				if (g_JSPDatabase)
+				{
+				strText += '<p><li><a href="samples/jsp/database/index.jsp" target="samplepage">Database Sample</a></p>';
+				}
+				if (g_JSPMultiEdit)
+				{
+				strText += '<p><li><a href="samples/jsp/multiedit/multiedit.jsp" target="samplepage">Multiedit</a></p>';
+				}
+				if (g_JSPJobEdit)
+				{
+					strText += '<p><li><a href="samples/jsp/xml_xslt_job/index.jsp" target="samplepage">XML XSLT Job</a></p>';
+				}
+			}
+			else if("lasso" == strPlatform)
+			{
+				strText = '<p><h3>Lasso Sample</h3></p>';
+				if (g_samplesLasso)
+				{
+				strText += '<p><a href="samples/lasso/multiedit/multiedit.lasso" target="samplepage">Multiedit</a></p>';
+				}
+			}
+			else if("php" == strPlatform)
+			{
+				strText = '<p><h3>PHP Samples</h3></p>';
+				if (g_PHPDatabase)
+				{
+				strText += '<p><li><a href="samples/php/database/index.php" target="samplepage">Database Sample</a></p>';
+				}
+				if (g_PHPMultiEdit)
+				{
+				strText += '<p><li><a href="samples/php/multiedit/multiedit.php" target="samplepage">Multiedit</a></p>';
+				}
+				if (g_PHPJobEdit)
+				{
+					strText += '<p><li><a href="samples/php/xml_xslt_job/index.php" target="samplepage">XML XSLT Job</a></p>';
+				}
+			}
+			else if("xml" == strPlatform)
+			{
+				strText = '<p><h3>XML Samples</h3></p>';
+				if (g_XMLDDesignAPI)
+				{
+					strText += '<p><li><a href="samples/xml/datadesignapi/datadesignapi.htm" target="samplepage">Access to Data Designer Data Field</a></p>';
+				}
+				if (g_XMLDblClick)
+				{
+				strText += '<p><li><a href="samples/xml/doubleclick/xmldoubleclkedittag.htm" target="samplepage">Double Click</a></p>';
+				}
+				if (g_XMLFaq)
+				{
+				strText += '<p><li><a href="samples/xml/faq/faqedit.htm" target="samplepage">FAQ</a></p>';
+				}
+				if (g_XMLFeatures)
+				{
+				strText += '<p><li><a href="samples/xml/features/xmlfeatures.htm" target="samplepage">Features</a></p>';
+				}
+				if (g_XMLFunctions)
+				{
+				strText += '<p><li><a href="samples/xml/functions/xmlfunctions.htm" target="samplepage">Functions</a></p>';
+				}
+				if (g_XMLKB)
+				{
+				strText += '<p><li><a href="samples/xml/kb/kbedit.htm" target="samplepage">KB</a></p>';
+				}
+				if (g_XMLNews)
+				{
+				strText += '<p><li><a href="samples/xml/news/news.htm" target="samplepage">News</a></p>';
+				}
+				if (g_XMLNoRootTag)
+				{
+				strText += '<p><li><a href="samples/xml/noroottag/noroottag.htm" target="samplepage">Hidden Root Tag</a></p>';
+				}
+				if (g_XMLPoem)
+				{
+				strText += '<p><li><a href="samples/xml/poem/poem.htm" target="samplepage" target="samplepage">Poem</a></p>';
+				}
+				if (g_XMLSchema)
+				{
+				strText += '<p><li><a href="samples/xml/schemas/xmlschemas.htm" target="samplepage" target="samplepage">Schema</a></p>';
+				}
+				if (g_XMLTransform)
+				{
+				strText += '<p><li><a href="samples/xml/transformation/xmltransformation.htm" target="samplepage">Transformation</a></p>';
+				}
+				if (g_XMLValidation)
+				{
+				strText += '<p><li><a href="samples/xml/validation/xmlvalidation.htm" target="samplepage">Validation</a></p>';
+				}
+				if (g_XMLView)
+				{
+				strText += '<p><li><a href="samples/xml/xmlview/select-view.htm" target="samplepage">XML View</a></p>';
+				}
+			}
+			return strText;
+		}	
+		
+		
+	//-->
+	</script>
+</head>
+
+<body>
+<p><h2 align="center">CONTENT</h2></p>
+<p>
+	<a href="samplepage.htm" target="samplepage">Product Information</a>
+</p>
+<p>
+	<a href="test.htm" target="samplepage">eWebEditPro Test</a>
+</p>
+<script language="JavaScript1.2">
+<!--
+if (typeof g_samplesWebImageFX != "undefined" && true == g_samplesWebImageFX)
+{
+	document.write('<p>	<a href="webimagefx.htm" target="samplepage">WebImageFX Test</a></p>');
+}
+//-->
+</script>
+<p>
+	<a href="ewebeditpro.htm" target="samplepage">Multiple Editors</a>
+</p>
+<p>
+	<a href="testlang.htm" target="samplepage">Languages Test</a>
+</p>
+<script language="JavaScript1.2">
+<!--
+	if (true == g_samplesInstalled)
+	{
+		if (true == g_samplesDataDesign)
+		{
+			if (bIsStatis)
+			{
+				document.write('<p>' + ListSamples("datadesign") + '</p>');
+			}
+			else
+			{
+				document.write('<p><div id="listDD"><a href="samplescontent.htm?platform=datadesign">Data Design</a></div></p>');
+			}	
+		}
+		if (true == g_samplesASP)
+		{
+			if (bIsStatis)
+			{
+				document.write('<p>' + ListSamples("asp") + '</p>');
+			}
+			else
+			{
+				document.write('<p><div id="listASP"><a href="samplescontent.htm?platform=asp">ASP</a></div></p>');
+			}	
+		}
+		if (true == g_samplesASPNET)
+		{
+			if (bIsStatis)
+			{
+				document.write('<p>' + ListSamples("aspnet") + '</p>');
+			}
+			else
+			{
+				document.write('<p><div id="listASPNET"><a href="samplescontent.htm?platform=aspnet">ASP.NET</a></div></p>');
+			}
+		}
+		if (true == g_samplesColdFusion)
+		{
+			if (bIsStatis)
+			{
+				document.write('<p>' + ListSamples("coldfusion") + '</p>');
+			}
+			else
+			{
+				document.write('<p><div id="listCF"><a href="samplescontent.htm?platform=coldfusion">ColdFusion</a></div></p>');
+			}
+		}
+		if (true == g_samplesHTML)
+		{
+			if (bIsStatis)
+			{
+				document.write('<p>' + ListSamples("html") + '</p>');
+			}
+			else
+			{
+				document.write('<p><div id="listHTML"><a href="samplescontent.htm?platform=html">HTML</a></div></p>');
+			}
+		}
+		if (true == g_samplesJSP)
+		{
+			if (bIsStatis)
+			{
+				document.write('<p>' + ListSamples("jsp") + '</p>');
+			}
+			else
+			{
+				document.write('<p><div id="listJSP"><a href="samplescontent.htm?platform=jsp">JSP</a></div></p>');
+			}
+		}
+		if (true == g_samplesLasso)
+		{
+			document.write('<p><div id="listLasso"><a href="samples/lasso/multiedit/multiedit.lasso"  target="samplepage"><h3>Lasso</h3></a></div></p>');
+		}
+		if (true == g_samplesPHP)
+		{
+			if (bIsStatis)
+			{
+				document.write('<p>' + ListSamples("php") + '</p>');
+			}
+			else
+			{
+				document.write('<p><div id="listPHP"><a href="samplescontent.htm?platform=php">PHP</a></div></p>');
+			}
+		}
+		if (true == g_samplesXML)
+		{
+			if (bIsStatis)
+			{
+				document.write('<p>' + ListSamples("xml") + '</p>');
+			}
+			else
+			{
+				document.write('<p><div id="listXML"><a href="samplescontent.htm?platform=xml">XML</a></div></p>');
+			}
+		}
+		if (typeof g_samplesWebImageFX != "undefined" && true == g_samplesWebImageFX)
+		{
+			if (bIsStatis)
+			{
+				document.write('<p>' + ListSamples("webimagefx") + '</p>');
+			}
+			else
+			{
+				document.write('<p><div id="listWIFX"><a href="samplescontent.htm?platform=webimagefx">WebImageFX</a></div></p>');
+			}	
+		}
+	}
+	
+	var objQuery = eWebEditProUtil_parseQuery();
+	if (objQuery["platform"]) 
+	{
+		var strSample = objQuery["platform"];
+		strSample = strSample.toLowerCase();
+		var strHTML = ListSamples(strSample);
+		if ("datadesign" == strSample)
+		{
+			listDD.innerHTML = strHTML;
+		}
+		else if ("asp" == strSample)
+		{
+			listASP.innerHTML = strHTML;
+		}
+		else if ("aspnet" == strSample)
+		{
+			listASPNET.innerHTML = strHTML;
+		}
+		else if ("coldfusion" == strSample)
+		{
+			listCF.innerHTML = strHTML;
+		}
+		else if ("html" == strSample)
+		{
+			listHTML.innerHTML = strHTML;
+		}
+		else if ("jsp" == strSample)
+		{
+			listJSP.innerHTML = strHTML;
+		}
+		else if ("lasso" == strSample)
+		{
+			listLasso.innerHTML = strHTML;
+		}
+		else if ("php" == strSample)
+		{
+			listPHP.innerHTML = strHTML;
+		}
+		else if ("xml" == strSample)
+		{
+			listXML.innerHTML = strHTML;
+		}
+		else if ("webimagefx" == strSample)
+		{
+			listWIFX.innerHTML = strHTML;
+		}
+	}
+//-->
+</script>
+
+</body>
+</html>

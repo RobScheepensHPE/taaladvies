@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="us-ascii"?>
+
+  <!-- Taaltitel, Taalvraag, Herformulering, NaslagwerktielLang, Brontitel, Teksttitel, Tekstbloktitel -->
+<uiconfig>
+<toolbar collapse="true">
+	<button actionid="CUT"/>
+	<button actionid="COPY"/>
+	<button actionid="PASTE"/>
+	<!--<button actionid="INSERTTEXT"/>-->
+	<button actionid="FIND"/>
+	<separator/>
+	<button actionid="UNDO"/>
+	<button actionid="REDO"/>
+	<separator/>
+	<choice actionid="PARAGRAPHSTYLE"/>
+	<choice actionid="FONTTYPE"/>
+	<choice actionid="FONTSIZE"/>
+	<separator/>
+	<button actionid="BOLD"/>
+	<button actionid="ITALIC"/>
+	<button actionid="UNDERLINE"/>
+	<separator/>
+	<button actionid="SPELLCHECK"/>
+	<button actionid="SPECIALCHARACTER"/>
+	<separator/>
+	<button actionid="STANDALONE"/>
+	<button actionid="INFO"/>
+ </toolbar>
+</uiconfig>

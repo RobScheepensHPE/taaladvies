@@ -1,0 +1,787 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>eWebEditProNet</name>
+    </assembly>
+    <members>
+        <member name="T:eWebEditProNet.eWebEditProButtonTag">
+            <summary>
+            Renders the buttonTag JavaScript object.
+            </summary>
+        </member>
+        <member name="T:eWebEditProNet.JavaScriptObject">
+            <summary>
+            Summary description for JavaScriptObject.
+            </summary>
+        </member>
+        <member name="M:eWebEditProNet.JavaScriptObject.#ctor(System.String,System.Type)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="hierarchy">Specifies name of the parent object.</param>
+            <param name="propertyNameEnum"></param>
+        </member>
+        <member name="M:eWebEditProNet.JavaScriptObject.CreateJavaScript">
+            <summary>
+            Creates a string to create the JavaScript object on the client-side.
+            </summary>
+            <returns>Returns a string to render JavaScript to set the properties of the JavaScript object.</returns>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProButtonTag.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="hierarchy">Specifies name of the parent object.</param>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProButtonTag.type">
+            <summary>
+            Specifies the type of button to render.
+            Valid value are: inputbutton, button, image, imagelink, hyperlink, custom.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProButtonTag.start">
+            <summary>
+            Specifies the starting HTML to render.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProButtonTag.tagAttributes">
+            <summary>
+            Specifies the HTML attributes to render.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProButtonTag.value">
+            <summary>
+            Specifies the value attribute to render.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProButtonTag.end">
+            <summary>
+            Specifies the ending HTML to render.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProButtonTag.imageTag">
+            <summary>
+            The object to render an HTML IMG tag if the button type is an image.
+            </summary>
+        </member>
+        <member name="T:eWebEditProNet.eWebEditProControl">
+            <summary>
+            Renders the eWebEditPro editor on a web page.
+            </summary>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProControl.SaveViewState">
+            <summary>
+            Override SaveViewState
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProControl.LoadViewState(System.Object)">
+            <summary>
+            Override LoadViewState
+            </summary>
+            <param name="savedState"></param>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProControl.OnInit(System.EventArgs)">
+            <summary>
+            See <see cref="M:System.Web.UI.Control.OnInit(System.EventArgs)"/>
+            </summary>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProControl.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            See <see cref="M:System.Web.UI.IPostBackDataHandler.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)"/>
+            </summary>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProControl.RaisePostDataChangedEvent">
+            <summary>
+            See <see cref="M:System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent"/>
+            </summary>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProControl.OnTextChanged(System.EventArgs)">
+            <summary>
+            Called by RaisePostDataChangedEvent. Calls TextChanged event.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProControl.OnPreRender(System.EventArgs)">
+            <summary>
+            Overrides System.Web.UI.Control.OnPreRender 
+            </summary>
+            <param name="e">An System.EventArgs object that contains the event data.</param>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProControl.RenderBeginTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Render this control to the output parameter specified.
+            </summary>
+            <param name="output">The HTML writer to write out to.</param>	
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProControl.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Render this control to the output parameter specified.
+            </summary>
+            <param name="output">The HTML writer to write out to.</param>	
+        </member>
+        <member name="E:eWebEditProNet.eWebEditProControl.TextChanged">
+            <summary>
+            Occurs when the Text property value changes.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.Path">
+            <summary>
+            Sets or gets the URL path where eWebEditPro files reside on the server relative to the hostname. For example, "/ewebeditpro4/".
+            </summary>
+            <remarks>
+            If the path does not end with a "/", one will be appended so that the path always ends with a "/". 
+            </remarks>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.parameters">
+            <summary>
+            Contains the default set of parameters used when creating an instance of the editor or button. 
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.MaxContentSize">
+            <summary>
+            The largest number of characters that can be saved in the editor window.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.EditorGetMethod">
+            <summary>
+            The method used to retrieve the content from the editor.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.PreferredType">
+            <summary>
+            Specifies the preferred type of editor to create.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.License">
+            <summary>
+            Sets or gets the comma-delimited list of license keys as a string. 
+            </summary>
+            <remarks>
+            Multiple keys must be separated by a comma (,). 
+            IMPORTANT: do not include line breaks, that is, new line characters.
+            </remarks>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.Locale">
+            <summary>
+            The URL of the localization directory or file.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.Config">
+            <summary>
+            The URL or contents of the configuration data.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.XmlInfo">
+            <summary>
+            The URL or contents of the custom XML tag definitions.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.BaseURL">
+            <summary>
+            The current URL of the editor to the specified location. 
+            </summary>
+            <remarks>
+            The property is useful for allowing a script to point the editor at another location. 
+            IMPORTANT: A trailing slash is required.
+            This property does not typically need to be set. 
+            </remarks>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.CharSet">
+            <summary>
+            The charset value for a page. This is only needed if saving the entire document.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.Title">
+            <summary>
+            A document title for the page. This is only needed if saving the entire document.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.StyleSheet">
+            <summary>
+            URL of the style sheet file (CSS) to apply to the editor content
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.BodyStyle">
+            <summary>
+            Specifies cascading style sheet (CSS) attribute values, such as background color, 
+            default font style, size, color and more. The bodyStyle parameter sets any valid CSS 
+            style supported by your browser. 
+            </summary>
+            <remarks>
+            Note that this property affects the same values as the style attribute in the body tag,
+            for example: 
+            
+            body style="background-color: black; font-size: 24pt"
+            </remarks>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.HideAboutButton">
+            <summary>
+            Set to "True" to remove the About button from the toolbar.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.ReadOnly">
+            <summary>
+            Lets you prevent the user from modifying the editor content. Other JavaScript methods 
+            can still modify the content, but all buttons (except for a few, like Copy, Find, and 
+            Print) are disabled. This method is useful when you want to display content in the 
+            editor that a user should not change. 
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.Disabled">
+            <summary>
+            Disables the editor so it cannot be used. All toolbar buttons are disabled. 
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.Fields">
+            <summary>
+            Specifies the list of content fields. 
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.IsChanged">
+            <summary>
+            Indicates whether the content (Text property) or any of the content field values have changed or not.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.Text">
+            <summary>
+            The content. 
+            </summary>
+            <remarks>
+            If the editor is not rendered, the content will be preserved in ViewState, if ViewState is enabled. 
+            If the editor is rendered, the content does not need to be preserved in ViewState because 
+            it is stored in a hidden field.
+            </remarks>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.Width">
+            <summary>
+            The width (in pixels or percent) of the editor, including toolbars.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.Height">
+            <summary>
+            The height (in pixels or percent) of the editor, including toolbars.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.AccessKey">
+            <summary>
+            Ignored. The property has no effect.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.BackColor">
+            <summary>
+            Ignored. The property has no effect.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.BorderColor">
+            <summary>
+            Sets the border color around the editor.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.BorderStyle">
+            <summary>
+            Sets the border style around the editor.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.BorderWidth">
+            <summary>
+            Sets the border width around the editor.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.CssClass">
+            <summary>
+            Sets the CSS class for the editor's container element.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.Enabled">
+            <summary>
+            Ignored. The property has no effect.
+            </summary>
+            
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.Font">
+            <summary>
+            Ignored. The property has no effect.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.ForeColor">
+            <summary>
+            Ignored. The property has no effect.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.TabIndex">
+            <summary>
+            Ignored. The property has no effect.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProControl.ToolTip">
+            <summary>
+            Ignored. The property has no effect.
+            </summary>
+        </member>
+        <member name="T:eWebEditProNet.eWebEditProField">
+            <summary>
+            Defines a content field.
+            </summary>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProField.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProField.Name">
+            <summary>
+            Specifies the name of the content field.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProField.SetContentType">
+            <summary>
+            Specifies the content type to load, that is, write into the editor.
+            Valid values include: htmlbody, htmlwhole, rtf, xmlwhole, and more.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProField.GetContentType">
+            <summary>
+            Specifies the content type to save, that is, read from the editor.
+            Valid values include: htmlbody, htmlwhole, rtf, text, xmlwhole, and more.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProField.Text">
+            <summary>
+            The content. 
+            </summary>
+            <remarks>
+            If the editor is not rendered, the content will be preserved in ViewState, if ViewState is enabled. 
+            If the editor is rendered, the content does not need to be preserved in ViewState because 
+            it is stored in a hidden field.
+            </remarks>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProField.StoreTextInViewState">
+            <summary>
+            For internal use only.
+            Specifies whether to save Text in ViewState or not.
+            </summary>
+        </member>
+        <member name="T:eWebEditProNet.eWebEditProFieldCollection">
+            <summary>
+            List of content fields.
+            </summary>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProFieldCollection.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProFieldCollection.RemoveAt(System.Int32)">
+            <summary>
+            Implementation of IList
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProFieldCollection.Insert(System.Int32,System.Object)">
+            <summary>
+            Implementation of IList
+            </summary>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProFieldCollection.Remove(System.Object)">
+            <summary>
+            Implementation of IList
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProFieldCollection.Contains(System.Object)">
+            <summary>
+            Implementation of IList
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProFieldCollection.Clear">
+            <summary>
+            Implementation of IList
+            </summary>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProFieldCollection.IndexOf(System.Object)">
+            <summary>
+            Implementation of IList
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProFieldCollection.Add(System.Object)">
+            <summary>
+            Implementation of IList
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProFieldCollection.CopyTo(System.Array,System.Int32)">
+            <summary>
+            Implementation of ICollection
+            </summary>
+            <param name="array"></param>
+            <param name="index"></param>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProFieldCollection.GetEnumerator">
+            <summary>
+            Implementation of IEnumerable
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProFieldCollection.System#Web#UI#IStateManager#TrackViewState">
+            <summary>
+            Implementation of IStateManager
+            </summary>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProFieldCollection.System#Web#UI#IStateManager#SaveViewState">
+            <summary>
+            Implementation of IStateManager
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProFieldCollection.System#Web#UI#IStateManager#LoadViewState(System.Object)">
+            <summary>
+            Implementation of IStateManager
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProFieldCollection.Item(System.Int32)">
+            <summary>
+            Sets or gets a field item.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProFieldCollection.IsReadOnly">
+            <summary>
+            Implementation of IList
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProFieldCollection.System#Collections#IList#$Item$(System.Int32)">
+            <summary>
+            Implementation of IList
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProFieldCollection.IsFixedSize">
+            <summary>
+            Implementation of IList
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProFieldCollection.IsSynchronized">
+            <summary>
+            Implementation of ICollection
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProFieldCollection.Count">
+            <summary>
+            Implementation of ICollection
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProFieldCollection.SyncRoot">
+            <summary>
+            Implementation of ICollection
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProFieldCollection.System#Web#UI#IStateManager#IsTrackingViewState">
+            <summary>
+            Implementation of IStateManager
+            </summary>
+        </member>
+        <member name="T:eWebEditProNet.eWebEditProImageTag">
+            <summary>
+            Renders an HTML IMG element for a custom graphic for "image" or "imagelink".
+            Set the imageTag object's properties to IMG attributes.
+            </summary>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProImageTag.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="hierarchy">Specifies name of the parent object.</param>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProImageTag.alt">
+            <summary>
+            Specifies the value of the alt attribute in the IMG tag.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProImageTag.border">
+            <summary>
+            Specifies the value of the border attribute in the IMG tag.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProImageTag.src">
+            <summary>
+            Specifies the value of the src attribute in the IMG tag.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProImageTag.width">
+            <summary>
+            Specifies the value of the width attribute in the IMG tag.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProImageTag.height">
+            <summary>
+            Specifies the value of the height attribute in the IMG tag.
+            </summary>
+        </member>
+        <member name="T:eWebEditProNet.eWebEditProInstallPopup">
+            <summary>
+            Renders the installPopup JavaScript object.
+            </summary>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProInstallPopup.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="hierarchy">Specifies name of the parent object.</param>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProInstallPopup.url">
+            <summary>
+            Specifies the URL to the web page to display to initiate an automatic download and installation.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProInstallPopup.windowName">
+            <summary>
+            Specifies the optional name of the popup window to open. Leave the name blank to open a window without a name.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProInstallPopup.windowFeatures">
+            <summary>
+            Specifies the optional window features for the popup window. 
+            Valid values are the same as for the window.open features parameter.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProInstallPopup.query">
+            <summary>
+            Specifies optional query string parameters to append to the URL when opening
+            the popup window. Do not include the "?". The query string must be URL encoded
+            by calling the JavaScript escape() function. Name-value pairs must be separated
+            by the "&amp;" character. Names and values must be separated by the "=" character.
+            Example, query=escape("id=my name&amp;num=10");
+            </summary>
+        </member>
+        <member name="T:eWebEditProNet.eWebEditProParameters">
+            <summary>
+            Renders the parameters JavaScript object.
+            </summary>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProParameters.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="hierarchy">Specifies name of the parent object.</param>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProParameters.CreateJavaScript">
+            <summary>
+            Creates a string to create the JavaScript parameters object on the client-side.
+            </summary>
+            <returns>Returns a string to render JavaScript to set the parameters.</returns>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.clientInstall">
+            <summary>
+            URL to the Windows client installation program.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.maxContentSize">
+            <summary>
+            The largest number of characters that can be saved in the editor window.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.embedAttributes">
+            <summary>
+            Optional attributes to the EMBED tag. Applies only to Netscape.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.objectAttributes">
+            <summary>
+            Optional attributes to the OBJECT tag. Applies only to Internet Explorer. 
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.textareaAttributes">
+            <summary>
+            Optional attributes to the TEXTAREA tag. Apply only when a textarea field appears.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.editorGetMethod">
+            <summary>
+            The method used to retrieve the content from the editor.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.preferredType">
+            <summary>
+            Specifies the preferred type of editor to create.
+            </summary>
+            
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.license">
+            <summary>
+            Specifies the license key(s). Multiple keys must be separated by a comma (,).
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.locale">
+            <summary>
+            The URL of the localization directory or file.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.config">
+            <summary>
+            The URL or contents of the configuration data.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.xmlInfo">
+            <summary>
+            The URL or contents of the custom XML tag definitions.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.baseURL">
+            <summary>
+            The current URL of the editor to the specified location. 
+            This property does not typically need to be set. 
+            The property is useful for allowing a script to point the editor at another location. 
+            IMPORTANT: A trailing slash is required.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.charset">
+            <summary>
+            The charset value for a page. This is only needed if saving the entire document.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.title">
+            <summary>
+            A document title for the page. This is only needed if saving the entire document.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.styleSheet">
+            <summary>
+            URL of the style sheet file (CSS) to apply to the editor content
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.bodyStyle">
+            <summary>
+            Specifies cascading style sheet (CSS) attribute values, such as background color, 
+            default font style, size, color and more. The bodyStyle parameter sets any valid CSS 
+            style supported by your browser. 
+            
+            Note that this property affects the same values as the style attribute in the body tag,
+            for example: 
+            
+            body style="background-color: black; font-size: 24pt"
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.hideAboutButton">
+            <summary>
+            Set to "True" to remove the About button from the toolbar.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.readOnly">
+            <summary>
+            Lets you prevent the user from modifying the editor content. Other JavaScript methods 
+            can still modify the content, but all buttons (except for a few, like Copy, Find, and 
+            Print) are disabled. This method is useful when you want to display content in the 
+            editor that a user should not change. 
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.disabled">
+            <summary>
+            Disables the editor so it cannot be used. All toolbar buttons are disabled. 
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.ondblclickelement">
+            <summary>
+            Client-side JavaScript event handler. 
+            Double-clicking on a hyperlink, applet, object, image, or table causes this event to fire.
+            Typically this will not need to be changed.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.onexeccommand">
+            <summary>
+            Client-side JavaScript event handler. 
+            Raised after a toolbar button is pressed, a toolbar dropdown list item is selected, or a context menu (right-click menu) item is selected.
+            Typically this will not need to be changed.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.onfocus">
+            <summary>
+            Client-side JavaScript event handler. 
+            Fires when the editor gains the focus.
+            Typically this will not need to be changed.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.onblur">
+            <summary>
+            Client-side JavaScript event handler. 
+            Fires when the editor loses the focus.
+            Typically this will not need to be changed.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.popup">
+            <summary>
+            Returns a reference to the popup object.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.installPopup">
+            <summary>
+            Returns a reference to the installPopup object.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProParameters.buttonTag">
+            <summary>
+            Returns a reference to the buttonTag object.
+            </summary>
+        </member>
+        <member name="T:eWebEditProNet.eWebEditProPopup">
+            <summary>
+            Renders the popup JavaScript object.
+            </summary>
+        </member>
+        <member name="M:eWebEditProNet.eWebEditProPopup.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="hierarchy">Specifies name of the parent object.</param>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProPopup.url">
+            <summary>
+            Specifies the URL to the web page to display.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProPopup.windowName">
+            <summary>
+            Specifies the optional name of the popup window to open. Leave the name blank to open a window without a name.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProPopup.windowFeatures">
+            <summary>
+            Specifies the optional window features for the popup window. 
+            Valid values are the same as for the window.open features parameter.
+            </summary>
+        </member>
+        <member name="P:eWebEditProNet.eWebEditProPopup.query">
+            <summary>
+            Specifies optional query string parameters to append to the URL when opening
+            the popup window. Do not include the "?". The query string must be URL encoded
+            by calling the JavaScript escape() function. Name-value pairs must be separated
+            by the "&amp;" character. Names and values must be separated by the "=" character.
+            Example, query=escape("id=my name&amp;num=10");
+            </summary>
+        </member>
+        <member name="T:eWebEditProNet.JavaScriptProperty">
+            <summary>
+            Summary description for JavaScriptProperty.
+            </summary>
+        </member>
+        <member name="M:eWebEditProNet.JavaScriptProperty.#ctor(System.String,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="heirarchy">Specifies name of the parent object.</param>
+            <param name="name">The name of the JavaScript property.</param>
+        </member>
+        <member name="M:eWebEditProNet.JavaScriptProperty.CreateJavaScript">
+            <summary>
+            Creates a string to set the JavaScript property on the client-side.
+            </summary>
+            <returns>Returns a string to render JavaScript to set the property of the JavaScript object.</returns>
+        </member>
+    </members>
+</doc>

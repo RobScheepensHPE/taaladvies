@@ -1,0 +1,913 @@
+---------------------------------------------------------
+DynamicConfigAPI.txt
+
+Copyright 2004, Ektron, Inc.
+Latest revision date: 24-Jun-2004
+---------------------------------------------------------
+
+
+=========================================================
+Dynamic Configuration Object
+=========================================================
+
+Description
+-----------
+The Dynamic Configuarion Object is a COM module that dynamically creates 
+an eWebEditPro configuration.
+
+The purpose of this module is to provide an object interface into the
+eWebEditPro configuration.  Interfaces are offered to the client script
+where editor settings can be modified.  
+
+A good use of this module is within an ASP script.  (The use of this 
+module is not dependent on ASP.)  The line below illustrates how an ASP 
+script can be specified as a configuration.  The script returns the 
+XML data created by the Dynamic Configuration object.
+
+    eWebEditPro.parameters.config = "dynamic_config.asp?ui=Minimal";
+
+Sample Files
+------------
+A sample ASP page which creates and transmits an eWebEditPro configuration
+stream is in the file:
+
+    [eWebEditPro]/dynamic_config.asp
+    
+An ASP web page offers an example of how to use the ASP page to produce
+configurations on the fly:
+
+    [eWebEditPro]/samples/asp/dynamicconfig/dynamicconfig.asp
+
+How To Create
+-------------
+
+ProgID:  eWepOperation.Configuration
+
+Example:
+
+    set objCfg = CreateObject("eWepOperation.Configuration") 
+
+    
+
+=========================================================
+API Reference
+=========================================================
+
+Object Hierarchy
+----------------
+This is the hierarchy of objects which can be used to generate a configuration
+for eWebEditPro.
+
+Configuration
+    CommandSet
+        Command
+            SelectionSet
+                Selection
+	ToolbarSet
+        Toolbar
+            Command
+                SelectionSet
+                    Selection
+	Functionality
+	ExpertUser
+	WYSIWYG
+
+
+
+---------------------------------------------------------
+Object:  Command
+---------------------------------------------------------
+This object holds the settings for a specific command, such as the type, the 
+name, caption, tooltip, assigned JavaScript, and other settings.
+
+Enumerations
+------------
+    CmdTypeChoices
+	    Button = 0
+	    Toggle = 1
+	    List = 2
+	    Edit = 3
+	    SeparatorBar = 4
+	    SeparatorSpace = 5
+
+Methods
+-------
+
+    Clear()
+        Return Value:  None
+        Parameters:    None
+        Description:   Clear all settings for command.  If it is a list command
+                       then the list is cleared.
+        
+Properties
+----------
+    Caption
+        Type:         String
+        Description:  The caption for the command.
+        
+    CaptionLocale
+        Type:         String
+        Description:  The locale value for caption text, used for translation.
+            
+    Enable
+        Type:         Boolean
+        Description:  True if the command is enabled, or not grayed out.
+		
+    ToolTip
+        Type:         String
+        Description:  Tooltip for the command.
+        
+    ToolTipLocale   
+        Type:         String
+        Description:  The locale value for the tooltip text, used for 
+                      translation.
+        
+    Type
+        Type:         CmdTypeChoices
+        Description:  The ype for command, as defined in the CmdtypeChoices 
+                      enumeration.
+    Name
+        Type:         String
+        Description:  The name of the command.  This is what the client 
+                      script sees when the command is selected by the user.
+                      It is a unique name.                  
+                      
+    Selections
+        Type:         SelectionSet Object (Read Only)
+        Description:  Selection list for the command.
+        
+    PopupName
+        Type:         String
+        Description:  The name of the popup menu to assign to the command.
+                      (Popup menus automatically appear if assigned to a 
+                      command.)
+                      
+    ImageLink
+        Type:         String
+        Description:  Reference or URL to image for icon.
+        
+    ImageLink    
+        Type:         String
+        Description:  Reference or URL to image for icon.
+        
+    ImageKey
+        Type:         String
+        Description:  The name of an internal image to use for a command.
+                      (See eWebEditPro documentation for a complete list.)
+                      
+    ConfigXML  
+        Type:         String  (Read Only)
+        Description:  Gets the XML for configuration of this command.
+        
+    JavaScript  
+        Type:         String
+        Description:  This is the JavaScript to assign to the command.  
+                      All command JavaScript for all commands is extracted as
+                      a single data stream using the Configuration.JavaScript 
+                      method.
+    
+    
+    
+---------------------------------------------------------
+Object:  CommandSet
+---------------------------------------------------------
+The CommandSet object maintains a list of all the commands defined in the
+configuration being generated.
+
+Enumerations
+------------
+    StartupChoices
+    	None = 0
+    	Minimal = 1
+
+Methods
+-------
+
+    Add(Command objCommand)
+        Return Value:  None
+        Parameters:    objCommand - the command object to add
+        Description:   Adds a command to the full collection of all coammands.
+
+    Remove(Command objCommand)
+        Return Value:  None
+        Parameters:    objCommand - the command object to remove
+        Description:   Adds a command to the full collection of all coammands.
+                       The command is also removed from any toolbars.
+
+    Item(long idxCmd)
+        Return Value:  Command Object
+        Parameters:    idxCmd - The command index.
+        Description:   Retrieves the command at the given index.
+                       This is used to enumerate commands.
+
+    RemoveCommand(String CmdName)
+        Return Value:  Command Object
+        Parameters:    CndName - The name of the command to remove.
+        Description:   Removes a command by using the name.
+                       The command is also removed from any toolbars.
+
+    FindCommand(String CmdName)
+        Return Value:  Command Object
+        Parameters:    CndName - The name of the command.
+        Description:   Finds specified command object by name.
+
+    CreateCommand()
+        Return Value:  Command Object
+        Parameters:    None
+        Description:   Creates a new command object.  The client is fills in
+                       the objects values and adds it to either a toolbar or
+                       to the general list of commands.
+
+Properties
+----------
+
+    Count
+        Type:         Long  (Read Only)
+        Description:  Returns the number of commands that currently exist.
+
+     
+
+---------------------------------------------------------
+Object:  Configuration
+---------------------------------------------------------
+This object is the main entry object.  From here all settings, the final 
+configuration data, and any JavaScript are retrieved.
+
+Enumerations
+------------
+    StartupChoices
+    	None = 0
+    	Minimal = 1
+    	Standard = 2
+    	Maximum = 3
+
+Methods
+-------
+
+    JavaScript()
+        Return Type:  String
+        Parameters:   None
+		Description:  Returns Javascript for external functionality.
+     
+    Configuration()   
+        Return Type:  String
+        Parameters:   None
+        Description:  Returns XML configuration document for eWebEditPro.  
+                      This is the actual XML data stream given to the
+                      eWebEditPro editor.
+     
+    Startup(StartupChoices InitialConfigType)
+        Return Type:  None
+        Parameters:   InitialConfigType - The startup level.
+		Description:  Creates the initial configuration.
+                      Only use this method if the license key is unknown.
+                      Many of the configuration values are determined by
+                      values in the license keys.
+                      Use CreateSettings instead.
+	
+    CommandSet()
+        Return Type:  CommandSet Object
+        Parameters:   None
+        Description:  Gets all defined commands.
+		
+    Functionality()
+        Return Type:  Functionality Object
+        Parameters:   None
+        Description:  Returns the object which contains the settings for 
+                      general functionality.
+        
+    ToolbarSet()
+        Return Type:  ToolbarSet Object
+        Parameters:   None
+        Description:  Gets the toolbars object (a collection of toolbars)
+                      in order of display.
+		
+    ExpertUser()
+        Return Type:  ExpertUser Object
+        Parameters:   None
+        Description:  Returns the object containing the configuration 
+                      properties for expert users.
+	
+    WYSIWYG()
+        Return Type:  WYSIWYG Object
+        Parameters:   None
+        Description:  Returns the WYSIWYG object which contains the formatting
+                      configuration properties
+		
+    Constant(String EnumerationName)    
+        Return Type:  Long
+        Parameters:   EnumerationName - The name of the enumeration to convert.
+        Description:  Converts an enumeration name into its numerical 
+                      equivalent so you don't have to hardcode constants into 
+                      scripting clients.
+
+    CreateSettings(StartupChoices InitialConfigType, String License)
+        Return Type:  None
+        Parameters:   InitialConfigType - The level to start a configuration.
+                      License - The license keys provided by Ektron.  This is
+                      used to determine what features to include by default.
+        Description:  Create the initial configuration.  Most of the basic
+                      work is done with this call, so the client does not need
+                      to go and create every item.  After this call, the client
+                      needs to only modify important settings, add or remove
+                      commands, or enable to disable features.
+
+                      
+    
+---------------------------------------------------------
+Object:  ExpertUser
+---------------------------------------------------------
+This object holds the settings which pertain to expert user needs.
+
+Enumerations
+------------
+    CharEncodeTypeChoices
+        Binary = 0
+        EntityName = 1
+        CharRef = 2
+        Special = 3
+        Latin = 4
+
+    CRLFTypeChoices
+        Remove = 0
+        Ignore = 1
+        CRLFCharRef = 2
+        Escaped = 3
+        
+    FeedbackTypeChoices     
+        Normal = 0
+        LargeContent = 1
+        Never = 2
+
+    ViewModeTypeChoices    
+        Body = 0
+        Whole = 1
+        
+    ViewAsTypeChoices    
+        Wysiwyg = 0
+        Source = 1
+        DataDesign = 2
+        DataEntry = 3
+
+Methods
+-------
+
+    None.
+
+Properties
+----------
+
+    CharEncode
+        Type:         CharEncodeTypeChoices
+        Description:  How to encode non-ASCII characters.
+
+    CR
+        Type:         CRLFTypeChoices
+        Description:  How to handle CR in content.
+
+    LF
+        Type:         CRLFTypeChoices
+        Description:  How to handle LF in content.
+
+    FeedbackLevel
+        Type:         FeedbackTypeChoices
+        Description:  How much feedback to give to user.
+
+    HideObject
+        Type:         Boolean
+        Description:  Whether to hide object tag from browser.
+
+    PreferFont
+        Type:         Boolean
+        Description:  Whether <SPAN> tags are converted to <FONT> tags.
+
+    MSWordFilter
+        Type:         Boolean
+        Description:  Whether to convert MS Word tags to normal HTML tags.
+
+    PreserveChars
+        Type:         String
+        Description:  Characters to prevent being converted to character 
+                      references.
+
+    Prompt
+        Type:         Boolean
+        Description:  Whether to suppress the Office content prompt when 
+                      pasting.
+
+    ReduceTags
+        Type:         Boolean
+        Description:  Whether unnecessary tags are removed.
+
+    ShowOnSize
+        Type:         Long 
+        Description:  Content size before a prompt is displayed.
+
+    ShowDoneMsg
+        Type:         Boolean
+        Description:  Whether a message is displayed when content has been
+                      cleaned.
+
+    Publish
+        Type:         PublishTypeChoices
+        Description:  How to format content when read from eWebEditPro.
+
+    Mode
+        Type:         ViewModeTypeChoices
+        Description:  How much of HTML source to display.
+
+    Unicode
+        Type:         Boolean
+        Description:  Whether to display Unicode characters using character
+                      references.
+
+    View
+        Type:         ViewAsTypeChoices
+        Description:  How to view content.
+     
+
+        
+---------------------------------------------------------
+Object:  Functionality
+---------------------------------------------------------
+Description of the object.
+
+Enumerations
+------------
+    FunctionalityTypeChoices
+        FormElements = 0
+        SpellCheck = 1
+        OfficeIntegration = 2
+        TableEditor = 3
+        Media = 4
+        XMLTags = 5
+        XMLDesign = 6
+        XMLEntry = 7
+        EditHTML = 8
+        
+    ResolveMediaTypeChoices
+        Full = 0
+        Host = 1
+        Local = 2
+        Given = 3
+
+        
+Methods
+-------
+
+    Include(FunctionalityTypeChoices funcName, Boolean enableFlag)
+        Return Type:  None
+        Parameters:   funcName - The functionality to enable or disable
+                      enableFlag - If false the functionality is not included.
+		Description:  Determines whether a peices of functionality is included
+                      or excluded from the configuration.
+
+    IsEnabled(FunctionalityTypeChoices funcName)
+        Return Type:  Boolean
+        Parameters:   funcName - The name of the functionality
+		Description:  Returns whether the named functionality is enabled and
+                      included in the configuration.
+
+    Constant(String EnumerationName)
+        Return Type:  Long
+        Parameters:   EnumerationName - The enumeration name to convert.
+		Description:  Converts an enumeration name to its corresponding long 
+                      value. Any enumeration from any object can be converted.
+                      This offers a mechanism so that enumeration values do 
+                      not need to be hard coded in source.       
+        
+Properties
+----------
+
+    LangID
+        Type:         String
+        Description:  MS Language ID for spell checker.
+
+    Dictionary
+        Type:         String
+        Description:  Primary spellcheck dictionary.
+
+    Dictionary2
+        Type:         String
+        Description:  Secondary spellcheck dictionary.
+
+    MarkMisspelledSrc
+        Type:         String
+        Description:  URL to image file used to indicate a word is misspelled.
+
+    AutoStart
+        Type:         Boolean
+        Description:  Automatically start As You Type spellchecking.
+
+    Delay
+        Type:         Long
+        Description:  Delay (in msec) between spell checks.
+
+    MaxSuggestions
+        Type:         Long
+        Description:  Max number of suggestions for misspelled words 
+                      (set to 0 to disable suggestions).
+
+    MaxSizeK
+        Type:         Long
+        Description:  Maximum upload size in KBytes (0=no limit).
+
+    ValidExt
+        Type:         String
+        Description:  Valid extensions for uploaded media files.
+
+    TransportType
+        Type:         String
+        Description:  How media is uploaded (ftp, file, post, or none; 
+                      can also be URL of media select web page).
+
+    ImageEditConfig
+        Type:         String
+        Description:  Location of ImageEdit configuration XML file.
+
+    AutoUploadType
+        Type:         String
+        Description:  How media is automatically uploaded
+                      (ftp, none, or specify a URL to post to).
+
+    ShowListOnSave
+        Type:         Boolean
+        Description:  Whether to show the user a list of files that will be 
+                      uploaded when the document is saved.
+
+    Port
+        Type:         Long
+        Description:  TCP/IP port to upload to (specify 0 to use the default
+                      for the protocol).
+
+    Username
+        Type:         String
+        Description:  Username to use for uploading.
+
+    Password
+        Type:         String
+        Description:  Password to use for uploading.
+
+    EncryptUploadLogin
+        Type:         Boolean
+        Description:  Whether to encrypt login username/password used for 
+                      upload.
+
+    Domain
+        Type:         String
+        Description:  Domain or IP to upload media to.
+
+    Dir
+        Type:         String
+        Description:  Directory to upload media to.
+
+    WebRoot
+        Type:         String
+        Description:  Root of image files for browser display.
+
+    ResolveMethod
+        Type:         ResolveMediaTypeChoices
+        Description:  How media paths will be resolved.
+
+    ResolveSrc
+        Type:         String
+        Description:  Path to use for resolving media paths.
+
+    ResolveEnable
+        Type:         Boolean
+        Description:  Whether to enable resolving path to media.
+
+    AllowMediaOverride
+        Type:         Boolean
+        Description:  Whether to allow users to override media paths.
+
+    DirLocale
+        Type:         String
+        Description:  Locale ref for upload directory.
+
+    AllowEdit
+        Type:         Boolean
+        Description:  Allow users to change the upload configuration at client.
+
+    AllowUpload
+        Type:         Boolean
+        Description:  Whether to allow upload of local files.
+
+    Indexing
+        Type:         Boolean
+        Description:  Whether users can tag fields for indexing in a CMS.
+
+
+
+---------------------------------------------------------
+Object:  Selection
+---------------------------------------------------------
+Description of the object.
+
+Enumerations
+------------
+    None
+
+Methods
+-------
+
+    None
+
+Properties
+----------
+
+    Delimiter
+        Type:         String
+        Description:  Delimiter for returned lists.
+
+    Value
+        Type:         String
+        Description:  Value for selection.
+
+    CommandName
+        Type:         String
+        Description:  Name of command for this selection.
+
+    Locale
+        Type:         String
+        Description:  Locale reference for selection description.
+
+    Color
+        Type:         String
+        Description:  Color for this selection.
+
+    ValueAttribute
+        Type:         String
+        Description:  Value attribute of selection (used for validation 
+                      selections).
+     
+
+
+---------------------------------------------------------
+Object:  SelectionSet
+---------------------------------------------------------
+Description of the object.
+
+Enumerations
+------------
+    None.
+
+Methods
+-------
+
+    Add(Selection objSelection)
+        Return Type:  None
+        Parameters:   objSelection - the selection item.
+		Description:  Adds a selection to the list of command selections.
+
+    Remove(Long idxSelection)
+        Return Type:  Selection Object
+        Parameters:   idxSelection - The index of the selection to remove.
+		Description:  Removes the selection at the given index.  The removed
+                      selection is returned as a selection object. 
+
+    Constant(String EnumerationName)
+        Return Type:  Long
+        Parameters:   EnumerationName - The enumeration name to convert.
+		Description:  Converts an enumeration name to its corresponding long.
+
+    CreateSelection(e)
+        Return Type:  Selection Object
+        Parameters:   None
+		Description:  Creates a new command selection.  The client then fills
+                      in the property values and adds it to the selection set.
+
+Properties
+----------
+
+    Count
+        Type:         Long  (Read Only)
+        Description:  Returns the number of items in the command selection
+                      list.
+
+    Name
+        Type:         String
+        Description:  Name of selection set.
+
+
+
+---------------------------------------------------------
+Object:  Toolbar
+---------------------------------------------------------
+zzz.
+
+Enumerations
+------------
+    TBTypeChoices
+        Icon = 0
+        Popup = 1
+
+Methods
+-------
+
+    Add(Command objCmd)
+        Return Value:  None
+        Parameters:    objCmd - The command object to add to the toolbar.
+        Description:   Appends the given command to the toolbar.
+        
+    Item(Long idxSelection)
+        Return Value:  Selection Object
+        Parameters:    idxSelection - The index of the Selection Object to 
+                       retrieve.
+        Description:   Retreives the selection object at the given index.
+                       Index is 1 based.
+
+    Remove(long idxCmd)
+        Return Value:  Command Object
+        Parameters:    idxCmd - The index of the command in the toolbar.
+        Description:   Removes the command at the given index.
+
+    RemoveCommand(String strCmdName)
+        Return Value:  None
+        Parameters:    strCmdName - the name of the toolbar to remove.
+        Description:   Removes the command with the given name.
+
+    AddAt(Command objCommand, Long Index)
+        Return Value:  None
+        Parameters:    objNewVal - The new command to add.
+                       Index - the position to place the command.
+        Description:   Adds command at specific position.
+
+    MoveCommand(String CommandName, Long Index)
+        Return Value:  None
+        Parameters:    CommandName - The command to move.
+                       Index - The position to move it to.
+        Description:   Moves named command to specified location.
+        
+                
+Properties
+----------
+   
+    Count
+        Type:          Long (Read Only)
+        Description:   Reads the number of commands in the toolbar.
+   
+    Enable     
+        Type:          Boolean
+        Description:   Enables (true) or disables (false) the toolbar (default is enabled)
+        
+    Show
+        Type:          Boolean
+        Description:   Shows (true) or hides (false) the toolbar.   
+        
+    Type
+        Type:          TBTypeChoices
+        Description:   The display type, or the interface, for the toolbar.
+        
+    Captions
+        Type:          Boolean
+        Description:   If True then the button captions are shown with the icons.
+        
+    Wrap
+        Type:          Boolean
+        Description:   Whether to wrap icons (default is false).
+        
+    Name
+        Type:          String
+        Description:   Name of the toolbar.
+        
+    Locale
+        Type:          String
+        Description:   Locale reference for toolbar caption.
+        
+    NewRow
+        Type:          Boolean
+        Description:   Whether this toolbar should be on a new row.
+
+
+
+---------------------------------------------------------
+Object:  ToolbarSet
+---------------------------------------------------------
+Description of the object.
+
+Enumerations
+------------
+    None.
+
+Methods
+-------
+
+    Add(Toolbar ObjToolbar)
+        Return Value:  None
+        Parameters:    ObjToolbar - The toolbar object to add.
+        Description:   Adds a toolbar to the set.
+
+    Remove(Long Index)
+        Return Value:  Toolbar Object
+        Parameters:    Index - The index of the toolbar to remove.
+        Description:   Removes a toolbar at the given index.
+                       The return value is the toolbar that was removed.
+
+    CreateToolbar()
+        Return Value:  Toolbar Object
+        Parameters:    None
+        Description:   Creates a new toolbar object.  The client must fill
+                       in the object's values defining the toolbar.
+
+    AddAt(Toolbar ObjToolbar, Long Index)
+        Return Value:  Toolbar Object
+        Parameters:    ObjToolbar - The toolbar to add.
+                       Index - The position to add the toolbar.
+        Description:   Adds toolbar at specified position.
+
+    MoveToolbar(String ToolbarName, Long Index)
+        Return Value:  None
+        Parameters:    ToolbarName - The name of the toolbar to move.
+                       Index - The position to move the toolbar.
+        Description:   Moves toolbar to specified position.
+
+    RemoveToolbar(String ToolbarName)
+        Return Value:  None
+        Parameters:    ToolbarName - The name of the toolbar to remove.
+        Description:   Removes the specified toolbar, by name.
+
+    FindToolbar(String ToolbarName)
+        Return Value:  Toolbar Object
+        Parameters:    ToolbarName - The name of the toolbar to retreive.
+        Description:   Retreives the toolbar object that has the given name.
+    
+    Item(Long Index)
+        Return Value:  Toolbar Object
+        Parameters:    Index - The index of the toolbar to retrieve.
+        Description:   Retreives the toolbar at the given index.
+                       Used for enumerating toolbars.
+
+Properties
+----------
+   
+    Count
+        Type:          Long (Read Only)
+        Description:   Reads the number of toolbars in the toolbar set.
+
+
+
+---------------------------------------------------------
+Object:  WYSIWYG
+---------------------------------------------------------
+Description of the object.
+
+Enumerations
+------------
+    None.
+
+Methods
+-------
+
+    None.
+     
+Properties
+----------
+   
+    AutoClean
+        Type:          Boolean
+        Description:   Automatically clean MS Office content.
+   
+    Publish
+        Type:          PublishTypeChoices
+        Description:   Type of content retrieved from eWebEditPro.
+   
+    ShiftEnter
+        Type:          Boolean
+        Description:   Whether to handle pressing the return key as pressing
+                       shift-enter.
+   
+    PublishViewAsSource
+        Type:          Boolean
+        Description:   Whether to allow users to save from HTML mode.
+   
+    DefaultDivOnEnter
+        Type:          Boolean
+        Description:   Whether to treat pressing enter as a new Div section.
+   
+    ContinueParagraph
+        Type:          Boolean
+        Description:   Removes leading <P> or <DIV> in content.
+   
+    MaxLoadSec
+        Type:          Long 
+        Description:   Max seconds to wait for editor content to load.
+   
+    PublishInvalid
+        Type:          Boolean
+        Description:   Whether to allow invalid dataentry documents to be saved.
+
+
+
+=========================================================
+Conclusion
+=========================================================
+
+Refer to the samples for a real-world illustration of using 
+the configuration object:
+
+    [eWebEditPro]/dynamic_config.asp
+    [eWebEditPro]/samples/asp/dynamicconfig/dynamicconfig.asp
+
+
+6/24/2004

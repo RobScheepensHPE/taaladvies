@@ -1,0 +1,20 @@
+package be.vlaanderen.sbs.s6.taaladvies.db;
+
+/**
+ * Insert the type's description here.
+ * Creation date: (20/09/2001 10:55:43)
+ * @author: Administrator
+ */
+public interface IDbConnection {
+/**
+ * Insert the method's description here.
+ * Creation date: (20/09/2001 10:56:44)
+ * @return java.sql.Connection
+ */
+java.sql.Connection getConnection();
+/**
+ * Insert the method's description here.
+ * Creation date: (20/09/2001 10:57:16)
+ */
+void releaseConnection(java.sql.Connection con);
+}

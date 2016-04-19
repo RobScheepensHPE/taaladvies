@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>eWebEditPro Methods Sampler</title>
+<script language="JavaScript1.2" src="../../../ewebeditpro.js"></script>
+<style>
+body { font-family: verdana, sans-serif; font-size: x-small;}
+p { margin-top:0; margin-bottom:0; }
+td { font-size: x-small; }
+input.methodButton { width:128px; }
+</style>
+</head>
+<body>
+
+<form method="post" action="">
+<p>Content field (typically a hidden field)</p>
+<textarea name="content" rows="10" cols="85">&lt;STRONG&gt;Ektron's eWebEditPro&lt;/STRONG&gt;--the first in a new market category--easily replaces an &lt;EM&gt;HTML &lt;/EM&gt;textarea field so content contributors can create and publish their own Web content while Webmasters and IT &lt;U&gt;professionals&lt;/U&gt; maintain control over the &lt;FONT color=#ff0080&gt;Web site's look and feel&lt;/FONT&gt;. The eWebEditPro content is saved as HTML or XHTML. It may or may not be a full HTML page, in other words it does not necessarily contain the header and &lt;FONT size=5&gt;body tags&lt;/FONT&gt;, only the &lt;FONT color=#000080 size=1&gt;content between the body tags&lt;/FONT&gt;. The content is typically saved to a database when the form is submitted.</textarea><br>
+<script language="JavaScript1.2">
+<!--
+
+function logMsg(strMsg)
+{
+	document.forms[0].evtlog.value += strMsg + "\n";
+}
+
+function onbeforeloadIHandler()
+{
+	// instances[] handler
+	logMsg("onbeforeload");
+}
+function onloadIHandler()
+{
+	// instances[] handler
+	logMsg("onload");
+}
+function onbeforesaveIHandler()
+{
+	// instances[] handler
+	if (this.isReady())
+	{
+		var nContentSize = this.estimateContentSize("whole");
+		logMsg("onbeforesave estSize=" + nContentSize);
+	}
+	else
+	{
+		logMsg("onbeforesave");
+	}
+}
+function onsaveIHandler()
+{
+	// instances[] handler
+	var objContent = this.linkedElement();
+	var nContentSize = objContent.value.length;
+	logMsg("onsave actualSize=" + nContentSize);
+}
+function onerrorHandler()
+{
+	logMsg("onerror event=" + eWebEditPro.event.source + " code=" + eWebEditPro.event.status + " editorName='" + eWebEditPro.event.name + "'");
+}
+function onreadyHandler()
+{
+	logMsg("onready editorName='" + eWebEditPro.event.srcName + "'");
+	setInterval("updateStatus()", 500);
+}
+function ontoolbarresetHandler()
+{
+	logMsg("ontoolbarreset editorName='" + eWebEditPro.event.srcName + "'");
+}
+eWebEditProExecCommandHandlers["cmdunderline"] = function(sEditorName, strCmdName, strTextData, lData)
+{
+	var objInstance = eWebEditPro.instances[sEditorName];
+	if (objInstance.editor)
+	{
+		var objToolbar = objInstance.editor.Toolbars();
+		var bPressedIn = objToolbar.CommandItem("cmdunderline").getPropertyBoolean("CmdToggledOn");
+		if (bPressedIn)
+		{
+			alert("Underlining is not recommended because it may be mistaken for a hyperlink.");
+		}
+	}
+}
+eWebEditPro.addEventHandler("onready", "logMsg('The editor is ready')");
+
+if (typeof eWebEditPro == "object")
+{
+	eWebEditPro.onexeccommand = "document.forms[0].cmdevt.value = eWebEditPro.event.cmdName";
+	eWebEditPro.onerror = onerrorHandler;
+	eWebEditPro.onready = onreadyHandler;
+	eWebEditPro.ontoolbarreset = ontoolbarresetHandler;
+	eWebEditPro.create("content", "700", "250");
+	eWebEditPro.instances[0].onbeforeload = onbeforeloadIHandler;
+	eWebEditPro.instances[0].onload = onloadIHandler;
+	eWebEditPro.instances[0].onbeforesave = onbeforesaveIHandler;
+	eWebEditPro.instances[0].onsave = onsaveIHandler;
+	eWebEditPro.instances[0].addEventHandler("onsave", "logMsg('Content for editor named \"' + this.name + '\" has been saved.')");
+}
+
+function getTextValue()
+{
+	return document.forms[0].elements.textBox.value;
+}
+
+function setTextValue(value)
+{
+	document.forms[0].elements.textBox.value = value;
+}
+
+function setReadOnly(bReadOnly)
+{
+	if (eWebEditPro.instances[0].isEditor())
+	{
+		eWebEditPro.instances[0].asyncSetProperty("ReadOnly", bReadOnly, null, new Function());
+	}
+}
+
+function updateStatus()
+{
+	var bIsChanged = eWebEditPro.instances[0].isChanged();
+	document.forms[0].elements.changed.value = (bIsChanged ? "Yes" : "No");
+	if (eWebEditPro.instances[0].isEditor())
+	{
+		eWebEditPro.instances[0].asyncGetPropertyBoolean("ReadOnly", null, function(value)
+		{
+			if (value)
+			{
+				document.forms[0].elements.RO.checked = true;
+			}
+			else
+			{
+				document.forms[0].elements.RW.checked = true;
+			}
+		});
+	}
+}
+//-->
+</script>  
+<br>
+<p>
+Text box: <input type="text" name="textBox" value="<i>Hello</i> <b>World</b> " size="100">
+</p>
+<table cellspacing="0" cellpadding="4" border="0">
+<tr>
+    <td align="center"><input type="radio" name="readOnly" id="RO" value="true" onclick="setReadOnly(this.value)">Yes <input type="radio" name="readOnly" id="RW" value="false" onclick="setReadOnly(this.value)">No
+</td>
+    <td>Read-Only
+</td>
+</tr>
+<tr>
+    <td align="center"><input type="button" class="methodButton" value="PasteHTML" onclick="eWebEditPro.instances[0].asyncCallMethod('pasteHTML', [getTextValue()], null, new Function())">
+</td>
+    <td>Paste contents of the text box into the editor using the pasteHTML method
+</td>
+</tr>
+<tr>
+    <td align="center"><input type="button" class="methodButton" value="PasteText" onclick="eWebEditPro.instances[0].asyncCallMethod('pasteText', [getTextValue()], null, new Function())"></td>
+    <td>Paste contents of the text box into the editor as text using the pasteText method</td>
+</tr>
+<tr>
+    <td align="center"><input type="button" class="methodButton" value="getSelectedHTML" onclick="eWebEditPro.instances[0].asyncCallMethod('getSelectedHTML', [], null, function (result) {setTextValue(result)})"></td>
+    <td>Select content in the editor and then get the HTML using the getSelectedHTML method</td>
+</tr>
+<tr>
+    <td align="center"><input type="button" class="methodButton" value="getSelectedText" onclick="eWebEditPro.instances[0].asyncCallMethod('getSelectedText', [], null, function (result) {setTextValue(result)})"></td>
+    <td>Select content in the editor and then get the text using the getSelectedText method</td>
+</tr>
+<tr>
+    <td align="center"><input type="button" class="methodButton" value="getBodyText" onclick="eWebEditPro.instances[0].asyncCallMethod('getBodyText', [], null, function (result) {setTextValue(result)})"></td>
+    <td>Copy the content as text only into the text box using the getBodyText method</td>
+</tr>
+
+<tr>
+    <td align="center"><input type="button" class="methodButton" value="GetContent(RTF)" onclick="eWebEditPro.instances[0].asyncCallMethod('GetContent', ['rtf'], null, function (result) {setTextValue(result)})"></td>
+    <td>Copy the content as text only into the text box using the getBodyText method</td>
+</tr>
+
+<tr>
+    <td align="center"><input type="button" class="methodButton" value="Save Whole" onclick="eWebEditPro.instances[0].editorGetMethod = 'getDocument'; eWebEditPro.instances[0].save(eWebEditPro.instances[0].linkedElement, null, new Function())"></td>
+    <td>Copy the entire content into the content field using getDocument in the save method</td>
+</tr>
+<tr>
+    <td align="center"><input type="button" class="methodButton" value="Save Body" onclick="eWebEditPro.instances[0].editorGetMethod = 'getBodyHTML'; eWebEditPro.instances[0].save(eWebEditPro.instances[0].linkedElement, null, new Function())">
+</td>
+    <td>Copy the body content into the content field using getBodyHTML in the save method</td>
+</tr>
+<tr>
+    <td align="center"><input type="button" class="methodButton" value="Load" onclick="eWebEditPro.instances[0].load()">
+</td>
+    <td>Copy the content field into the editor using the load method</td>
+</tr>
+<tr><td align="center"><input type="button" class="methodButton" value="Clear" onclick="eWebEditPro.instances[0].load('')"></td>
+<td>Clear the contents of the editor using the load method</td></tr>
+
+<tr><td align="center"><input type="button" class="methodButton" value="ExecCommand" onclick="eWebEditPro.instances[0].asyncCallMethod('ExecCommand', [cmd.value, spar.value, npar.value], null, new Function())"></td>
+<td>Use ExecCommand(sCmd, sData, nData). <input type="text" name="cmd" style="width:120px" value="cmdBold"> <input type="text"  name="spar" value=""> <input type="text" name="npar" style="width:20px" value="0"></td></tr>
+
+<tr><td align="center">Content changed?</td>
+<td><input type="input" name="changed" readonly="readonly" value="unknown" size="8"></td></tr>
+</table>
+<p>
+Most recent command: <input type="text" name="cmdevt" value="">
+</p>
+<p>
+Event log:<br>
+<textarea name="evtlog" rows="5" cols="80"></textarea>
+</p>
+</form>
+
+</body>
+</html>

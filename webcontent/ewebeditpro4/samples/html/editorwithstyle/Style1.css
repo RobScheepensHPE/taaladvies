@@ -1,0 +1,85 @@
+H1.heading1  {
+	caption : Blue (Heading 1);
+	font-weight : bold;
+	font-size : x-large;
+	font-style : normal;
+	color : #3366CC;
+}
+H2.heading2  {
+	caption : Blue (Heading 2);
+	font-size : large;
+	font-style : normal;
+	font-weight : normal;
+	color : #3366CC;
+}
+H3.heading3 {
+	caption : Blue (Heading 3);
+	font-size : medium;
+	font-style : normal;
+	font-weight : normal;
+	color : #3366CC;
+}
+Body{
+	background-color : #00CC99;
+}
+p.border{
+	caption : Paragraph Border;
+	border : thin solid Blue;
+}
+.highlight {
+	caption: Highlight;
+	background-color : Aqua;
+}
+.green{
+	caption : Green;
+	color : Green;
+}
+.blue{
+	Caption : Blue;
+	color : Blue;
+}
+a.hyperlink{
+   Caption : Green (Hyperlink);
+	color : Green;
+}
+td.green{
+	caption : White on Green (Cell);
+	color : white;
+	background-color : Green;
+}
+ul.disc{
+	caption : Disc (Bullet);
+	list-style : disc;
+}
+ul.circle{
+	caption : Circle (Bullet);
+	list-style : circle;
+}
+ul.square{
+	caption : Square (Bullet);
+	list-style : square;
+}
+ol.decimal{
+	caption : Decimal (List);
+	list-style : decimal;
+}
+ol.lowerroman{
+	caption : Lower-roman (List);
+	list-style : lower-roman;
+}
+ol.upperroman{
+	caption : Upper-roman (List);
+	list-style : upper-roman;
+}
+ol.loweralpha{
+	caption : Lower-alpha (List);
+	list-style : lower-alpha;
+}
+ol.upperalpha{
+	caption : Upper-alpha (List);
+	list-style : upper-alpha;
+}
+ul.none, ol.none{
+	caption : Invisible Bullet;
+	list-style : none;
+}

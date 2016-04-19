@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<config>
+        <paragraphstyles>
+                <paragraphstyle name="Standard" />
+                <paragraphstyle name="H1"/>
+                <paragraphstyle name="H2"/>
+                <paragraphstyle name="H3"/>
+                <paragraphstyle name="H4"/>
+                <paragraphstyle name="H5"/>
+                <paragraphstyle name="H6"/>
+	        	<paragraphstyle name="PRE"/>
+                <paragraphstyle name="DIV"/>
+        </paragraphstyles>
+    	<fontmapping>
+                <font name="Arial">
+                        <renderedfont>SansSerif</renderedfont>
+                        <exportedfont>Arial</exportedfont>
+                </font>
+                <font name="Courier">
+                        <renderedfont>Monospaced</renderedfont>
+                        <exportedfont>Courier</exportedfont>
+                </font>
+                <font name="Times">
+                        <renderedfont>Serif</renderedfont>
+                        <exportedfont>Times new roman,Times</exportedfont>
+                </font>
+                <font name="Verdana">
+                		<renderedfont>Verdana</renderedfont>
+                		<exportedfont>Verdana</exportedfont>
+                </font>
+                <font name="Comic Sans MS">
+                		<renderedfont>Comic Sans MS</renderedfont>
+                		<exportedfont>Comic Sans MS</exportedfont>
+                </font>
+                <font name="Lucida Sans Unicode">
+                		<renderedfont>Lucida Sans Unicode</renderedfont>
+                		<exportedfont>Lucida Sans Unicode</exportedfont>
+                </font>
+        </fontmapping>
+        <presetcolors>
+                <color rgb="#0045aa" />
+                <color rgb="#0067aa" />
+                <color rgb="#0123aa" />
+                <color rgb="#ee45aa" />
+                <color rgb="#00e023" />
+                <color rgb="#e0e0aa" />
+                <color rgb="#30801a" />
+                <color rgb="#346788" />
+                <color rgb="#0EE0aa" />
+                <color rgb="#01e4aa" />
+                <color rgb="#12300a" />
+                <color rgb="#111111" />
+        </presetcolors>
+        <!--<customtags>
+                <customtag name="voorbeeldzin" isblockelement="false" alwaysshow="false" isreadonlytag="false"></customtag>
+        </customtags>-->
+        <spellingcheckers>
+
+                <spellingchecker name="LANGUAGE_DUTCH" archive="lex/dutch.jar" version="100" default="true" />
+
+        </spellingcheckers>
+        <!--<cleanupprocess isclientside="true" enabled="true" alwaysclean="false"/>-->
+        <defaulttablesettings>
+        	<table_numrows>4</table_numrows>
+        	<table_numcols>4</table_numcols>
+        	<table_overallwidth>100%</table_overallwidth>
+        	<table_rowheight>10</table_rowheight>
+        	<table_colwidth>25%</table_colwidth>
+        </defaulttablesettings>        
+        <!--<htmlformatclipboard enabled="true" />-->
+        <alternateenterkeyaction enabled="true" />
+	<bodyonly enabled="true" />
+	<nbspfill enabled="false" />
+	
+	<uicolors>
+		<uicolor name="windowfacecolor" rgb="#EBF0FF" />
+		<uicolor name="tabpaneactivecolor" rgb="#cce3ff" />
+		<uicolor name="windowhighlightcolor" rgb="#FFffff" />
+		<uicolor name="lightedgecolor" rgb="#ebf0ff" />
+		<uicolor name="darkedgecolor" rgb="#C5CCFF" />
+		<uicolor name="innertextcolor" rgb="#000000" />
+
+	</uicolors>
+</config>
